@@ -6,8 +6,9 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "lint": "biome lint",
+    "lint": "biome lint --write .",
     "check": "biome check --write .",
+    "start": "runner start",
     "build": "tsc --build",
     "build:watch": "tsc --build --watch"
   },
@@ -19,7 +20,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@chyzwar/biome-config": "^0.2.27",
+    "@chyzwar/runner": "^0.4.29",
     "typescript": "^5.5.4"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@4.3.1"
 }
