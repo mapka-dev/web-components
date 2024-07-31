@@ -10,7 +10,8 @@
   },
   "include": [],
   "references": [
-    { "path": "./packages/map/tsconfig.json" },
+    { "path": "./packages/maplibre-map/tsconfig.json" },
+    { "path": "./packages/mapbox-map/tsconfig.json" },
     { "path": "./packages/configurator/tsconfig.json" }
   ]
 }

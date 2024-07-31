@@ -105,6 +105,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chyzwar/tsconfig@npm:^0.2.28":
+  version: 0.2.28
+  resolution: "@chyzwar/tsconfig@npm:0.2.28"
+  checksum: 47d90854bd94e68bfd2a9bd85a6d5a3ba08f344f81da34d22e57e433bb8a25d7897510e1df380ccc6abebf192f246247261fe5ce3e40451b90e87809d5219fce
+  languageName: node
+  linkType: hard
+
 "@esbuild/aix-ppc64@npm:0.21.5":
   version: 0.21.5
   resolution: "@esbuild/aix-ppc64@npm:0.21.5"
@@ -340,6 +347,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/configurator@workspace:packages/configurator"
   dependencies:
+    "@mapka/mapbox-map": 0.0.4
+    "@mapka/maplibre-map": 0.0.4
     "@types/react": ^18.3.3
     "@types/react-dom": ^18.3.0
     "@vitejs/plugin-react-swc": ^3.7.0
@@ -350,13 +359,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/map@workspace:packages/map":
+"@mapka/mapbox-map@0.0.4, @mapka/mapbox-map@workspace:packages/mapbox-map":
   version: 0.0.0-use.local
-  resolution: "@mapka/map@workspace:packages/map"
+  resolution: "@mapka/mapbox-map@workspace:packages/mapbox-map"
   dependencies:
+    "@chyzwar/tsconfig": ^0.2.28
     "@types/mapbox-gl": ^3.4.0
     mapbox-gl: 3.5.2
+    typescript: ^5.5.4
+  languageName: unknown
+  linkType: soft
+
+"@mapka/maplibre-map@0.0.4, @mapka/maplibre-map@workspace:packages/maplibre-map":
+  version: 0.0.0-use.local
+  resolution: "@mapka/maplibre-map@workspace:packages/maplibre-map"
+  dependencies:
+    "@chyzwar/tsconfig": ^0.2.28
     maplibre-gl: ^4.5.0
+    react: ^18.3.1
     typescript: ^5.5.4
   languageName: unknown
   linkType: soft

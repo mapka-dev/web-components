@@ -1,0 +1,42 @@
+{
+  "name": "@mapka/maplibre-map",
+  "version": "0.0.4",
+  "engines": {
+    "node": "18.x.x",
+    "yarn": "1.x.x"
+  },
+  "type": "module",
+  "description": "MapLibre web component",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "build:watch": "tsc --watch --build",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "map"
+  ],
+  "author": "chyzwar",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "maplibre-gl": "^4.5.0",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@chyzwar/tsconfig": "^0.2.28",
+    "typescript": "^5.5.4"
+  },
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
+}
