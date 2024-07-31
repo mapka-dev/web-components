@@ -1,0 +1,36 @@
+{
+  "name": "@mapka/map",
+  "version": "0.0.4",
+  "engines": {
+    "node": "18.x.x",
+    "yarn": "1.x.x"
+  },
+  "type": "module",
+  "description": "Map",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --build",
+    "build:watch": "tsc --watch --build",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "map"
+  ],
+  "author": "chyzwar",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "mapbox-gl": "3.5.2",
+    "maplibre-gl": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/mapbox-gl": "^3.4.0",
+    "typescript": "^5.5.4"
+  },
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
+}
