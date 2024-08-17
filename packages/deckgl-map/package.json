@@ -1,0 +1,34 @@
+{
+  "name": "@mapka/deckgl-map",
+  "version": "0.0.4",
+  "engines": {
+    "node": "18.x.x",
+    "yarn": "1.x.x"
+  },
+  "type": "module",
+  "description": "Deck GL based map component",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --build",
+    "build:watch": "tsc --watch --build"
+  },
+  "keywords": [
+    "map",
+    "deck.gl"
+  ],
+  "author": "chyzwar",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "deck.gl": "^9.0.26"
+  },
+  "devDependencies": {
+    "@chyzwar/tsconfig": "^0.2.28",
+    "typescript": "^5.5.4"
+  },
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
+}
