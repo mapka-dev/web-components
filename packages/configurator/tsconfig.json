@@ -18,6 +18,8 @@
   ], 
   "references": [
     { "path": "../maplibre-map/tsconfig.json" },
-    { "path": "../mapbox-map/tsconfig.json" }
+    { "path": "../mapbox-map/tsconfig.json" },
+    { "path": "../split-panel/tsconfig.json" },
+    { "path": "../leaflet-map/tsconfig.json" }
   ]
 }

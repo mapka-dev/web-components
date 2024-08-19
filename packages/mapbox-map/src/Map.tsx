@@ -7,13 +7,15 @@ interface MapboxMapProps {
   height?: string | number;
   accessToken: string;
   zoom?: number;
+  onMapLoaded?: (map: Mapbox) => void;
 }
 
 export function MapboxMap(props: MapboxMapProps) {
   const { 
     width = "100%", 
     height = "100%", 
-    accessToken
+    accessToken,
+    onMapLoaded,
   } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
@@ -30,9 +32,14 @@ export function MapboxMap(props: MapboxMapProps) {
       });
       map.current = mapboxMap;
       container.current = newContainer;
-    }
-  }, [accessToken]);
 
+      mapboxMap.on("load", () => {
+        if (onMapLoaded) {
+          onMapLoaded(mapboxMap);
+        }
+      });
+    }
+  }, [accessToken, onMapLoaded]);
 
   const style = useMemo(() => {
     return {
