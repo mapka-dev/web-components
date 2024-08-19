@@ -1038,6 +1038,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@mapka/split-panel@workspace:packages/split-panel":
+  version: 0.0.0-use.local
+  resolution: "@mapka/split-panel@workspace:packages/split-panel"
+  dependencies:
+    "@chyzwar/tsconfig": "npm:^0.2.28"
+    moderndash: "npm:^3.12.0"
+    react: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@maplibre/maplibre-gl-style-spec@npm:^20.3.0":
   version: 20.3.0
   resolution: "@maplibre/maplibre-gl-style-spec@npm:20.3.0"
@@ -2434,6 +2445,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hotscript@npm:1.0.13":
+  version: 1.0.13
+  resolution: "hotscript@npm:1.0.13"
+  checksum: 10c2/deaa528857a5fd0f3f2a5d2d003fa360ea14ebeae2d8909c1f04fe2cc7bff5982438122e26c1343d2c11d1b0deba8438d605772b73e015a446b67306ea4ce347
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.0":
   version: 4.1.0
   resolution: "http-cache-semantics@npm:4.1.0"
@@ -2986,6 +3004,15 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 10c2/07b56b61a8f094a5e28d2507886930f35687cc1998f1d4c44abcfd55e4e65d92479434a8614db49db3c5eb7ec843597f5815576a1e8d8db32ac29c7fc2efd7db
+  languageName: node
+  linkType: hard
+
+"moderndash@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "moderndash@npm:3.12.0"
+  dependencies:
+    hotscript: "npm:1.0.13"
+  checksum: 10c2/bf317a0e5f944db6450b19a1ba2979f972dfcd4608b731403224d12287e957e64b6f8ee0624236142db80550d14e4a2e7ecc9895850fa6e93d54422e4a796430
   languageName: node
   linkType: hard
 

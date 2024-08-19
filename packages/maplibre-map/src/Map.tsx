@@ -1,5 +1,6 @@
 import { Map as MapLibre } from "maplibre-gl";
 import { useCallback, useMemo, useRef } from "react";
+import { MapLibreStyles } from './MapLibreStyles.js';
 
 interface MapLibreMapProps {
   width?: string | number;
@@ -7,7 +8,7 @@ interface MapLibreMapProps {
 }
 
 export function MapLibreMap(props: MapLibreMapProps) {
-  const { width, height } = props;
+  const { width = "100%", height = "100%"} = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<MapLibre | null>(null);
@@ -35,9 +36,12 @@ export function MapLibreMap(props: MapLibreMapProps) {
 
 
   return (
-    <div 
-      style={style} 
-      ref={initMap}
-    />
+    <>
+      <MapLibreStyles />
+      <div 
+        style={style} 
+        ref={initMap}
+      />
+    </>
   );
 }
