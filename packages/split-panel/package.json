@@ -9,18 +9,14 @@
   "description": "Leaflet web component and react component",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.js"
-    }
+    ".": "./lib/index.js",
+    "./webcomponent": "./lib/webcomponent.js"
   },
   "scripts": {
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
-  "keywords": [
-    "split-panel"
-  ],
+  "keywords": ["split-panel"],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
@@ -31,10 +27,5 @@
     "@chyzwar/tsconfig": "^0.2.28",
     "typescript": "^5.5.4"
   },
-  "files": [
-    "src/",
-    "lib/",
-    "!**/__tests__/",
-    "!lib/buildInfo.json"
-  ]
+  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
 }

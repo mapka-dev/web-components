@@ -1,1 +1,1 @@
-export {MapboxMap} from './Map.js';
+export { MapboxMap } from "./Map.js";

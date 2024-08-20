@@ -13,9 +13,7 @@
     "build:watch": "tsc --build --watch --preserveWatchOutput"
   },
   "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
+    "packages": ["packages/**"]
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

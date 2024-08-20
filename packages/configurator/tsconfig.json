@@ -1,5 +1,5 @@
 {
-  "extends": "@chyzwar/tsconfig/bundler.json", 
+  "extends": "@chyzwar/tsconfig/bundler.json",
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "outDir": "dist",
@@ -8,14 +8,9 @@
     "noUncheckedIndexedAccess": true,
     "tsBuildInfoFile": "./dist/buildInfo.json",
     "skipLibCheck": true,
-    "types": [
-      "react",
-      "react-dom"
-    ]
+    "types": ["react", "react-dom"]
   },
-  "include": [
-    "src"
-  ], 
+  "include": ["src"],
   "references": [
     { "path": "../maplibre-map/tsconfig.json" },
     { "path": "../mapbox-map/tsconfig.json" },

@@ -1,5 +1,3 @@
-
-
 export const MapboxStyles = () => {
   return (
     <style>
@@ -788,4 +786,4 @@ export const MapboxStyles = () => {
     `}
     </style>
   );
-}
+};

@@ -4,7 +4,6 @@ const medianWidth = 10;
 const mobileColumns = "100% 0px 100%";
 const desktopColumns = "1fr max-content 1fr";
 
-
 export const renderShadow = (el: HTMLElement, html: string, css?: string) => {
   if (el.shadowRoot) {
     return;
@@ -93,7 +92,7 @@ export class SplitPanel extends HTMLElement {
 
   handleResizeDrag = (e: PointerEvent) => {
     e.stopPropagation();
-    if(this.rec) {
+    if (this.rec) {
       const newMedianLeft = e.clientX - this.rec.left;
       this.style.gridTemplateColumns = `calc(${newMedianLeft}px - ${medianWidth / 2}px) ${medianWidth}px 1fr`;
     }
@@ -175,5 +174,3 @@ export class SplitPanel extends HTMLElement {
     renderShadow(this, SplitPanel.html, SplitPanel.styles);
   }
 }
-
-

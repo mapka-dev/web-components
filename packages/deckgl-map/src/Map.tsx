@@ -11,24 +11,27 @@ interface MapboxMapProps {
 }
 
 export function MapboxMap(props: MapboxMapProps) {
-  const { width, height, accessToken} = props;
+  const { width, height, accessToken } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<Mapbox | null>(null);
 
-  const initMap = useCallback((newContainer: HTMLDivElement) => {
-    if(!map.current) {
-      const mapboxMap = new Mapbox({
-        container: newContainer,
-        style: 'mapbox://styles/mapbox/streets-v12',
-        center: [0, 0],
-        zoom: 1,
-        accessToken,
-      });
-      map.current = mapboxMap;
-      container.current = newContainer;
-    }
-  }, [accessToken]);
+  const initMap = useCallback(
+    (newContainer: HTMLDivElement) => {
+      if (!map.current) {
+        const mapboxMap = new Mapbox({
+          container: newContainer,
+          style: "mapbox://styles/mapbox/streets-v12",
+          center: [0, 0],
+          zoom: 1,
+          accessToken,
+        });
+        map.current = mapboxMap;
+        container.current = newContainer;
+      }
+    },
+    [accessToken],
+  );
 
   const style = useMemo(() => {
     return {
@@ -37,11 +40,5 @@ export function MapboxMap(props: MapboxMapProps) {
     };
   }, [width, height]);
 
-
-  return (
-    <div 
-      style={style} 
-      ref={initMap}
-    />
-  );
+  return <div style={style} ref={initMap} />;
 }

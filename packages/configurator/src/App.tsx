@@ -1,62 +1,40 @@
-import { type Mapbox, MapboxMap } from "@mapka/mapbox-map";
-import { type MapLibre, MapLibreMap } from "@mapka/maplibre-map";
-import { SplitPanel } from "@mapka/split-panel";
-import { CodeEditor } from "./components/CodeEditor";
-import { useMemo, useState } from "react";
+import { Tabs, rem } from "@mantine/core";
+import { IconMessageCircle, IconPhoto, IconSettings } from "@tabler/icons-react";
+import { MapLibreSplitPanelExample } from "./components/MapLibreSplitPanelExample";
+import { MapboxSplitPanelExample } from "./components/MapboxSplitPanelExample";
+import { LeafletSplitPanelExample } from "./components/LeafletSplitPanelExample";
 
-customElements.define("split-panel", SplitPanel);
-
-const accessToken = "pk.eyJ1IjoibWFyY2lua29wYWN6IiwiYSI6ImNrenlteHJvaTAxdWUzY254ZHppMG5nN3QifQ.U3tuBCRNFosiS3buKpUxnQ"
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "split-panel": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
-}
-
-function App() {
-  const [mapLibre, setMapLibre] = useState<MapLibre | null>(null);
-  const contextMapLibre = useMemo(() => {
-    return {
-      map: mapLibre,
-    };
-  }, [mapLibre]);
-
-  const [mapMapbox, setMapMapbox] = useState<Mapbox | null>(null);
-  const contextMapMapbox = useMemo(() => {
-    return {
-      map: mapMapbox,
-    };
-  }, [mapMapbox]);
+export function App() {
+  const iconStyle = { width: rem(12), height: rem(12) };
 
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
-      <split-panel>
-        <div slot="map-panel">
-          <MapLibreMap onMapLoaded={setMapLibre} />
-        </div>
+    <Tabs radius="lg" defaultValue="gallery">
+      <Tabs.List>
+        <Tabs.Tab value="gallery" leftSection={<IconPhoto style={iconStyle} />}>
+          MapLibre
+        </Tabs.Tab>
+        <Tabs.Tab value="messages" leftSection={<IconMessageCircle style={iconStyle} />}>
+          Mapbox
+        </Tabs.Tab>
+        <Tabs.Tab value="settings" leftSection={<IconSettings style={iconStyle} />}>
+          Leaflet
+        </Tabs.Tab>
+        <Tabs.Tab value="settings" leftSection={<IconSettings style={iconStyle} />}>
+          Deck.gallery
+        </Tabs.Tab>
+      </Tabs.List>
 
-        <div slot="content-panel">
-          <CodeEditor context={contextMapLibre} />
-        </div>
-      </split-panel>
+      <Tabs.Panel value="gallery" h="800px">
+        <MapLibreSplitPanelExample />
+      </Tabs.Panel>
 
-      <split-panel>
-        <div slot="map-panel">
-          <MapboxMap 
-            onMapLoaded={setMapMapbox} 
-            accessToken={accessToken}
-          />
-        </div>
+      <Tabs.Panel value="messages" h="800px">
+        <MapboxSplitPanelExample />
+      </Tabs.Panel>
 
-        <div slot="content-panel">
-          <CodeEditor context={contextMapMapbox} />
-        </div>
-      </split-panel>
-    </div>
+      <Tabs.Panel value="settings" h="800px">
+        <LeafletSplitPanelExample />
+      </Tabs.Panel>
+    </Tabs>
   );
 }
-
-export default App;

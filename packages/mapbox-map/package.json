@@ -19,9 +19,7 @@
       "import": "./lib/index.js"
     }
   },
-  "keywords": [
-    "map"
-  ],
+  "keywords": ["map"],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
@@ -32,10 +30,5 @@
     "@types/mapbox-gl": "^3.4.0",
     "typescript": "^5.5.4"
   },
-  "files": [
-    "src/",
-    "lib/",
-    "!**/__tests__/",
-    "!lib/buildInfo.json"
-  ]
+  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
 }
