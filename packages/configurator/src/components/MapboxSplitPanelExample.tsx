@@ -26,7 +26,7 @@ export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props)
   return (
     <split-panel>
       <div slot="map-panel">
-        <MapboxMap onMapLoaded={setMap} accessToken={accessToken} />
+        <MapboxMap accessToken={accessToken} onMapLoaded={setMap} />
       </div>
 
       <div slot="content-panel">
