@@ -23,7 +23,7 @@
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
-    "mapbox-gl": "3.5.2", 
+    "mapbox-gl": "3.5.2",
     "moderndash": "^3.12.0"
   },
   "devDependencies": {

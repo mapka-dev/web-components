@@ -1,5 +1,6 @@
 import { Map as MapLibre } from "maplibre-gl";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
+import { MapLibreContainer } from "./MapLibreContainer.js";
 import { MapLibreStyles } from "./MapLibreStyles.js";
 
 interface MapLibreMapProps {
@@ -15,16 +16,16 @@ export function MapLibreMap(props: MapLibreMapProps) {
   const map = useRef<MapLibre | null>(null);
 
   const initMap = useCallback(
-    (newContainer: HTMLDivElement) => {
+    (element: HTMLDivElement) => {
       if (!map.current) {
         const mapLibreMap = new MapLibre({
-          container: newContainer,
+          container: element,
           style: "https://demotiles.maplibre.org/style.json",
           center: [0, 0],
           zoom: 1,
         });
         map.current = mapLibreMap;
-        container.current = newContainer;
+        container.current = element;
 
         mapLibreMap.on("load", () => {
           if (onMapLoaded) {
@@ -46,7 +47,7 @@ export function MapLibreMap(props: MapLibreMapProps) {
   return (
     <>
       <MapLibreStyles />
-      <div style={style} ref={initMap} />
+      <MapLibreContainer ref={initMap} style={style} />
     </>
   );
 }

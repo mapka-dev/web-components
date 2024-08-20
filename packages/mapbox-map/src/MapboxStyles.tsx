@@ -1,7 +1,7 @@
 export const MapboxStyles = () => {
   return (
-    <style>{
-  `
+    <style>
+      {`
     .mapboxgl-map {
       font: 12px/20px Helvetica Neue, Arial, Helvetica, sans-serif;
       overflow: hidden;
