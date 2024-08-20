@@ -1,4 +1,4 @@
-import { type Mapbox, MapboxMap } from "@mapka/mapbox-map";
+import { type MapboxMapInstance, MapboxMap } from "@mapka/mapbox-map";
 import { useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 
@@ -6,7 +6,7 @@ const accessToken =
   "pk.eyJ1IjoibWFyY2lua29wYWN6IiwiYSI6ImNrenlteHJvaTAxdWUzY254ZHppMG5nN3QifQ.U3tuBCRNFosiS3buKpUxnQ";
 
 export const MapboxSplitPanelExample = () => {
-  const [mapMapbox, setMapMapbox] = useState<Mapbox | null>(null);
+  const [mapMapbox, setMapMapbox] = useState<MapboxMapInstance | null>(null);
   const contextMapMapbox = useMemo(() => {
     return {
       map: mapMapbox,

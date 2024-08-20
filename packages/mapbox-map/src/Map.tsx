@@ -1,5 +1,6 @@
 import { Map as Mapbox } from "mapbox-gl";
-import { useCallback, useMemo, useRef } from "react";
+import { debounce } from "moderndash";
+import { useCallback, useMemo, useRef, useEffect } from "react";
 import { MapboxStyles } from "./MapboxStyles.js";
 
 interface MapboxMapProps {
@@ -25,17 +26,36 @@ export function MapboxMap(props: MapboxMapProps) {
           center: [0, 0],
           zoom: 1,
           accessToken,
+          fitBoundsOptions: {
+            padding: 15 
+          }
         });
         map.current = mapboxMap;
         container.current = newContainer;
 
-        mapboxMap.on("load", () => {
+        mapboxMap.once("load", () => {
           onMapLoaded?.(mapboxMap);
         });
       }
     },
     [accessToken, onMapLoaded],
   );
+
+  useEffect(() => {
+    if (map.current === null) {
+      return;
+    }
+    if (container.current === null) { 
+      return;
+    }
+
+    const resizer = new ResizeObserver(debounce(() => map.current?.resize(), 150));
+    resizer.observe(container.current); 
+    
+    return () => {
+      resizer.disconnect();
+    };
+  }, []);
 
   const style = useMemo(() => {
     return {
