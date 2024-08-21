@@ -2,7 +2,7 @@ import { debounce } from "moderndash";
 
 const medianWidth = 10;
 const mobileColumns = "100% 0px 100%";
-const desktopColumns = "1fr max-content 1fr";
+const desktopColumns = `1fr ${medianWidth}px 1fr`;
 
 export const renderShadow = (el: HTMLElement, html: string, css?: string) => {
   if (el.shadowRoot) {
@@ -140,19 +140,23 @@ export class SplitPanel extends HTMLElement {
       cursor: col-resize; 
     }
     :host { 
-      grid-template-columns: ${desktopColumns}; 
+      grid-template-columns: ${desktopColumns};
+      grid-template-rows: 1fr;
     }
-    :host #median { 
-      inline-size: 0.5rem; grid-column: 2 / 3; 
+    :host #median {
+      inline-size: ${medianWidth}px;
+      grid-column: 2 / 3; 
     }
     :host #median:hover { 
       cursor: col-resize; 
     }
-    :host #map-panel { 
-      grid-column: 1 / 2; grid-row: 1 / 1; 
+    slot[name="map-panel"] { 
+      grid-column: 1 / 2; 
+      grid-row: 1 / 1;
     }
-    :host #content-panel { 
-      grid-column: 3 / 4; grid-row: 1 / 1; 
+    slot[name="content-panel"] { 
+      grid-column: 3 / 4; 
+      grid-row: 1 / 1; 
     }
     :host([resizing][direction=col]){ cursor: row-resize; }
 

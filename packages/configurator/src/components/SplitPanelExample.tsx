@@ -23,7 +23,7 @@ export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
   const iconStyle = { width: rem(12), height: rem(12) };
 
   return (
-    <Tabs radius="lg" defaultValue="maplibre">
+    <Tabs variant="pills" radius="sm" keepMounted={false} defaultValue="maplibre">
       <Tabs.List>
         <Tabs.Tab value="maplibre" leftSection={<IconPhoto style={iconStyle} />}>
           MapLibre
