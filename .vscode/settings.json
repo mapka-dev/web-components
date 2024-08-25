@@ -1,5 +1,14 @@
 {
-  "cSpell.words": ["arcgis", "mantine", "mapbox", "maplibre", "moderndash", "webcomponent"],
+  "cSpell.words": [
+    "arcgis",
+    "configurator",
+    "mantine",
+    "mapbox",
+    "maplibre",
+    "moderndash",
+    "tabler",
+    "webcomponent"
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome",
     "editor.formatOnSave": true

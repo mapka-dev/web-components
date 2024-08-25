@@ -8,12 +8,12 @@ interface MapboxMapProps {
   width?: string | number;
   height?: string | number;
   accessToken: string;
-  zoom?: number;
+  showFeatureTooltip?: boolean;
   onMapLoaded?: (map: mapbox.Map) => void;
 }
 
 export function MapboxMap(props: MapboxMapProps) {
-  const { width = "100%", height = "100%", accessToken, onMapLoaded } = props;
+  const { width = "100%", height = "100%", accessToken, showFeatureTooltip, onMapLoaded } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<mapbox.Map | null>(null);
@@ -21,6 +21,8 @@ export function MapboxMap(props: MapboxMapProps) {
   const initMap = useCallback(
     (element: HTMLDivElement) => {
       if (!map.current) {
+        container.current = element;
+
         import("mapbox-gl").then(({ default: mapbox }) => {
           const mapboxMap = new mapbox.Map({
             container: element,
@@ -33,7 +35,6 @@ export function MapboxMap(props: MapboxMapProps) {
             },
           });
           map.current = mapboxMap;
-          container.current = element;
 
           if (onMapLoaded) {
             mapboxMap.once("load", () => {
@@ -46,11 +47,31 @@ export function MapboxMap(props: MapboxMapProps) {
     [accessToken, onMapLoaded],
   );
 
+  const currentMap = map.current;
   useEffect(() => {
-    if (map.current === null) return;
+    if (!showFeatureTooltip) return;
+
+    const onClick = (event: mapbox.MapMouseEvent) => {
+      const features = currentMap?.queryRenderedFeatures(event.point);
+      if (!features) return;
+
+      console.log(features);
+    };
+    currentMap?.on("click", onClick);
+
+    return () => {
+      currentMap?.off("click", onClick);
+    };
+  }, [currentMap, showFeatureTooltip]);
+
+  useEffect(() => {
     if (container.current === null) return;
 
-    const resizer = new ResizeObserver(debounce(() => map.current?.resize(), 150));
+    const resizer = new ResizeObserver(
+      debounce(() => {
+        map.current?.resize();
+      }, 150),
+    );
     resizer.observe(container.current);
 
     return () => {

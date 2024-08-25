@@ -25,6 +25,7 @@
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
+    "@mapka/map-shared": "^0.0.4",
     "mapbox-gl": "3.6.0",
     "moderndash": "^3.12.0"
   },

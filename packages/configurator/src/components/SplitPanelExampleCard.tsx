@@ -13,11 +13,11 @@ interface SplitPanelExampleProps {
   leafletExample?: MapExample;
 }
 
-export const SplitPanelExampleCard: FC<SplitPanelExampleProps> = () => {
+export const SplitPanelExampleCard: FC<SplitPanelExampleProps> = (props) => {
   return (
     <MantineProvider>
-      <Card shadow="sm" padding="0px" radius="md" h="800px" withBorder w="90%">
-        <SplitPanelExample />
+      <Card className="not-content" shadow="sm" padding="0px" radius="md" withBorder w="100%">
+        <SplitPanelExample {...props} />
       </Card>
     </MantineProvider>
   );

@@ -2,8 +2,7 @@
   "name": "@mapka/maplibre-map",
   "version": "0.0.4",
   "engines": {
-    "node": "18.x.x",
-    "yarn": "1.x.x"
+    "node": "20.x.x"
   },
   "type": "module",
   "description": "MapLibre web component",
@@ -21,7 +20,9 @@
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
-    "maplibre-gl": "^4.6.0"
+    "@mapka/map-shared": "^0.0.4",
+    "maplibre-gl": "^4.6.0",
+    "moderndash": "^3.12.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.2.28",
