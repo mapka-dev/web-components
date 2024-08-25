@@ -2,6 +2,7 @@ import { MapboxMap, type MapboxMapInstance } from "@mapka/mapbox-map";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 import type { MapExample } from "./SplitPanelExample";
+import { SplitPanel } from "@mapka/split-panel";
 
 const accessToken =
   "pk.eyJ1IjoibWFyY2lua29wYWN6IiwiYSI6ImNrenlteHJvaTAxdWUzY254ZHppMG5nN3QifQ.U3tuBCRNFosiS3buKpUxnQ";
@@ -24,14 +25,9 @@ export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props)
   }, [map]);
 
   return (
-    <split-panel>
-      <div slot="map-panel">
-        <MapboxMap accessToken={accessToken} onMapLoaded={setMap} />
-      </div>
-
-      <div slot="content-panel">
-        <CodeEditor context={context} defaultValue={code} waitForContext />
-      </div>
-    </split-panel>
+    <SplitPanel
+      leftPanel={<MapboxMap accessToken={accessToken} onMapLoaded={setMap} />}
+      rightPanel={<CodeEditor context={context} defaultValue={code} waitForContext />}
+    />
   );
 };

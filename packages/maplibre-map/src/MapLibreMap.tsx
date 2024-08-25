@@ -1,41 +1,60 @@
-import { Map as MapLibre } from "maplibre-gl";
-import { useCallback, useMemo, useRef } from "react";
+import type maplibre from "maplibre-gl";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
 import { MapLibreStyles } from "./MapLibreStyles.js";
 
 interface MapLibreMapProps {
   width?: string | number;
   height?: string | number;
-  onMapLoaded?: (map: MapLibre) => void;
+  showFeatureTooltip?: boolean;
+  onMapLoaded?: (map: maplibre.Map) => void;
 }
 
 export function MapLibreMap(props: MapLibreMapProps) {
-  const { width = "100%", height = "100%", onMapLoaded } = props;
+  const { width = "100%", height = "100%", onMapLoaded, showFeatureTooltip } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
-  const map = useRef<MapLibre | null>(null);
+  const map = useRef<maplibre.Map | null>(null);
 
   const initMap = useCallback(
     (element: HTMLDivElement) => {
-      if (!map.current) {
-        const mapLibreMap = new MapLibre({
-          container: element,
-          style: "https://demotiles.maplibre.org/style.json",
-          center: [0, 0],
-          zoom: 1,
-        });
-        map.current = mapLibreMap;
-        container.current = element;
+      import("maplibre-gl").then(({ default: maplibre }) => {
+        if (!map.current) {
+          const mapLibreMap = new maplibre.Map({
+            container: element,
+            style: "https://demotiles.maplibre.org/style.json",
+            center: [0, 0],
+            zoom: 1,
+          });
+          map.current = mapLibreMap;
+          container.current = element;
 
-        mapLibreMap.on("load", () => {
           if (onMapLoaded) {
-            onMapLoaded(mapLibreMap);
+            mapLibreMap.once("load", () => {
+              onMapLoaded(mapLibreMap);
+            });
           }
-        });
-      }
+        }
+      });
     },
     [onMapLoaded],
   );
+
+  useEffect(() => {
+    if (!showFeatureTooltip) return;
+
+    const onClick = (event: maplibre.MapMouseEvent) => {
+      const features = map.current?.queryRenderedFeatures(event.point);
+      if (!features) return;
+
+      console.log(features);
+    };
+    map.current?.on("click", onClick);
+
+    return () => {
+      map.current?.off("click", onClick);
+    };
+  }, [showFeatureTooltip]);
 
   const style = useMemo(() => {
     return {

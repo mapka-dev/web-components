@@ -1,4 +1,4 @@
-import L from "leaflet";
+import type L from "leaflet";
 import type { Map as LeafletMapInstance } from "leaflet";
 import { debounce } from "moderndash";
 import { useCallback, useEffect, useMemo, useRef } from "react";
@@ -22,21 +22,23 @@ export function LeafletMap(props: LeafletMapProps) {
   const initMap = useCallback(
     (element: HTMLDivElement) => {
       if (!map.current) {
-        const leafletMap = L.map(element, {
-          center: [0, 0],
-          zoom: 1,
-          layers: [
-            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-              maxZoom: 19,
-              attribution:
-                'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-            }),
-          ],
-        });
-        map.current = leafletMap;
-        container.current = element;
-        leafletMap.whenReady(() => {
-          onMapLoaded?.(leafletMap, L);
+        import("leaflet").then(({ default: L }) => {
+          const leafletMap = L.map(element, {
+            center: [0, 0],
+            zoom: 1,
+            layers: [
+              L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution:
+                  'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+              }),
+            ],
+          });
+          map.current = leafletMap;
+          container.current = element;
+          leafletMap.whenReady(() => {
+            onMapLoaded?.(leafletMap, L);
+          });
         });
       }
     },

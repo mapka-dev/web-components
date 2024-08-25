@@ -1,1 +1,1 @@
-export { SplitPanel } from "./SplitPanel.js";
+export { SplitPanel } from "./components/SplitPanel.js";

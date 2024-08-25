@@ -12,7 +12,10 @@
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
-  "keywords": ["map", "deck.gl"],
+  "keywords": [
+    "map",
+    "deck.gl"
+  ],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
@@ -25,5 +28,10 @@
     "react-dom": "^18.3.1",
     "typescript": "^5.5.4"
   },
-  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
 }

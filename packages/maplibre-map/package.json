@@ -15,11 +15,13 @@
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
-  "keywords": ["map"],
+  "keywords": [
+    "map"
+  ],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
-    "maplibre-gl": "^4.5.2"
+    "maplibre-gl": "^4.6.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.2.28",
@@ -27,5 +29,10 @@
     "react-dom": "^18.3.1",
     "typescript": "^5.5.4"
   },
-  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
 }

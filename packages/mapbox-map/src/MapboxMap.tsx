@@ -1,4 +1,4 @@
-import { Map as Mapbox } from "mapbox-gl";
+import type mapbox from "mapbox-gl";
 import { debounce } from "moderndash";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapboxContainer } from "./MapboxContainer.js";
@@ -9,33 +9,37 @@ interface MapboxMapProps {
   height?: string | number;
   accessToken: string;
   zoom?: number;
-  onMapLoaded?: (map: Mapbox) => void;
+  onMapLoaded?: (map: mapbox.Map) => void;
 }
 
 export function MapboxMap(props: MapboxMapProps) {
   const { width = "100%", height = "100%", accessToken, onMapLoaded } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
-  const map = useRef<Mapbox | null>(null);
+  const map = useRef<mapbox.Map | null>(null);
 
   const initMap = useCallback(
     (element: HTMLDivElement) => {
       if (!map.current) {
-        const mapboxMap = new Mapbox({
-          container: element,
-          style: "mapbox://styles/mapbox/streets-v12",
-          center: [0, 0],
-          zoom: 1,
-          accessToken,
-          fitBoundsOptions: {
-            padding: 15,
-          },
-        });
-        map.current = mapboxMap;
-        container.current = element;
+        import("mapbox-gl").then(({ default: mapbox }) => {
+          const mapboxMap = new mapbox.Map({
+            container: element,
+            style: "mapbox://styles/mapbox/streets-v12",
+            center: [0, 0],
+            zoom: 1,
+            accessToken,
+            fitBoundsOptions: {
+              padding: 15,
+            },
+          });
+          map.current = mapboxMap;
+          container.current = element;
 
-        mapboxMap.once("load", () => {
-          onMapLoaded?.(mapboxMap);
+          if (onMapLoaded) {
+            mapboxMap.once("load", () => {
+              onMapLoaded(mapboxMap);
+            });
+          }
         });
       }
     },
@@ -43,12 +47,8 @@ export function MapboxMap(props: MapboxMapProps) {
   );
 
   useEffect(() => {
-    if (map.current === null) {
-      return;
-    }
-    if (container.current === null) {
-      return;
-    }
+    if (map.current === null) return;
+    if (container.current === null) return;
 
     const resizer = new ResizeObserver(debounce(() => map.current?.resize(), 150));
     resizer.observe(container.current);

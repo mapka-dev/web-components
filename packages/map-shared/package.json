@@ -1,33 +1,33 @@
 {
-  "name": "@mapka/split-panel",
+  "name": "@mapka/map-shared",
   "version": "0.0.4",
   "engines": {
     "node": "18.x.x",
     "yarn": "1.x.x"
   },
   "type": "module",
-  "description": "Leaflet web component and react component",
+  "description": "Shared map components and utils",
   "sideEffects": false,
   "exports": {
-    ".": "./lib/index.js",
-    "./webcomponent": "./lib/webcomponent.js"
+    ".": "./lib/index.js"
   },
   "scripts": {
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
   "keywords": [
-    "split-panel"
+    "map"
   ],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
-    "moderndash": "^3.12.0"
+    "maplibre-gl": "^4.6.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.2.28",
-    "typescript": "^5.5.4",
-    "react": "^18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4"
   },
   "files": [
     "src/",

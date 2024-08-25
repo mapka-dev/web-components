@@ -1,6 +1,6 @@
-import { SplitPanel } from "./SplitPanel.js";
+import { SplitPanel } from "./web-components/SplitPanel.js";
 
-customElements.define("split-panel", SplitPanel);
+customElements.get("split-panel") ?? customElements.define("split-panel", SplitPanel);
 
 declare global {
   namespace JSX {

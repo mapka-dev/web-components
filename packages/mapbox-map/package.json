@@ -19,7 +19,9 @@
       "import": "./lib/index.js"
     }
   },
-  "keywords": ["map"],
+  "keywords": [
+    "map"
+  ],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
@@ -33,5 +35,10 @@
     "react-dom": "^18.3.1",
     "typescript": "^5.5.4"
   },
-  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
 }
