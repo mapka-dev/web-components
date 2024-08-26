@@ -36,9 +36,11 @@ export function LeafletMap(props: LeafletMapProps) {
           });
           map.current = leafletMap;
           container.current = element;
-          leafletMap.whenReady(() => {
-            onMapLoaded?.(leafletMap, L);
-          });
+          if (onMapLoaded) {
+            leafletMap.whenReady(() => {
+              onMapLoaded(leafletMap, L);
+            });
+          }
         });
       }
     },
@@ -46,12 +48,7 @@ export function LeafletMap(props: LeafletMapProps) {
   );
 
   useEffect(() => {
-    if (map.current === null) {
-      return;
-    }
-    if (container.current === null) {
-      return;
-    }
+    if (!container.current) return;
 
     const resizer = new ResizeObserver(debounce(() => map.current?.invalidateSize(), 150));
     resizer.observe(container.current);
