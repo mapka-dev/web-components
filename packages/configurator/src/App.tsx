@@ -1,6 +1,6 @@
 import { Stack } from "@mantine/core";
-import { trimCode } from "./utils/dash";
 import { SplitPanelExampleCard } from "./components/SplitPanelExampleCard";
+import { trimCode } from "./utils/dash";
 
 export function App() {
   const mapLibreCodeExample = {

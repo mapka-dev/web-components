@@ -1,7 +1,7 @@
 import { Card } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
 import type { FC } from "react";
 import { SplitPanelExample } from "./SplitPanelExample";
-import { MantineProvider } from "@mantine/core";
 
 export interface MapExample {
   code?: string;
