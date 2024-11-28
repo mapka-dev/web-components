@@ -1,5 +1,5 @@
 import type mapbox from "mapbox-gl";
-import { debounce } from "moderndash";
+import { debounce } from "es-toolkit";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapboxContainer } from "./MapboxContainer.js";
 import { MapboxStyles } from "./MapboxStyles.js";

@@ -1,4 +1,4 @@
-import { debounce } from "moderndash";
+import { debounce } from "es-toolkit";
 
 const medianWidth = 10;
 const mobileColumns = "100% 0px 100%";
