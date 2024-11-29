@@ -10,7 +10,8 @@
     "check": "biome check --write .",
     "start": "runner start",
     "build": "tsc --build",
-    "build:watch": "tsc --build --watch --preserveWatchOutput"
+    "build:watch": "tsc --build --watch --preserveWatchOutput",
+    "prepare": "husky"
   },
   "workspaces": {
     "packages": [
@@ -28,7 +29,12 @@
     "@lerna-lite/version": "^3.10.1",
     "@types/node": "^22.10.1",
     "conventional-changelog-conventionalcommits": "^7.0.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "yarn lint"
   },
   "packageManager": "yarn@4.4.1"
 }
