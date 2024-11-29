@@ -3,14 +3,14 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { Map as Mapbox } from "mapbox-gl";
 import { useCallback, useMemo, useRef } from "react";
 
-interface MapboxMapProps {
+interface DeckGLMapProps {
   width?: string | number;
   height?: string | number;
   accessToken: string;
   zoom?: number;
 }
 
-export function MapboxMap(props: MapboxMapProps) {
+export function DeckGLMap(props: DeckGLMapProps) {
   const { width, height, accessToken } = props;
 
   const container = useRef<HTMLDivElement | null>(null);

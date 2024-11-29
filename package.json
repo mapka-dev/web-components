@@ -20,8 +20,14 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@chyzwar/biome-config": "^0.2.31",
-    "@chyzwar/runner": "^0.4.34",
+    "@chyzwar/runner": "^0.4.35",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@lerna-lite/cli": "^3.10.1",
+    "@lerna-lite/publish": "^3.10.1",
+    "@lerna-lite/version": "^3.10.1",
     "@types/node": "^22.10.1",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
     "typescript": "^5.7.2"
   },
   "packageManager": "yarn@4.4.1"

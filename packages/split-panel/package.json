@@ -6,8 +6,11 @@
     "yarn": "1.x.x"
   },
   "type": "module",
-  "description": "Leaflet web component and react component",
+  "description": "Split panel for mapka",
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./webcomponent": "./lib/webcomponent.js"
@@ -17,10 +20,12 @@
     "build:watch": "tsc --watch --build"
   },
   "keywords": [
+    "react",  
+    "component",
     "split-panel"
   ],
   "author": "chyzwar",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
     "es-toolkit": "^1.27.0"
   },
