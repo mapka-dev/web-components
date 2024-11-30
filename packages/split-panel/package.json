@@ -1,10 +1,6 @@
 {
   "name": "@mapka/split-panel",
   "version": "0.0.4",
-  "engines": {
-    "node": "18.x.x",
-    "yarn": "1.x.x"
-  },
   "type": "module",
   "description": "Split panel for mapka",
   "sideEffects": false,
