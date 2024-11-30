@@ -7833,11 +7833,11 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^5.7.2#optional!builtin<compat/typescript>":
   version: 5.7.2
-  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=8c6c40"
+  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c2/7d33f41a1e5e76c712b633df26ee6c03e94a640b2ea35d46663b265b60d5d0c94041582a702d3328c887ce7cf62bb0b537f9c9c9315ef2df141d3b5a2c147d4b
+  checksum: 10c2/82feb929fc636677d509b24b94a62c3fb6d5c13705b9fc9b6353c6d534bb058b26763470c1a7eff5420687f9b11a64cd8eb01653d98ea9624c0aa187689311e9
   languageName: node
   linkType: hard
 

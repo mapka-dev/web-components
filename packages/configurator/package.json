@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "type": "module",
   "license": "Apache-2.0",
-  "engines": {
-    "node": "22.x.x"
-  },
   "exports": {
     ".": "./lib/index.js"
   },

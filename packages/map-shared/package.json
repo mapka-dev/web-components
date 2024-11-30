@@ -1,10 +1,6 @@
 {
   "name": "@mapka/map-shared",
   "version": "0.0.4",
-  "engines": {
-    "node": "18.x.x",
-    "yarn": "1.x.x"
-  },
   "type": "module",
   "description": "Shared map components and utils",
   "sideEffects": false,
