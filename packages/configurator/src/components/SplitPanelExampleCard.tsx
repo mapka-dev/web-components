@@ -10,6 +10,7 @@ export interface MapExample {
 interface SplitPanelExampleProps {
   mapLibreExample?: MapExample;
   mapboxExample?: MapExample;
+  mapboxAccessToken?: string;
   leafletExample?: MapExample;
 }
 

@@ -2,6 +2,8 @@ import { Stack } from "@mantine/core";
 import { SplitPanelExampleCard } from "./components/SplitPanelExampleCard";
 import { trimCode } from "./utils/dash";
 
+const mapboxAccessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
+
 export function App() {
   const mapLibreCodeExample = {
     code: trimCode(
@@ -47,6 +49,7 @@ export function App() {
         mapLibreExample={mapLibreCodeExample}
         mapboxExample={mapLibreCodeExample}
         leafletExample={leafletCodeExample}
+        mapboxAccessToken={mapboxAccessToken}
       />
     </Stack>
   );
