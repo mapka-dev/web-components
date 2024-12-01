@@ -1,4 +1,4 @@
-import { debounce } from "moderndash";
+import { debounce } from "es-toolkit";
 import { type ReactNode, useCallback, useEffect, useRef } from "react";
 
 interface SplitPanelProps {

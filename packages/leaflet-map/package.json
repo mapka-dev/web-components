@@ -1,13 +1,11 @@
 {
   "name": "@mapka/leaflet-map",
   "version": "0.0.4",
-  "engines": {
-    "node": "18.x.x",
-    "yarn": "1.x.x"
-  },
   "type": "module",
-  "description": "Leaflet web component and react component",
-  "sideEffects": false,
+  "description": "Leaflet web components and react component",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./lib/index.js"
   },
@@ -15,20 +13,28 @@
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
-  "keywords": ["map", "leaflet"],
+  "keywords": [
+    "map",
+    "leaflet"
+  ],
   "author": "chyzwar",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
+    "es-toolkit": "^1.27.0",
     "leaflet": "^1.9.4",
-    "moderndash": "^3.12.0",
     "react": "^18.3.1"
   },
   "devDependencies": {
-    "@chyzwar/tsconfig": "^0.3.0",
-    "@types/leaflet": "^1.9.12",
+    "@chyzwar/tsconfig": "^0.3.1",
+    "@types/leaflet": "^1.9.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.7.2"
   },
-  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
 }
