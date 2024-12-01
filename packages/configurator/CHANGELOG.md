@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/mapka-dev/web-components/compare/v0.2.0...v0.3.0) (2024-12-01)
+
+### Features
+
+* **configurator:** handle accesstoken as prop ([c7545b8](https://github.com/mapka-dev/web-components/commit/c7545b8e60dd2c259858ef9c5e55b875c201d64c)) - by @chyzwar
+
 ## 0.2.0 (2024-12-01)
 
 ### Features

@@ -1634,10 +1634,10 @@ __metadata:
   dependencies:
     "@mantine/core": "npm:^7.14.3"
     "@mantine/hooks": "npm:^7.14.3"
-    "@mapka/leaflet-map": "npm:^0.2.0"
-    "@mapka/mapbox-map": "npm:^0.2.0"
-    "@mapka/maplibre-map": "npm:^0.2.0"
-    "@mapka/split-panel": "npm:^0.2.0"
+    "@mapka/leaflet-map": "npm:^0.3.0"
+    "@mapka/mapbox-map": "npm:^0.3.0"
+    "@mapka/maplibre-map": "npm:^0.3.0"
+    "@mapka/split-panel": "npm:^0.3.0"
     "@monaco-editor/react": "npm:^4.6.0"
     "@tabler/icons-react": "npm:^3.23.0"
     "@types/react": "npm:^18.3.12"
@@ -1664,7 +1664,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/leaflet-map@npm:^0.2.0, @mapka/leaflet-map@workspace:packages/leaflet-map":
+"@mapka/leaflet-map@npm:^0.3.0, @mapka/leaflet-map@workspace:packages/leaflet-map":
   version: 0.0.0-use.local
   resolution: "@mapka/leaflet-map@workspace:packages/leaflet-map"
   dependencies:
@@ -1678,7 +1678,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/map-shared@npm:^0.2.0, @mapka/map-shared@workspace:packages/map-shared":
+"@mapka/map-shared@npm:^0.3.0, @mapka/map-shared@workspace:packages/map-shared":
   version: 0.0.0-use.local
   resolution: "@mapka/map-shared@workspace:packages/map-shared"
   dependencies:
@@ -1690,12 +1690,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/mapbox-map@npm:^0.2.0, @mapka/mapbox-map@workspace:packages/mapbox-map":
+"@mapka/mapbox-map@npm:^0.3.0, @mapka/mapbox-map@workspace:packages/mapbox-map":
   version: 0.0.0-use.local
   resolution: "@mapka/mapbox-map@workspace:packages/mapbox-map"
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.1"
-    "@mapka/map-shared": "npm:^0.2.0"
+    "@mapka/map-shared": "npm:^0.3.0"
     "@types/mapbox-gl": "npm:^3.4.1"
     es-toolkit: "npm:^1.27.0"
     mapbox-gl: "npm:3.8.0"
@@ -1705,12 +1705,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/maplibre-map@npm:^0.2.0, @mapka/maplibre-map@workspace:packages/maplibre-map":
+"@mapka/maplibre-map@npm:^0.3.0, @mapka/maplibre-map@workspace:packages/maplibre-map":
   version: 0.0.0-use.local
   resolution: "@mapka/maplibre-map@workspace:packages/maplibre-map"
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.1"
-    "@mapka/map-shared": "npm:^0.2.0"
+    "@mapka/map-shared": "npm:^0.3.0"
     es-toolkit: "npm:^1.27.0"
     maplibre-gl: "npm:^4.7.1"
     react: "npm:^18.3.1"
@@ -1739,7 +1739,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/split-panel@npm:^0.2.0, @mapka/split-panel@workspace:packages/split-panel":
+"@mapka/split-panel@npm:^0.3.0, @mapka/split-panel@workspace:packages/split-panel":
   version: 0.0.0-use.local
   resolution: "@mapka/split-panel@workspace:packages/split-panel"
   dependencies:
