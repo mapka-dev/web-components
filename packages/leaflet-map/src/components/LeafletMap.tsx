@@ -1,6 +1,6 @@
 import type L from "leaflet";
 import type { Map as LeafletMapInstance } from "leaflet";
-import { debounce } from "moderndash";
+import { debounce } from "es-toolkit";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { LeafletContainer } from "./LeafletContainer.js";
 import { LeafletStyles } from "./LeafletStyles.js";

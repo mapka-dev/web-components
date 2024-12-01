@@ -1,12 +1,12 @@
 {
   "name": "@mapka/maplibre-map",
   "version": "0.0.4",
-  "engines": {
-    "node": "20.x.x"
-  },
   "type": "module",
-  "description": "MapLibre web component",
+  "description": "MapLibre react web component",
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./lib/index.js"
   },
@@ -14,19 +14,29 @@
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
-  "keywords": ["map"],
+  "keywords": [
+    "map",
+    "maplibre",
+    "react",
+    "component"
+  ],
   "author": "chyzwar",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
     "@mapka/map-shared": "^0.0.4",
-    "maplibre-gl": "^4.7.1",
-    "moderndash": "^3.12.0"
+    "es-toolkit": "^1.27.0",
+    "maplibre-gl": "^4.7.1"
   },
   "devDependencies": {
-    "@chyzwar/tsconfig": "^0.3.0",
+    "@chyzwar/tsconfig": "^0.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.7.2"
   },
-  "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
+  "files": [
+    "src/",
+    "lib/",
+    "!**/__tests__/",
+    "!lib/buildInfo.json"
+  ]
 }

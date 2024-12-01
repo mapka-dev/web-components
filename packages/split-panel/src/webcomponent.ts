@@ -1,6 +1,6 @@
 import { SplitPanel } from "./web-components/SplitPanel.js";
 
-customElements.get("split-panel") ?? customElements.define("split-panel", SplitPanel);
+customElements.get("mapka-split-panel") ?? customElements.define("mapka-split-panel", SplitPanel);
 
 declare global {
   namespace JSX {
