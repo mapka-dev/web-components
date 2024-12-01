@@ -1,4 +1,6 @@
-# Mapka map components
+# Mapka map components (ALPHA)
+
+![Publish](https://github.com/mapka-dev/web-components/actions/workflows/publish.yaml/badge.svg)
 
 Collection of react map components
 

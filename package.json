@@ -6,11 +6,11 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "lint": "biome lint --write .",
-    "check": "biome check --write .",
+    "lint": "runner lint",
+    "check": "runner check",
     "start": "runner start",
-    "build": "tsc --build",
-    "build:watch": "tsc --build --watch --preserveWatchOutput",
+    "build": "runner build",
+    "build:watch": "runner build:watch",
     "prepare": "husky"
   },
   "workspaces": {

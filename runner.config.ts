@@ -1,6 +1,10 @@
 import { parallelTask, spawnTask } from "@chyzwar/runner";
 
-spawnTask("build:watch", "yarn", ["build:watch"]);
+spawnTask("lint", "yarn", ["biome", "lint", "--write", "."]);
+spawnTask("check", "yarn", ["biome", "check", "--write", "."]);
+
+spawnTask("build", "yarn", ["tsc", "--build"]);
+spawnTask("build:watch", "yarn", ["tsc", "--build", "--watch", "--preserveWatchOutput"]);
 
 spawnTask("start:configurator", "yarn", ["dev"], {
   cwd: "./packages/configurator",

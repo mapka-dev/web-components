@@ -2,7 +2,7 @@
   "name": "@mapka/leaflet-map",
   "version": "0.0.4",
   "type": "module",
-  "description": "Leaflet web component and react component",
+  "description": "Leaflet web components and react component",
   "publishConfig": {
     "access": "public"
   },
