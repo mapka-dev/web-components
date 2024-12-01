@@ -2205,11 +2205,11 @@ __metadata:
   linkType: hard
 
 "@polymer/polymer@npm:^3.0.0":
-  version: 3.5.1
-  resolution: "@polymer/polymer@npm:3.5.1"
+  version: 3.5.2
+  resolution: "@polymer/polymer@npm:3.5.2"
   dependencies:
     "@webcomponents/shadycss": "npm:^1.9.1"
-  checksum: 10c2/96120050f82ad05e167b4931a2a5524bd2deed199757c33cef8bf5eee56062a4c30755686572acfaa2dc94d2a58033f0f6f6d86a2bc9c6dcb0727c43168ef208
+  checksum: 10c2/8b8f80320a706fb94ea80c7b3717d92b0d6f73f9e4dc134673a2732bfe6cd1440b304dacd3806f69b7b8970aacf06c3bb60f888ccc9d9f467c42e4e766af1c24
   languageName: node
   linkType: hard
 
@@ -2677,18 +2677,18 @@ __metadata:
   linkType: hard
 
 "@types/color-convert@npm:*":
-  version: 2.0.3
-  resolution: "@types/color-convert@npm:2.0.3"
+  version: 2.0.4
+  resolution: "@types/color-convert@npm:2.0.4"
   dependencies:
-    "@types/color-name": "npm:*"
-  checksum: 10c2/bea05749b679bee88f5bfe7e7c1f2e4687afd9b79475a7df0caeae0e2a442e782b257777d2b3b8721ada9c46baffaa6ecf9bada29a74d18d226726076a8de527
+    "@types/color-name": "npm:^1.1.0"
+  checksum: 10c2/701df5e1365d5e00fc0eb068d0b4954b9627586d39d6c1590903c7dc35cb5d8132b830c491c38c2a435d5b3e78b5200c2cb18e1545f5e26dce4bfa4ed49d90b3
   languageName: node
   linkType: hard
 
-"@types/color-name@npm:*":
-  version: 1.1.4
-  resolution: "@types/color-name@npm:1.1.4"
-  checksum: 10c2/521b76a374d34653110f8db20891727145e01d3d43487c1ebf3c27b5f8b712ca1f88e2b7115c0efb8fadf70ca4fdb63a666d6c870f3de65c76645b0af106d25e
+"@types/color-name@npm:^1.1.0":
+  version: 1.1.5
+  resolution: "@types/color-name@npm:1.1.5"
+  checksum: 10c2/21ce9c12b883dadc4ab55a3282a445bdcd9244af12b75be5e7533491f3390cae56f5fd4501b1e45b965509fab91f13c447108ae52d0e74167daf91833ea9cea0
   languageName: node
   linkType: hard
 
@@ -3083,11 +3083,11 @@ __metadata:
   linkType: hard
 
 "@vaadin/vaadin-usage-statistics@npm:^2.1.0":
-  version: 2.1.2
-  resolution: "@vaadin/vaadin-usage-statistics@npm:2.1.2"
+  version: 2.1.3
+  resolution: "@vaadin/vaadin-usage-statistics@npm:2.1.3"
   dependencies:
     "@vaadin/vaadin-development-mode-detector": "npm:^2.0.0"
-  checksum: 10c2/76c01af894925add0d738f0b35ebe313e2b22b260fdc1326c8bc93fc2c374e8cb93db3bf38847371dba937348210c98c5ae35024e079c062a14aa084a685da12
+  checksum: 10c2/9cf95b2cbb0252fdbc99e2012d41d2d07ce17b71f6468e12e46b23dc28b37736fa62b01714c73efbedfed196e11731968fd5bd638ed7e7c2a85bbeee417e8103
   languageName: node
   linkType: hard
 
@@ -5538,33 +5538,33 @@ __metadata:
   linkType: hard
 
 "lit-element@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "lit-element@npm:4.1.0"
+  version: 4.1.1
+  resolution: "lit-element@npm:4.1.1"
   dependencies:
     "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
     "@lit/reactive-element": "npm:^2.0.4"
     lit-html: "npm:^3.2.0"
-  checksum: 10c2/2ffd0054f0e50b0aed5362e0ee6f265eb215138a8cc980848be91aa3c9964bf2088b3926ff776b123332b90d59d6bba39ceadf3d9eec13b80d37f0227a5fe98e
+  checksum: 10c2/30bcc71c8a6b09edd6207f2a114abb232a07dd6b98e7be5c57a52d613fe6eea9b93981da6e4cef791f47275988c7149d9a5c03f60bf1a52b6502e8970e448053
   languageName: node
   linkType: hard
 
 "lit-html@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "lit-html@npm:3.2.0"
+  version: 3.2.1
+  resolution: "lit-html@npm:3.2.1"
   dependencies:
     "@types/trusted-types": "npm:^2.0.2"
-  checksum: 10c2/5d529bc0a09b96fc9a39d960a2d14dd46e181d93e3fc786dc0a3ab5907d6899fa83f3a298da1004331c4f6622d3eb05a093048511e5a45bcf917fcd22c55d82b
+  checksum: 10c2/16b5702d2fa3daadef51dc1b0796fa8e4dd216ced62b2d300e31ed0419be29e4bacf3ccd0381f27a5d2686bbf4d1247a8b33d52d0842c9c2b157ff4777b6a462
   languageName: node
   linkType: hard
 
 "lit@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "lit@npm:3.2.0"
+  version: 3.2.1
+  resolution: "lit@npm:3.2.1"
   dependencies:
     "@lit/reactive-element": "npm:^2.0.4"
     lit-element: "npm:^4.1.0"
     lit-html: "npm:^3.2.0"
-  checksum: 10c2/1459003838dfef3a1232ed1986b7eaa0a77bcde84e802276e8ee9de90043a9fef9e0059d42c04c507ddf3f77d8cacfc222c919e7eacd26a30693ab0c449f7527
+  checksum: 10c2/e2a2a9e821abd89f074f5d54e8c5775ee3f96fa3d7c75ecc07e5ec7f425187ec26876f480fa0666629a42fc02c6ff097095c7f416006472b858ac0a6ffcfdee8
   languageName: node
   linkType: hard
 
@@ -7423,9 +7423,9 @@ __metadata:
   linkType: hard
 
 "sortablejs@npm:~1.15.3":
-  version: 1.15.5
-  resolution: "sortablejs@npm:1.15.5"
-  checksum: 10c2/bc105b158009a0d82be16c03897b316b16f736a780120bd96bd273cd2bfc74cecfc0f507f9cec9f2aae6a12de0acf8be046ba7c5c7a5a44c8df24eb6f91286f4
+  version: 1.15.6
+  resolution: "sortablejs@npm:1.15.6"
+  checksum: 10c2/89dc3aa3f20120f6b6a75b84f5a87a59ba32f5bb266c03618882894454f09c556b01929ba6feccc4814aa80faa5777d7c1f9419389a3cb5bcff8b62c6d6500c4
   languageName: node
   linkType: hard
 
