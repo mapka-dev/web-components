@@ -1,0 +1,16 @@
+# Change Log
+## Collection of react map components
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.2.0 (2024-12-01)
+
+### Features
+
+* added split panel ([7a2b462](https://github.com/mapka-dev/web-components/commit/7a2b462a53746b4ad610abc423e46fd793076da1)) - by @chyzwar
+* added tabbed config and leaflet example for split ([e8b52b5](https://github.com/mapka-dev/web-components/commit/e8b52b5d14eaf9bca09b598f5bb0f404deeb1cc0)) - by @chyzwar
+* fix map initi issues ([9689dc7](https://github.com/mapka-dev/web-components/commit/9689dc72604cebdf7042d17d8b7beb5623a93bed)) - by @chyzwar
+* fix map resize ([4329c9c](https://github.com/mapka-dev/web-components/commit/4329c9c0eff1a9e40543bedd2a4eb526b33ad4f1)) - by @chyzwar
+* initial work to publish to npm ([4079b6a](https://github.com/mapka-dev/web-components/commit/4079b6a5759af06c7f25a643b35229c1ad48f2b9)) - by @chyzwar
+* new react split panel, lazy load maps ([42418f0](https://github.com/mapka-dev/web-components/commit/42418f0302a73992528539621c5acc89d7f4c234)) - by @chyzwar

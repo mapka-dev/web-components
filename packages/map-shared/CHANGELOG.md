@@ -1,0 +1,12 @@
+# Change Log
+## Collection of react map components
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.2.0 (2024-12-01)
+
+### Features
+
+* initial work to publish to npm ([4079b6a](https://github.com/mapka-dev/web-components/commit/4079b6a5759af06c7f25a643b35229c1ad48f2b9)) - by @chyzwar
+* new react split panel, lazy load maps ([42418f0](https://github.com/mapka-dev/web-components/commit/42418f0302a73992528539621c5acc89d7f4c234)) - by @chyzwar

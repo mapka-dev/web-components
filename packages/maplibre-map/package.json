@@ -1,6 +1,6 @@
 {
   "name": "@mapka/maplibre-map",
-  "version": "0.0.4",
+  "version": "0.2.0",
   "type": "module",
   "description": "MapLibre react web component",
   "sideEffects": false,
@@ -23,7 +23,7 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mapka/map-shared": "^0.0.4",
+    "@mapka/map-shared": "^0.2.0",
     "es-toolkit": "^1.27.0",
     "maplibre-gl": "^4.7.1"
   },
