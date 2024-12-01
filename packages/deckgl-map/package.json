@@ -1,6 +1,6 @@
 {
   "name": "@mapka/deckgl-map",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Deck GL based map component",
   "sideEffects": false,
