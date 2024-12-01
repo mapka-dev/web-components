@@ -4,15 +4,15 @@ import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 import type { MapExample } from "./SplitPanelExample";
 
-const accessToken =
-  "pk.eyJ1IjoibWFyY2lua29wYWN6IiwiYSI6ImNrenlteHJvaTAxdWUzY254ZHppMG5nN3QifQ.U3tuBCRNFosiS3buKpUxnQ";
 
 export interface MapboxSplitPanelExampleProps {
   example?: MapExample;
+  mapboxAccessToken: string; 
 }
 
 export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props) => {
   const {
+    mapboxAccessToken,
     example: { code } = {},
   } = props;
 
@@ -26,7 +26,7 @@ export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props)
 
   return (
     <SplitPanel
-      leftPanel={<MapboxMap accessToken={accessToken} onMapLoaded={setMap} />}
+      leftPanel={<MapboxMap accessToken={mapboxAccessToken} onMapLoaded={setMap} />}
       rightPanel={<CodeEditor context={context} defaultValue={code} waitForContext />}
     />
   );

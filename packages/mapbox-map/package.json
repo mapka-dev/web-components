@@ -7,6 +7,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapka-dev/web-components.git"
+  },
   "scripts": {
     "build": "tsc --build",
     "build:watch": "tsc --watch --build",

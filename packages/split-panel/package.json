@@ -7,6 +7,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapka-dev/web-components.git"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./webcomponent": "./lib/webcomponent.js"
