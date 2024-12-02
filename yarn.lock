@@ -1643,6 +1643,7 @@ __metadata:
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     "@vitejs/plugin-react-swc": "npm:^3.7.2"
+    es-toolkit: "npm:^1.29.0"
     monaco-editor: "npm:^0.52.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
