@@ -28,7 +28,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@mapka/map-shared": "^0.3.0",
-    "es-toolkit": "^1.27.0",
+    "es-toolkit": "^1.29.0",
     "maplibre-gl": "^4.7.1"
   },
   "devDependencies": {

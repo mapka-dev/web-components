@@ -1,6 +1,6 @@
 import { Stack } from "@mantine/core";
-import { SplitPanelExampleCard } from "./components/SplitPanelExampleCard";
-import { trimCode } from "./utils/dash";
+import { SplitPanelExampleCard } from "./components/SplitPanelExampleCard.js";
+import { trimCode } from "./utils/dash.js";
 
 const mapboxAccessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 

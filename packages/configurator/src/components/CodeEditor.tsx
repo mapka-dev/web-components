@@ -1,4 +1,4 @@
-import Editor from "@monaco-editor/react";
+import { Editor } from "@monaco-editor/react";
 import { type FC, useEffect, useState } from "react";
 
 /*

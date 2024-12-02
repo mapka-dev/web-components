@@ -1647,7 +1647,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     typescript: "npm:^5.7.2"
-    vite: "npm:^6.0.1"
+    vite: "npm:^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -1670,7 +1670,7 @@ __metadata:
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.1"
     "@types/leaflet": "npm:^1.9.14"
-    es-toolkit: "npm:^1.27.0"
+    es-toolkit: "npm:^1.29.0"
     leaflet: "npm:^1.9.4"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -1697,7 +1697,7 @@ __metadata:
     "@chyzwar/tsconfig": "npm:^0.3.1"
     "@mapka/map-shared": "npm:^0.3.0"
     "@types/mapbox-gl": "npm:^3.4.1"
-    es-toolkit: "npm:^1.27.0"
+    es-toolkit: "npm:^1.29.0"
     mapbox-gl: "npm:3.8.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -1711,7 +1711,7 @@ __metadata:
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.1"
     "@mapka/map-shared": "npm:^0.3.0"
-    es-toolkit: "npm:^1.27.0"
+    es-toolkit: "npm:^1.29.0"
     maplibre-gl: "npm:^4.7.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -1744,7 +1744,7 @@ __metadata:
   resolution: "@mapka/split-panel@workspace:packages/split-panel"
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.1"
-    es-toolkit: "npm:^1.27.0"
+    es-toolkit: "npm:^1.29.0"
     react: "npm:^18.3.1"
     typescript: "npm:^5.7.2"
   languageName: unknown
@@ -4237,15 +4237,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-toolkit@npm:^1.27.0":
-  version: 1.27.0
-  resolution: "es-toolkit@npm:1.27.0"
+"es-toolkit@npm:^1.29.0":
+  version: 1.29.0
+  resolution: "es-toolkit@npm:1.29.0"
   dependenciesMeta:
     "@trivago/prettier-plugin-sort-imports@4.3.0":
       unplugged: true
     prettier-plugin-sort-re-exports@0.0.1:
       unplugged: true
-  checksum: 10c2/98a108f0fb8a74b7777a2af358509c4eac5b0f1a64153bb1debc60b16064853fa7b4dc3449cbe6eb04bd365d2aa0fdc11e7de85447917c6237e0c3ef7b324f31
+  checksum: 10c2/bc6ec53a6175432870ce987719238d793e4fca6a960cb1c7c345d4d45400c23405f913dcf00b7e927d0403dfc423956cf77c9d971ce38c860cd7cff042af6976
   languageName: node
   linkType: hard
 
@@ -8041,9 +8041,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "vite@npm:6.0.1"
+"vite@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "vite@npm:6.0.2"
   dependencies:
     esbuild: "npm:^0.24.0"
     fsevents: "npm:~2.3.3"
@@ -8089,7 +8089,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c2/28f4cd796f7570cfbf95dd403e60a1df07dbfb2f0ee878c6d2ff557dc4ff324005ebcedf1705b5de8ab5def5fe6a2e710e1660b37e4bf438d5e087aefed2677e
+  checksum: 10c2/8854ad875562cd197f02bbc0535fdf914dfaf8926f79ebe7330a3af99bb883b3767b233c4681108601112d43927705e080aececf2e2bdb8757e2bf2dac627ed7
   languageName: node
   linkType: hard
 
