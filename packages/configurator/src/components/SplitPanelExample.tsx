@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { Tabs, rem } from "@mantine/core";
 import { IconMessageCircle, IconPhoto, IconSettings } from "@tabler/icons-react";
-import { LeafletSplitPanelExample } from "./LeafletSplitPanelExample";
-import { MapLibreSplitPanelExample } from "./MapLibreSplitPanelExample";
-import { MapboxSplitPanelExample } from "./MapboxSplitPanelExample";
+import { LeafletSplitPanelExample } from "./LeafletSplitPanelExample.js";
+import { MapLibreSplitPanelExample } from "./MapLibreSplitPanelExample.js";
+import { MapboxSplitPanelExample } from "./MapboxSplitPanelExample.js";
 
 export interface MapExample {
   code?: string;
@@ -12,7 +12,7 @@ export interface MapExample {
 interface SplitPanelExampleProps {
   mapLibreExample?: MapExample;
   mapboxExample?: MapExample;
-  mapboxAccessToken?: string;  
+  mapboxAccessToken?: string;
   leafletExample?: MapExample;
   defaultValue?: "mapLibre" | "mapbox" | "leaflet";
 }
@@ -45,7 +45,7 @@ export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
           </Tabs.Tab>
         )}
       </Tabs.List>
-      
+
       {mapLibreExample && (
         <Tabs.Panel value="mapLibre" h="800px">
           <MapLibreSplitPanelExample example={mapLibreExample} />

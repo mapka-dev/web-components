@@ -1,5 +1,5 @@
 {
-  "extends": "@chyzwar/tsconfig/bundler.json",
+  "extends": "@chyzwar/tsconfig/react.json",
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "noEmit": false,
