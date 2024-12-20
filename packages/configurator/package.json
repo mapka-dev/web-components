@@ -1,6 +1,6 @@
 {
   "name": "@mapka/configurator",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "type": "module",
   "license": "Apache-2.0",
   "exports": {
@@ -24,10 +24,10 @@
   "dependencies": {
     "@mantine/core": "^7.15.1",
     "@mantine/hooks": "^7.15.1",
-    "@mapka/leaflet-map": "^0.3.1",
-    "@mapka/mapbox-map": "^0.3.1",
-    "@mapka/maplibre-map": "^0.3.1",
-    "@mapka/split-panel": "^0.3.1",
+    "@mapka/leaflet-map": "^0.4.0",
+    "@mapka/mapbox-map": "^0.4.0",
+    "@mapka/maplibre-map": "^0.4.0",
+    "@mapka/split-panel": "^0.4.0",
     "@monaco-editor/react": "^4.6.0",
     "@tabler/icons-react": "^3.26.0",
     "es-toolkit": "^1.30.1",

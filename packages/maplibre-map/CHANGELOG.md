@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.0](https://github.com/mapka-dev/web-components/compare/v0.3.1...v0.4.0) (2024-12-20)
+
+### Features
+
+* upgraed react, expose maplibre only example ([bc9c7b4](https://github.com/mapka-dev/web-components/commit/bc9c7b4b9cd00942d9e01cc0651b903b2aa5b362)) - by @chyzwar
+
 ## [0.3.1](https://github.com/mapka-dev/web-components/compare/v0.3.0...v0.3.1) (2024-12-02)
 
 **Note:** Version bump only for package @mapka/maplibre-map
