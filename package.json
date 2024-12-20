@@ -22,15 +22,15 @@
     "@biomejs/biome": "^1.9.4",
     "@chyzwar/biome-config": "^0.2.31",
     "@chyzwar/runner": "^0.4.35",
-    "@commitlint/cli": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@lerna-lite/cli": "^3.10.1",
     "@lerna-lite/publish": "^3.10.1",
     "@lerna-lite/version": "^3.10.1",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.2",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
+    "lint-staged": "^15.2.11",
     "typescript": "^5.7.2"
   },
   "lint-staged": {
