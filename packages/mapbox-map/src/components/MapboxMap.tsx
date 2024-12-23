@@ -24,22 +24,28 @@ export function MapboxMap(props: MapboxMapProps) {
         container.current = element;
 
         import("mapbox-gl").then(({ default: mapbox }) => {
-          const mapboxMap = new mapbox.Map({
-            container: element,
-            style: "mapbox://styles/mapbox/streets-v12",
-            center: [0, 0],
-            zoom: 1,
-            accessToken,
-            fitBoundsOptions: {
-              padding: 15,
-            },
-          });
-          map.current = mapboxMap;
+          if (!element) {
+            return;
+          }
 
-          if (onMapLoaded) {
-            mapboxMap.once("load", () => {
-              onMapLoaded(mapboxMap);
+          if (!map.current) {
+            const mapboxMap = new mapbox.Map({
+              container: element,
+              style: "mapbox://styles/mapbox/streets-v12",
+              center: [0, 0],
+              zoom: 1,
+              accessToken,
+              fitBoundsOptions: {
+                padding: 15,
+              },
             });
+            map.current = mapboxMap;
+
+            if (onMapLoaded) {
+              mapboxMap.once("load", () => {
+                onMapLoaded(mapboxMap);
+              });
+            }
           }
         });
       }

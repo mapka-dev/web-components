@@ -21,6 +21,10 @@ export function MapLibreMap(props: MapLibreMapProps) {
       container.current = element;
 
       import("maplibre-gl").then(({ default: maplibre }) => {
+        if (!element) {
+          return;
+        }
+
         if (!map.current) {
           const mapLibreMap = new maplibre.Map({
             container: element,
