@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.0](https://github.com/mapka-dev/web-components/compare/v0.5.1...v0.6.0) (2024-12-23)
+
+### Features
+
+* added code mirrior deps ([6ddb668](https://github.com/mapka-dev/web-components/commit/6ddb6681229c4691303c6a608bb8bd1bff758f35)) - by @chyzwar
+
 ## [0.5.1](https://github.com/mapka-dev/web-components/compare/v0.5.0...v0.5.1) (2024-12-23)
 
 **Note:** Version bump only for package @mapka/root
