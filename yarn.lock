@@ -1638,7 +1638,6 @@ __metadata:
     "@mapka/mapbox-map": "npm:^0.4.0"
     "@mapka/maplibre-map": "npm:^0.4.0"
     "@mapka/split-panel": "npm:^0.4.0"
-    "@monaco-editor/react": "npm:^4.6.0"
     "@tabler/icons-react": "npm:^3.26.0"
     "@types/react": "npm:^19.0.2"
     "@types/react-dom": "npm:^19.0.2"
@@ -1648,7 +1647,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:^5.7.2"
-    vite: "npm:^6.0.4"
+    vite: "npm:^6.0.5"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
@@ -1843,30 +1842,6 @@ __metadata:
   version: 4.0.1
   resolution: "@math.gl/web-mercator@npm:4.0.1"
   checksum: 10c2/032ba8ba44bf0418446417319ee44d3acfc6efe958bcb5774951e7a9eea5b788d5b8f19c6665ee203d3a49a17d905317c338a08562a2f2a83cc7b452096ee0e6
-  languageName: node
-  linkType: hard
-
-"@monaco-editor/loader@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@monaco-editor/loader@npm:1.4.0"
-  dependencies:
-    state-local: "npm:^1.0.6"
-  peerDependencies:
-    monaco-editor: ">= 0.21.0 < 1"
-  checksum: 10c2/371b1753cdb3c89e5126853e9c370b8c0757b43bc0bf5ae22b3cf632efcda557e1620af0268f92f86b0fe80235866f2a6e3c8958380255eaecedac6f902c3325
-  languageName: node
-  linkType: hard
-
-"@monaco-editor/react@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "@monaco-editor/react@npm:4.6.0"
-  dependencies:
-    "@monaco-editor/loader": "npm:^1.4.0"
-  peerDependencies:
-    monaco-editor: ">= 0.25.0 < 1"
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c2/e1f026d6b73419a73e13172a8f451e7324127abd163a2a3a3da3d1c760ac64bdf4afb0a75f34a2259c9f59c085e674769668dafbd79e9545df241ab5e2b729a6
   languageName: node
   linkType: hard
 
@@ -4288,7 +4263,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.24.0":
+"esbuild@npm:0.24.0":
   version: 0.24.0
   resolution: "esbuild@npm:0.24.0"
   dependencies:
@@ -7568,13 +7543,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"state-local@npm:^1.0.6":
-  version: 1.0.7
-  resolution: "state-local@npm:1.0.7"
-  checksum: 10c2/60a7e71f82eea061d9b8c551362674c613c0ab3fb68b63be2fda431e14c17721aadc03d6a1e9a8dabc6307982d42da7db14ba675067be378411d947d13c779f6
-  languageName: node
-  linkType: hard
-
 "string-argv@npm:~0.3.2":
   version: 0.3.2
   resolution: "string-argv@npm:0.3.2"
@@ -8075,11 +8043,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.0.4":
-  version: 6.0.4
-  resolution: "vite@npm:6.0.4"
+"vite@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "vite@npm:6.0.5"
   dependencies:
-    esbuild: "npm:^0.24.0"
+    esbuild: "npm:0.24.0"
     fsevents: "npm:~2.3.3"
     postcss: "npm:^8.4.49"
     rollup: "npm:^4.23.0"
@@ -8123,7 +8091,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c2/c41577246c02f6cbb712aefbada242be513b646f2ea1474556b02c3a8f77400275cbfc9f2f17b1eedfd6145dd09a1fddef3c82711d8311c2a95038571c75d6f6
+  checksum: 10c2/b0531dd1640e791629fa56f7afc154d11ead3c306761a66f656119db70296f054cce0e3a45d239df69238b01510bde9ba2d90a6b9f152e2a0bfaf343eaf7d448
   languageName: node
   linkType: hard
 
