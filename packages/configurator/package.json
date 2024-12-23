@@ -1,6 +1,6 @@
 {
   "name": "@mapka/configurator",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "type": "module",
   "license": "Apache-2.0",
   "exports": {
@@ -26,10 +26,10 @@
     "@codemirror/view": "^6.2.2",
     "@mantine/core": "^7.15.2",
     "@mantine/hooks": "^7.15.2",
-    "@mapka/leaflet-map": "^0.4.0",
-    "@mapka/mapbox-map": "^0.4.0",
-    "@mapka/maplibre-map": "^0.4.0",
-    "@mapka/split-panel": "^0.4.0",
+    "@mapka/leaflet-map": "^0.5.0",
+    "@mapka/mapbox-map": "^0.5.0",
+    "@mapka/maplibre-map": "^0.5.0",
+    "@mapka/split-panel": "^0.5.0",
     "@tabler/icons-react": "^3.26.0",
     "@uiw/react-codemirror": "^4.23.7",
     "es-toolkit": "^1.30.1"
