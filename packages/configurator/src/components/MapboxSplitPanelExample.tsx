@@ -26,7 +26,7 @@ export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props)
   return (
     <SplitPanel
       leftPanel={<MapboxMap accessToken={mapboxAccessToken} onMapLoaded={setMap} />}
-      rightPanel={<CodeEditor context={context} defaultValue={code} waitForContext />}
+      rightPanel={<CodeEditor context={context} value={code} waitForContext />}
     />
   );
 };
