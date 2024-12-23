@@ -1,5 +1,6 @@
-import { Editor } from "@monaco-editor/react";
-import { type FC, useEffect, useState } from "react";
+import { type FC, useEffect, useMemo, useState } from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
 
 /*
  * This function evaluates the code in the context of the provided object.
@@ -40,8 +41,9 @@ export const CodeEditor: FC<CodeEditorProps> = ({
   defaultValue = "",
   waitForContext = false,
 }) => {
-  const [code, setCode] = useState<string | undefined>(defaultValue);
+  const [code, setCode] = useState<string>(defaultValue);
 
+  const extensions = useMemo(() => [javascript()], []);
   useEffect(() => {
     if (!waitForContext || context) {
       evalInContext(code, context);
@@ -49,12 +51,13 @@ export const CodeEditor: FC<CodeEditorProps> = ({
   }, [code, context, waitForContext]);
 
   return (
-    <Editor
+    // @ts-expect-error - CodeMirror typings are incorrect for react 19?
+    <CodeMirror
+      value={code}
       height="100%"
       width="100%"
-      defaultLanguage="javascript"
+      extensions={extensions}
       onChange={setCode}
-      value={code}
     />
   );
 };
