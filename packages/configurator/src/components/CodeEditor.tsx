@@ -1,23 +1,6 @@
-import * as monaco from "monaco-editor";
-import { type FC, useEffect, useRef, useState } from "react";
-import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
-import tsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker";
-
-/**
- * Monaco environment is used to load monaco workers
- * @see https://github.com/microsoft/monaco-editor/issues/4739
- */
-self.MonacoEnvironment = {
-  getWorker(_, label) {
-    switch (label) {
-      case "typescript":
-      case "javascript":
-        return new tsWorker();
-      default:
-        return new editorWorker();
-    }
-  },
-};
+import { type FC, useEffect, useMemo, useState } from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
 
 /*
  * This function evaluates the code in the context of the provided object.
@@ -58,37 +41,23 @@ export const CodeEditor: FC<CodeEditorProps> = ({
   defaultValue = "",
   waitForContext = false,
 }) => {
-  const container = useRef<HTMLDivElement | null>(null);
-  const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
   const [code, setCode] = useState<string>(defaultValue);
 
-  useEffect(() => {
-    if (!container.current) return;
-    if (editorRef.current) return;
-
-    const editor = monaco.editor.create(container.current, {
-      language: "javascript",
-    });
-    editor.onDidChangeModelContent(() => {
-      setCode(editor.getValue());
-    });
-    editorRef.current = editor;
-  }, []);
-
-  useEffect(() => {
-    if (!editorRef.current) return;
-
-    const currentValue = editorRef.current.getValue();
-    if (currentValue !== code) {
-      editorRef.current.setValue(code);
-    }
-  }, [code]);
-
+  const extensions = useMemo(() => [javascript()], []);
   useEffect(() => {
     if (!waitForContext || context) {
       evalInContext(code, context);
     }
   }, [code, context, waitForContext]);
 
-  return <div ref={container} style={{ height: "100%", width: "100%" }} />;
+  return (
+    // @ts-expect-error - CodeMirror typings are incorrect for react 19?
+    <CodeMirror
+      value={code}
+      height="100%"
+      width="100%"
+      extensions={extensions}
+      onChange={setCode}
+    />
+  );
 };
