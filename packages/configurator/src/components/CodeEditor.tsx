@@ -1,6 +1,8 @@
-import { type FC, useEffect, useMemo, useState } from "react";
-import CodeMirror from "@uiw/react-codemirror";
+import { type FC, useEffect, useMemo, useRef, useState } from "react";
+import { EditorState } from "@codemirror/state";
+import { EditorView, basicSetup } from "codemirror";
 import { javascript } from "@codemirror/lang-javascript";
+import { Stack } from "@mantine/core";
 
 /*
  * This function evaluates the code in the context of the provided object.
@@ -32,32 +34,60 @@ async function evalInContext(code?: string, context: Record<string, unknown> = {
 
 export interface CodeEditorProps {
   context?: Record<string, unknown>;
-  defaultValue?: string;
+  value?: string;
   waitForContext?: boolean;
 }
 
 export const CodeEditor: FC<CodeEditorProps> = ({
   context,
-  defaultValue = "",
+  value = "",
   waitForContext = false,
 }) => {
-  const [code, setCode] = useState<string>(defaultValue);
+  const [code, setCode] = useState<string>(value);
+  const editorRef = useRef<EditorView | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const extensions = useMemo(() => [javascript()], []);
+  const onChangeExtension = useMemo(() => {
+    return EditorView.updateListener.of(({ state }) => {
+      setCode(state.doc.toString());
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    if (editorRef.current) return;
+
+    const state = EditorState.create({
+      doc: value,
+      extensions: [basicSetup, javascript(), onChangeExtension],
+    });
+    editorRef.current = new EditorView({
+      parent: containerRef.current,
+      state,
+    });
+  }, [onChangeExtension, value]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    if (!editorRef.current) return;
+
+    const state = editorRef.current.state;
+    if (value !== state.doc.toString()) {
+      state.update({
+        changes: {
+          from: 0,
+          to: state.doc.length,
+          insert: value,
+        },
+      });
+    }
+  }, [value]);
+
   useEffect(() => {
     if (!waitForContext || context) {
       evalInContext(code, context);
     }
   }, [code, context, waitForContext]);
 
-  return (
-    // @ts-expect-error - CodeMirror typings are incorrect for react 19?
-    <CodeMirror
-      value={code}
-      height="100%"
-      width="100%"
-      extensions={extensions}
-      onChange={setCode}
-    />
-  );
+  return <Stack ref={containerRef} />;
 };

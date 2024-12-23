@@ -24,7 +24,7 @@ export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (pr
   return (
     <SplitPanel
       leftPanel={<MapLibreMap onMapLoaded={setMap} showFeatureTooltip />}
-      rightPanel={<CodeEditor context={context} defaultValue={code} waitForContext />}
+      rightPanel={<CodeEditor context={context} value={code} waitForContext />}
     />
   );
 };

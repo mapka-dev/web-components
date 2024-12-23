@@ -18,7 +18,7 @@ export const LeafletSplitPanelExample: FC<LeafletSplitPanelExampleProps> = (prop
   return (
     <SplitPanel
       leftPanel={<LeafletMap onMapLoaded={(map, L) => setContext({ map, L })} />}
-      rightPanel={<CodeEditor context={context} defaultValue={code} waitForContext />}
+      rightPanel={<CodeEditor context={context} value={code} waitForContext />}
     />
   );
 };
