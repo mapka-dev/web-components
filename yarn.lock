@@ -180,6 +180,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@codemirror/commands@npm:^6.0.0":
+  version: 6.7.1
+  resolution: "@codemirror/commands@npm:6.7.1"
+  dependencies:
+    "@codemirror/language": "npm:^6.0.0"
+    "@codemirror/state": "npm:^6.4.0"
+    "@codemirror/view": "npm:^6.27.0"
+    "@lezer/common": "npm:^1.1.0"
+  checksum: 10c2/d1d85c324af95e117b82e95ee820b0b9e149e66957ac98506395a5687149e98c62d00b47bf87ce0a4d836f9454cff1305e0386af4f80e2f864affee71ce3a601
+  languageName: node
+  linkType: hard
+
 "@codemirror/lang-javascript@npm:^6.2.2":
   version: 6.2.2
   resolution: "@codemirror/lang-javascript@npm:6.2.2"
@@ -220,7 +232,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/state@npm:^6.0.0, @codemirror/state@npm:^6.5.0":
+"@codemirror/search@npm:^6.0.0":
+  version: 6.5.8
+  resolution: "@codemirror/search@npm:6.5.8"
+  dependencies:
+    "@codemirror/state": "npm:^6.0.0"
+    "@codemirror/view": "npm:^6.0.0"
+    crelt: "npm:^1.0.5"
+  checksum: 10c2/f4c06b16d285b6cb93d1b82ff8a52c94fc87c067af6a249bd9b7cc65006d4a35450aafc62831c24f23691a5b5867ae792d1593dffb37d39d3de344c67e2e5868
+  languageName: node
+  linkType: hard
+
+"@codemirror/state@npm:^6.0.0, @codemirror/state@npm:^6.4.0, @codemirror/state@npm:^6.5.0":
   version: 6.5.0
   resolution: "@codemirror/state@npm:6.5.0"
   dependencies:
@@ -229,7 +252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/view@npm:^6.17.0, @codemirror/view@npm:^6.2.2, @codemirror/view@npm:^6.23.0, @codemirror/view@npm:^6.35.0":
+"@codemirror/view@npm:^6.0.0, @codemirror/view@npm:^6.17.0, @codemirror/view@npm:^6.2.2, @codemirror/view@npm:^6.23.0, @codemirror/view@npm:^6.27.0, @codemirror/view@npm:^6.35.0":
   version: 6.36.1
   resolution: "@codemirror/view@npm:6.36.1"
   dependencies:
@@ -1752,6 +1775,7 @@ __metadata:
     "@types/react": "npm:^19.0.2"
     "@types/react-dom": "npm:^19.0.2"
     "@vitejs/plugin-react-swc": "npm:^3.7.2"
+    codemirror: "npm:^6.0.1"
     es-toolkit: "npm:^1.30.1"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
@@ -3714,6 +3738,21 @@ __metadata:
   version: 6.0.3
   resolution: "cmd-shim@npm:6.0.3"
   checksum: 10c2/5604ff9c47ba5d6204bc66042e6068d3cfe6aa59ecb5dc594bc6a5845d709900de1c3bf9355a0d0e9b0779e8a2e3e8290d9506f17f8f64cecb608187890409f0
+  languageName: node
+  linkType: hard
+
+"codemirror@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "codemirror@npm:6.0.1"
+  dependencies:
+    "@codemirror/autocomplete": "npm:^6.0.0"
+    "@codemirror/commands": "npm:^6.0.0"
+    "@codemirror/language": "npm:^6.0.0"
+    "@codemirror/lint": "npm:^6.0.0"
+    "@codemirror/search": "npm:^6.0.0"
+    "@codemirror/state": "npm:^6.0.0"
+    "@codemirror/view": "npm:^6.0.0"
+  checksum: 10c2/8a0c34b2bab4c6631712d5f7e6a33e45f08555fd11d0bf846742404311166ccbba3e040e00e7bcff57e51be6de3b16dd114290956caa7c68badeee5a4de4251a
   languageName: node
   linkType: hard
 

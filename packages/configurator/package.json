@@ -31,6 +31,7 @@
     "@mapka/maplibre-map": "^0.4.0",
     "@mapka/split-panel": "^0.4.0",
     "@tabler/icons-react": "^3.26.0",
+    "codemirror": "^6.0.1",
     "es-toolkit": "^1.30.1"
   },
   "devDependencies": {
