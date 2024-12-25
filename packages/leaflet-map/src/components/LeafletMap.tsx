@@ -23,6 +23,9 @@ export function LeafletMap(props: LeafletMapProps) {
     (element: HTMLDivElement) => {
       if (!map.current) {
         import("leaflet").then(({ default: L }) => {
+          if (!element) {
+            return;
+          }
           const leafletMap = L.map(element, {
             center: [0, 0],
             zoom: 1,
