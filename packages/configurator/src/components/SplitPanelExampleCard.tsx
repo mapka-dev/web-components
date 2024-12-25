@@ -13,13 +13,23 @@ interface SplitPanelExampleProps {
   mapboxExample?: MapExample;
   mapboxAccessToken?: string;
   leafletExample?: MapExample;
+  height?: string;
+  width?: string;
 }
 
 export const SplitPanelExampleCard: FC<SplitPanelExampleProps> = memo(
-  (props) => {
+  ({ height = "100%", width = "100%", ...props }) => {
     return (
       <MantineProvider>
-        <Card className="not-content" shadow="sm" padding="0px" radius="md" withBorder w="100%">
+        <Card
+          className="not-content"
+          shadow="sm"
+          padding="0px"
+          radius="md"
+          withBorder
+          w={width}
+          h={height}
+        >
           <SplitPanelExample {...props} />
         </Card>
       </MantineProvider>

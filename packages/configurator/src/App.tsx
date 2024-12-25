@@ -44,7 +44,7 @@ export function App() {
   };
 
   return (
-    <Stack h="100vh" pt="200px" align="center" bg={"gray.1"}>
+    <Stack h="100vh" pt="100px" pb="100px" px="200px" align="center" bg={"gray.1"}>
       <SplitPanelExampleCard
         mapLibreExample={mapLibreCodeExample}
         mapboxExample={mapLibreCodeExample}

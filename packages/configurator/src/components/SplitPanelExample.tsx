@@ -27,14 +27,21 @@ export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
   const iconStyle = { width: rem(12), height: rem(12) };
 
   return (
-    <Tabs variant="pills" radius="sm" keepMounted={false} defaultValue={defaultValue}>
+    <Tabs
+      variant="pills"
+      radius="sm"
+      h="100%"
+      w="100%"
+      keepMounted={false}
+      defaultValue={defaultValue}
+    >
       <Tabs.List>
         {mapLibreExample && (
           <Tabs.Tab value="mapLibre" leftSection={<IconPhoto style={iconStyle} />}>
             MapLibre
           </Tabs.Tab>
         )}
-        {mapboxExample && (
+        {mapboxExample && mapboxAccessToken && (
           <Tabs.Tab value="mapbox" leftSection={<IconMessageCircle style={iconStyle} />}>
             Mapbox
           </Tabs.Tab>
@@ -47,19 +54,19 @@ export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
       </Tabs.List>
 
       {mapLibreExample && (
-        <Tabs.Panel value="mapLibre" h="800px">
+        <Tabs.Panel value="mapLibre" h="calc(100% - 34px)">
           <MapLibreSplitPanelExample example={mapLibreExample} />
         </Tabs.Panel>
       )}
 
       {mapboxAccessToken && mapboxExample && (
-        <Tabs.Panel value="mapbox" h="800px">
+        <Tabs.Panel value="mapbox" h="calc(100% - 34px)">
           <MapboxSplitPanelExample mapboxAccessToken={mapboxAccessToken} example={mapboxExample} />
         </Tabs.Panel>
       )}
 
       {leafletExample && (
-        <Tabs.Panel value="leaflet" h="800px">
+        <Tabs.Panel value="leaflet" h="calc(100% - 34px)">
           <LeafletSplitPanelExample example={leafletExample} />
         </Tabs.Panel>
       )}

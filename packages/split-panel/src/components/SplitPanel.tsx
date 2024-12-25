@@ -153,10 +153,14 @@ export function SplitPanel({ rightPanel, leftPanel }: SplitPanelProps) {
         #mapka-split-panel[data-direction=row] #left-panel { 
           grid-column: 1 / 1; 
           grid-row: 1 / 2;
+          max-width: 100%;
+          overflow: hidden;
         }
         #mapka-split-panel[data-direction=col] #right-panel { 
           grid-column: 3 / 4; 
           grid-row: 1 / 1; 
+          max-width: 100%;
+          overflow: hidden;
         }
         #mapka-split-panel[data-direction=row] #right-panel { 
           grid-column: 1 / 1; 
