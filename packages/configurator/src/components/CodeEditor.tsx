@@ -2,7 +2,7 @@ import { type FC, useEffect, useMemo, useRef, useState } from "react";
 import { EditorState } from "@codemirror/state";
 import { EditorView, basicSetup } from "codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { Stack } from "@mantine/core";
+import { Box, Stack } from "@mantine/core";
 
 /*
  * This function evaluates the code in the context of the provided object.
@@ -47,7 +47,7 @@ export const CodeEditor: FC<CodeEditorProps> = ({
   const editorRef = useRef<EditorView | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const onChangeExtension = useMemo(() => {
+  const updateListener = useMemo(() => {
     return EditorView.updateListener.of(({ state }) => {
       setCode(state.doc.toString());
     });
@@ -59,13 +59,13 @@ export const CodeEditor: FC<CodeEditorProps> = ({
 
     const state = EditorState.create({
       doc: value,
-      extensions: [basicSetup, javascript(), onChangeExtension],
+      extensions: [basicSetup, javascript(), updateListener],
     });
     editorRef.current = new EditorView({
       parent: containerRef.current,
       state,
     });
-  }, [onChangeExtension, value]);
+  }, [updateListener, value]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -89,5 +89,16 @@ export const CodeEditor: FC<CodeEditorProps> = ({
     }
   }, [code, context, waitForContext]);
 
-  return <Stack ref={containerRef} />;
+  return (
+    <>
+      <style>
+        {`
+        .cm-editor { 
+          height: 100%
+        }
+      `}
+      </style>
+      <Box w="100%" h="100%" ref={containerRef} />
+    </>
+  );
 };
