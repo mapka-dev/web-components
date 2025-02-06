@@ -19,13 +19,17 @@ export function LeafletMap(props: LeafletMapProps) {
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<LeafletMapInstance | null>(null);
 
-  const initMap = useCallback(
-    (element: HTMLDivElement) => {
-      if (!map.current) {
-        import("leaflet").then(({ default: L }) => {
-          if (!element) {
-            return;
-          }
+  /*
+   * We want to this callback ref to be created only once. Deps update will be handled in dedicated useEffect
+   * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
+   */
+  const initMap = useCallback((element: HTMLDivElement) => {
+    if (!map.current) {
+      import("leaflet").then(({ default: L }) => {
+        if (!element) {
+          return;
+        }
+        if (!map.current) {
           const leafletMap = L.map(element, {
             center: [0, 0],
             zoom: 1,
@@ -44,11 +48,10 @@ export function LeafletMap(props: LeafletMapProps) {
               onMapLoaded(leafletMap, L);
             });
           }
-        });
-      }
-    },
-    [onMapLoaded],
-  );
+        }
+      });
+    }
+  }, []);
 
   useEffect(() => {
     if (!container.current) return;

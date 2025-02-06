@@ -1,4 +1,4 @@
-import { type Leaflet, LeafletMap, type LeafletMapInstance } from "@mapka/leaflet-map";
+import { type Leaflet, LeafletMap, type LeafletMapInstance } from "@mapka/react-leaflet-map";
 import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useState } from "react";
 import { CodeEditor } from "./CodeEditor.js";

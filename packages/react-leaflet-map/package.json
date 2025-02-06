@@ -1,9 +1,8 @@
 {
-  "name": "@mapka/mapbox-map",
-  "version": "0.6.0",
+  "name": "@mapka/react-leaflet-map",
+  "version": "0.6.1",
   "type": "module",
-  "description": "Map",
-  "sideEffects": false,
+  "description": "Leaflet web components and react component",
   "publishConfig": {
     "access": "public"
   },
@@ -11,31 +10,27 @@
     "type": "git",
     "url": "https://github.com/mapka-dev/web-components.git"
   },
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "scripts": {
     "build": "tsc --build",
-    "build:watch": "tsc --watch --build",
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
-  "exports": {
-    ".": {
-      "import": "./lib/index.js"
-    }
+    "build:watch": "tsc --watch --build"
   },
   "keywords": [
     "map",
-    "mapbox"
+    "leaflet"
   ],
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mapka/map-shared": "^0.6.0",
     "es-toolkit": "^1.32.0",
-    "mapbox-gl": "3.9.4"
+    "leaflet": "^1.9.4",
+    "react": "^19.0.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.3.2",
-    "@types/mapbox-gl": "^3.4.1",
+    "@types/leaflet": "^1.9.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.7.3"
