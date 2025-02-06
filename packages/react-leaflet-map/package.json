@@ -1,6 +1,6 @@
 {
   "name": "@mapka/react-leaflet-map",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "type": "module",
   "description": "Leaflet web components and react component",
   "publishConfig": {
