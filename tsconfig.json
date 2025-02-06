@@ -13,7 +13,6 @@
     { "path": "./packages/maplibre-map/tsconfig.json" },
     { "path": "./packages/mapbox-map/tsconfig.json" },
     { "path": "./packages/leaflet-map/tsconfig.json" },
-    { "path": "./packages/deckgl-map/tsconfig.json" },
     { "path": "./packages/split-panel/tsconfig.json" },
     { "path": "./packages/configurator/tsconfig.json" }
   ]
