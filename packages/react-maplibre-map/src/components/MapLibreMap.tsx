@@ -1,13 +1,14 @@
 import type maplibre from "maplibre-gl";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, version } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
 import { MapLibreStyles } from "./MapLibreStyles.js";
 import { isEqual } from "es-toolkit";
+import type { StyleSpecification } from "maplibre-gl";
 
 interface MapLibreMapProps {
   center?: [number, number];
   zoom?: number;
-  style?: string;
+  style?: string | StyleSpecification;
   width?: string | number;
   height?: string | number;
   mapkaApiKey?: string;
@@ -44,14 +45,12 @@ export function MapLibreMap(props: MapLibreMapProps) {
    * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
    */
   const initMap = useCallback((element: HTMLDivElement) => {
-    container.current = element;
+    if (!element) {
+      return;
+    }
 
-    import("maplibre-gl").then(({ default: maplibre }) => {
-      if (!element) {
-        return;
-      }
-
-      if (!map.current) {
+    if (!map.current) {
+      import("maplibre-gl").then(({ default: maplibre }) => {
         const mapLibreMap = new maplibre.Map({
           container: element,
           style,
@@ -73,6 +72,7 @@ export function MapLibreMap(props: MapLibreMapProps) {
             };
           },
         });
+        container.current = element;
         map.current = mapLibreMap;
 
         if (onMapLoaded) {
@@ -80,9 +80,12 @@ export function MapLibreMap(props: MapLibreMapProps) {
             onMapLoaded(mapLibreMap);
           });
         }
-      }
-    });
+      });
+    }
 
+    if (!version?.startsWith("19")) {
+      return;
+    }
     return () => {
       if (map.current) {
         map.current.remove();
