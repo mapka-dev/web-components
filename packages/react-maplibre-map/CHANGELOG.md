@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.0](https://github.com/mapka-dev/web-components/compare/v0.7.0...v0.8.0) (2025-02-06)
+
+### Features
+
+* **react-mapbox-map, react-maplibre-map:** allow for style to be object, compact for react 18 ([5bbcda8](https://github.com/mapka-dev/web-components/commit/5bbcda86423a37dbf40050d28f07ff54a76882dc)) - by @chyzwar
+
 ## [0.7.0](https://github.com/mapka-dev/web-components/compare/v0.6.1...v0.7.0) (2025-02-06)
 
 ### Features
