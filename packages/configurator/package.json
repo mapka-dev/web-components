@@ -23,25 +23,25 @@
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.2.2",
-    "@codemirror/view": "^6.2.2",
-    "@mantine/core": "^7.15.2",
-    "@mantine/hooks": "^7.15.2",
-    "@mapka/leaflet-map": "^0.6.1",
-    "@mapka/mapbox-map": "^0.6.0",
-    "@mapka/maplibre-map": "^0.6.0",
+    "@codemirror/view": "^6.36.2",
+    "@mantine/core": "^7.16.2",
+    "@mantine/hooks": "^7.16.2",
+    "@mapka/react-leaflet-map": "^0.6.1",
+    "@mapka/react-mapbox-map": "^0.6.0",
+    "@mapka/react-maplibre-map": "^0.6.0",
     "@mapka/split-panel": "^0.6.1",
-    "@tabler/icons-react": "^3.26.0",
+    "@tabler/icons-react": "^3.29.0",
     "codemirror": "^6.0.1",
-    "es-toolkit": "^1.30.1"
+    "es-toolkit": "^1.32.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.5"
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

@@ -1,23 +1,50 @@
 import type mapbox from "mapbox-gl";
-import { debounce } from "es-toolkit";
+import { debounce, isEqual } from "es-toolkit";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapboxContainer } from "./MapboxContainer.js";
 import { MapboxStyles } from "./MapboxStyles.js";
 
 interface MapboxMapProps {
+  center?: [number, number];
+  zoom?: number;
+  style?: string;
   width?: string | number;
   height?: string | number;
   accessToken: string;
+  mapkaApiKey?: string;
   showFeatureTooltip?: boolean;
   onMapLoaded?: (map: mapbox.Map) => void;
 }
 
+const defaultCenter: [number, number] = [0, 0];
+const defaultZoom = 1;
+const defaultStyle = "mapbox://styles/mapbox/streets-v12";
+
 export function MapboxMap(props: MapboxMapProps) {
-  const { width = "100%", height = "100%", accessToken, showFeatureTooltip, onMapLoaded } = props;
+  const {
+    width = "100%",
+    height = "100%",
+    center = defaultCenter,
+    zoom = defaultZoom,
+    style = defaultStyle,
+    accessToken,
+    mapkaApiKey,
+    showFeatureTooltip,
+    onMapLoaded,
+  } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<mapbox.Map | null>(null);
 
+  const mapkaAPIkeyRef = useRef<string | null>(mapkaApiKey);
+  if (mapkaApiKey !== mapkaAPIkeyRef.current) {
+    mapkaAPIkeyRef.current = mapkaApiKey;
+  }
+
+  /*
+   * We want to this callback ref to be created only once. Deps update will be handled in dedicated useEffect
+   * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
+   */
   const initMap = useCallback(
     (element: HTMLDivElement) => {
       if (!map.current) {
@@ -31,12 +58,27 @@ export function MapboxMap(props: MapboxMapProps) {
           if (!map.current) {
             const mapboxMap = new mapbox.Map({
               container: element,
-              style: "mapbox://styles/mapbox/streets-v12",
-              center: [0, 0],
-              zoom: 1,
+              style,
+              center,
+              zoom,
               accessToken,
               fitBoundsOptions: {
                 padding: 15,
+              },
+              transformRequest: (url) => {
+                if (url.includes("mapka.dev") || url.includes("mapka.localhost")) {
+                  if (mapkaAPIkeyRef.current) {
+                    return {
+                      url,
+                      headers: {
+                        Authorization: `Bearer ${mapkaAPIkeyRef.current}`,
+                      },
+                    };
+                  }
+                }
+                return {
+                  url,
+                };
               },
             });
             map.current = mapboxMap;
@@ -49,8 +91,14 @@ export function MapboxMap(props: MapboxMapProps) {
           }
         });
       }
+      return () => {
+        if (map.current) {
+          map.current.remove();
+          map.current = null;
+        }
+      };
     },
-    [accessToken, onMapLoaded],
+    [accessToken],
   );
 
   const currentMap = map.current;
@@ -85,7 +133,31 @@ export function MapboxMap(props: MapboxMapProps) {
     };
   }, []);
 
-  const style = useMemo(() => {
+  useEffect(() => {
+    if (!currentMap) return;
+
+    const currentZoom = currentMap.getZoom();
+
+    if (!isEqual(currentZoom, zoom)) {
+      currentMap.setZoom(zoom);
+    }
+  }, [currentMap, zoom]);
+
+  useEffect(() => {
+    if (!currentMap) return;
+
+    const currentCenter = currentMap.getCenter().toArray();
+    if (!isEqual(currentCenter, center)) {
+      currentMap.setCenter(center);
+    }
+  }, [currentMap, center]);
+
+  useEffect(() => {
+    if (!currentMap) return;
+    currentMap.setStyle(style);
+  }, [currentMap, style]);
+
+  const styles = useMemo(() => {
     return {
       width: typeof width === "number" ? `${width}px` : width,
       height: typeof height === "number" ? `${height}px` : height,
@@ -95,7 +167,7 @@ export function MapboxMap(props: MapboxMapProps) {
   return (
     <>
       <MapboxStyles />
-      <MapboxContainer style={style} ref={initMap} />
+      <MapboxContainer style={styles} ref={initMap} />
     </>
   );
 }

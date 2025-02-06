@@ -1,9 +1,8 @@
 {
-  "name": "@mapka/deckgl-map",
-  "version": "0.6.0",
+  "name": "@mapka/react-leaflet-map",
+  "version": "0.6.1",
   "type": "module",
-  "description": "Deck GL based map component",
-  "sideEffects": false,
+  "description": "Leaflet web components and react component",
   "publishConfig": {
     "access": "public"
   },
@@ -11,25 +10,30 @@
     "type": "git",
     "url": "https://github.com/mapka-dev/web-components.git"
   },
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "scripts": {
     "build": "tsc --build",
     "build:watch": "tsc --watch --build"
   },
   "keywords": [
     "map",
-    "deck.gl"
+    "leaflet"
   ],
   "author": "chyzwar",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
-    "@arcgis/core": "^4.31.6",
-    "deck.gl": "^9.0.38"
+    "es-toolkit": "^1.32.0",
+    "leaflet": "^1.9.4",
+    "react": "^19.0.0"
   },
   "devDependencies": {
-    "@chyzwar/tsconfig": "^0.3.1",
+    "@chyzwar/tsconfig": "^0.3.2",
+    "@types/leaflet": "^1.9.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

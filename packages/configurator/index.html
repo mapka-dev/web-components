@@ -10,7 +10,7 @@
       default-src 'self'; 
       worker-src 'self' blob:;
       connect-src 'self' https://*.maplibre.org https://*.mapbox.com https://d2ad6b4ur7yvpq.cloudfront.net;
-      img-src 'self' 'unsafe-inline' data:;
+      img-src 'self' https://*.openstreetmap.org  'unsafe-inline' data:;
       frame-src 'self' https://*.stripe.com;
       script-src 'self' 'unsafe-eval' https://*.stripe.com; 
       style-src 'self' 'unsafe-inline';
