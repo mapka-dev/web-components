@@ -24,13 +24,13 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "maplibre-gl": "^4.7.1"
+    "maplibre-gl": "^5.1.0"
   },
   "devDependencies": {
-    "@chyzwar/tsconfig": "^0.3.1",
+    "@chyzwar/tsconfig": "^0.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "files": [
     "src/",
