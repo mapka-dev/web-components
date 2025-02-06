@@ -1,4 +1,4 @@
-import { type MapLibreInstance, MapLibreMap } from "@mapka/maplibre-map";
+import { type MapLibreInstance, MapLibreMap } from "@mapka/react-maplibre-map";
 import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor.js";

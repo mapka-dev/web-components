@@ -1094,9 +1094,9 @@ __metadata:
     "@codemirror/view": "npm:^6.36.2"
     "@mantine/core": "npm:^7.16.2"
     "@mantine/hooks": "npm:^7.16.2"
-    "@mapka/leaflet-map": "npm:^0.6.1"
-    "@mapka/mapbox-map": "npm:^0.6.0"
-    "@mapka/maplibre-map": "npm:^0.6.0"
+    "@mapka/react-leaflet-map": "npm:^0.6.1"
+    "@mapka/react-mapbox-map": "npm:^0.6.0"
+    "@mapka/react-maplibre-map": "npm:^0.6.0"
     "@mapka/split-panel": "npm:^0.6.1"
     "@tabler/icons-react": "npm:^3.29.0"
     "@types/react": "npm:^19.0.8"
@@ -1108,23 +1108,6 @@ __metadata:
     react-dom: "npm:^19.0.0"
     typescript: "npm:^5.7.3"
     vite: "npm:^6.1.0"
-  peerDependencies:
-    react: ^18.0.0 || ^19.0.0
-    react-dom: ^18.0.0 || ^19.0.0
-  languageName: unknown
-  linkType: soft
-
-"@mapka/leaflet-map@npm:^0.6.1, @mapka/leaflet-map@workspace:packages/leaflet-map":
-  version: 0.0.0-use.local
-  resolution: "@mapka/leaflet-map@workspace:packages/leaflet-map"
-  dependencies:
-    "@chyzwar/tsconfig": "npm:^0.3.2"
-    "@types/leaflet": "npm:^1.9.16"
-    es-toolkit: "npm:^1.32.0"
-    leaflet: "npm:^1.9.4"
-    react: "npm:^19.0.0"
-    react-dom: "npm:^19.0.0"
-    typescript: "npm:^5.7.3"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
@@ -1143,9 +1126,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/mapbox-map@npm:^0.6.0, @mapka/mapbox-map@workspace:packages/mapbox-map":
+"@mapka/react-leaflet-map@npm:^0.6.1, @mapka/react-leaflet-map@workspace:packages/react-leaflet-map":
   version: 0.0.0-use.local
-  resolution: "@mapka/mapbox-map@workspace:packages/mapbox-map"
+  resolution: "@mapka/react-leaflet-map@workspace:packages/react-leaflet-map"
+  dependencies:
+    "@chyzwar/tsconfig": "npm:^0.3.2"
+    "@types/leaflet": "npm:^1.9.16"
+    es-toolkit: "npm:^1.32.0"
+    leaflet: "npm:^1.9.4"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:^5.7.3"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  languageName: unknown
+  linkType: soft
+
+"@mapka/react-mapbox-map@npm:^0.6.0, @mapka/react-mapbox-map@workspace:packages/react-mapbox-map":
+  version: 0.0.0-use.local
+  resolution: "@mapka/react-mapbox-map@workspace:packages/react-mapbox-map"
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.2"
     "@mapka/map-shared": "npm:^0.6.0"
@@ -1161,9 +1161,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/maplibre-map@npm:^0.6.0, @mapka/maplibre-map@workspace:packages/maplibre-map":
+"@mapka/react-maplibre-map@npm:^0.6.0, @mapka/react-maplibre-map@workspace:packages/react-maplibre-map":
   version: 0.0.0-use.local
-  resolution: "@mapka/maplibre-map@workspace:packages/maplibre-map"
+  resolution: "@mapka/react-maplibre-map@workspace:packages/react-maplibre-map"
   dependencies:
     "@chyzwar/tsconfig": "npm:^0.3.2"
     "@mapka/map-shared": "npm:^0.6.0"
