@@ -1,13 +1,14 @@
 import type mapbox from "mapbox-gl";
 import { debounce, isEqual } from "es-toolkit";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, version } from "react";
 import { MapboxContainer } from "./MapboxContainer.js";
 import { MapboxStyles } from "./MapboxStyles.js";
+import type { StyleSpecification } from "mapbox-gl";
 
 interface MapboxMapProps {
   center?: [number, number];
   zoom?: number;
-  style?: string;
+  style?: string | StyleSpecification;
   width?: string | number;
   height?: string | number;
   accessToken: string;
@@ -46,50 +47,50 @@ export function MapboxMap(props: MapboxMapProps) {
    * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
    */
   const initMap = useCallback(
-    (element: HTMLDivElement) => {
+    (element: HTMLDivElement): VoidFunction | undefined => {
+      if (!element) {
+        return;
+      }
+
       if (!map.current) {
-        container.current = element;
-
         import("mapbox-gl").then(({ default: mapbox }) => {
-          if (!element) {
-            return;
-          }
-
-          if (!map.current) {
-            const mapboxMap = new mapbox.Map({
-              container: element,
-              style,
-              center,
-              zoom,
-              accessToken,
-              fitBoundsOptions: {
-                padding: 15,
-              },
-              transformRequest: (url) => {
-                if (url.includes("mapka.dev") || url.includes("mapka.localhost")) {
-                  if (mapkaAPIkeyRef.current) {
-                    return {
-                      url,
-                      headers: {
-                        Authorization: `Bearer ${mapkaAPIkeyRef.current}`,
-                      },
-                    };
-                  }
+          const mapboxMap = new mapbox.Map({
+            container: element,
+            style,
+            center,
+            zoom,
+            accessToken,
+            fitBoundsOptions: {
+              padding: 15,
+            },
+            transformRequest: (url) => {
+              if (url.includes("mapka.dev") || url.includes("mapka.localhost")) {
+                if (mapkaAPIkeyRef.current) {
+                  return {
+                    url,
+                    headers: {
+                      Authorization: `Bearer ${mapkaAPIkeyRef.current}`,
+                    },
+                  };
                 }
-                return {
-                  url,
-                };
-              },
-            });
-            map.current = mapboxMap;
+              }
+              return {
+                url,
+              };
+            },
+          });
+          map.current = mapboxMap;
+          container.current = element;
 
-            if (onMapLoaded) {
-              mapboxMap.once("load", () => {
-                onMapLoaded(mapboxMap);
-              });
-            }
+          if (onMapLoaded) {
+            mapboxMap.once("load", () => {
+              onMapLoaded(mapboxMap);
+            });
           }
         });
+      }
+      if (!version?.startsWith("19")) {
+        return;
       }
       return () => {
         if (map.current) {
@@ -108,7 +109,6 @@ export function MapboxMap(props: MapboxMapProps) {
     const onClick = (event: mapbox.MapMouseEvent) => {
       const features = currentMap?.queryRenderedFeatures(event.point);
       if (!features) return;
-
       console.log(features);
     };
     currentMap?.on("click", onClick);
