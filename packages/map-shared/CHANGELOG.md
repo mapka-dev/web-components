@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.0](https://github.com/mapka-dev/web-components/compare/v0.6.1...v0.7.0) (2025-02-06)
+
+### Features
+
+* **maplibre-map:** added new props and on change handlig ([627d804](https://github.com/mapka-dev/web-components/commit/627d804828a30722bc353955c8a277b9592d99e3)) - by @chyzwar
+
 ## [0.6.0](https://github.com/mapka-dev/web-components/compare/v0.5.1...v0.6.0) (2024-12-23)
 
 **Note:** Version bump only for package @mapka/map-shared
