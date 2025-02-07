@@ -24,11 +24,8 @@ export function LeafletMap(props: LeafletMapProps) {
    * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
    */
   const initMap = useCallback((element: HTMLDivElement) => {
-    if (!map.current) {
+    if (!map.current && element) {
       import("leaflet").then(({ default: L }) => {
-        if (!element) {
-          return;
-        }
         if (!map.current) {
           const leafletMap = L.map(element, {
             center: [0, 0],
