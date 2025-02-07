@@ -1,2 +1,5 @@
 export { MapboxMap } from "./components/MapboxMap.js";
-export type { Map as MapboxMapInstance } from "mapbox-gl";
+export type {
+  Map,
+  StyleSpecification,
+} from "mapbox-gl";

@@ -1,4 +1,4 @@
-import { MapboxMap, type MapboxMapInstance } from "@mapka/react-mapbox-map";
+import { MapboxMap, type Map as MapboxMapInstance } from "@mapka/react-mapbox-map";
 import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor.js";

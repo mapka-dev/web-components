@@ -1,4 +1,5 @@
-import { type Leaflet, LeafletMap, type LeafletMapInstance } from "@mapka/react-leaflet-map";
+import type { Leaflet, L } from "@mapka/react-leaflet-map";
+import { LeafletMap } from "@mapka/react-leaflet-map";
 import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useState } from "react";
 import { CodeEditor } from "./CodeEditor.js";
@@ -13,7 +14,7 @@ export const LeafletSplitPanelExample: FC<LeafletSplitPanelExampleProps> = (prop
     example: { code } = {},
   } = props;
 
-  const [context, setContext] = useState<{ map: LeafletMapInstance; L: Leaflet }>();
+  const [context, setContext] = useState<{ map: L.Map; L: Leaflet }>();
 
   return (
     <SplitPanel
