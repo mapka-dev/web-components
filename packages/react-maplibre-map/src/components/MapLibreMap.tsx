@@ -45,11 +45,7 @@ export function MapLibreMap(props: MapLibreMapProps) {
    * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
    */
   const initMap = useCallback((element: HTMLDivElement) => {
-    if (!element) {
-      return;
-    }
-
-    if (!map.current) {
+    if (!map.current && element) {
       import("maplibre-gl").then(({ default: maplibre }) => {
         const mapLibreMap = new maplibre.Map({
           container: element,
