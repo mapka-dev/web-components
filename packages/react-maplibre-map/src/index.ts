@@ -1,2 +1,5 @@
 export { MapLibreMap } from "./components/MapLibreMap.js";
-export type { Map as MapLibreInstance } from "maplibre-gl";
+export type {
+  Map,
+  StyleSpecification,
+} from "maplibre-gl";

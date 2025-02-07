@@ -48,11 +48,7 @@ export function MapboxMap(props: MapboxMapProps) {
    */
   const initMap = useCallback(
     (element: HTMLDivElement): VoidFunction | undefined => {
-      if (!element) {
-        return;
-      }
-
-      if (!map.current) {
+      if (!map.current && element) {
         import("mapbox-gl").then(({ default: mapbox }) => {
           const mapboxMap = new mapbox.Map({
             container: element,
