@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.0](https://github.com/mapka-dev/web-components/compare/v0.9.0...v0.10.0) (2025-02-20)
+
+### Features
+
+* **react-map-shared:** rename shared package, update deps ([cd646d1](https://github.com/mapka-dev/web-components/commit/cd646d112dce3490db2123ed984d0f3bd826e66f)) - by @chyzwar
+
 ## [0.8.0](https://github.com/mapka-dev/web-components/compare/v0.7.0...v0.8.0) (2025-02-06)
 
 **Note:** Version bump only for package @mapka/map-shared
