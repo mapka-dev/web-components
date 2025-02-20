@@ -1,6 +1,6 @@
 import type mapbox from "mapbox-gl";
 import { debounce, isEqual } from "es-toolkit";
-import { useCallback, useEffect, useMemo, useRef, version } from "react";
+import { type FC, memo, useCallback, useEffect, useMemo, useRef, version } from "react";
 import { MapboxContainer } from "./MapboxContainer.js";
 import { MapboxStyles } from "./MapboxStyles.js";
 import type { StyleSpecification } from "mapbox-gl";
@@ -21,7 +21,7 @@ const defaultCenter: [number, number] = [0, 0];
 const defaultZoom = 1;
 const defaultStyle = "mapbox://styles/mapbox/streets-v12";
 
-export function MapboxMap(props: MapboxMapProps) {
+export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
   const {
     width = "100%",
     height = "100%",
@@ -166,4 +166,6 @@ export function MapboxMap(props: MapboxMapProps) {
       <MapboxContainer style={styles} ref={initMap} />
     </>
   );
-}
+});
+
+MapboxMap.displayName = "MapboxMap"
