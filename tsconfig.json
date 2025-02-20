@@ -13,6 +13,7 @@
     { "path": "./packages/react-maplibre-map/tsconfig.json" },
     { "path": "./packages/react-mapbox-map/tsconfig.json" },
     { "path": "./packages/react-leaflet-map/tsconfig.json" },
+    { "path": "./packages/react-map-shared/tsconfig.json" },
     { "path": "./packages/split-panel/tsconfig.json" },
     { "path": "./packages/configurator/tsconfig.json" }
   ]
