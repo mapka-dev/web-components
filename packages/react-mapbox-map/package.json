@@ -29,9 +29,9 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mapka/map-shared": "^0.9.0",
+    "@mapka/react-map-shared": "^0.9.0",
     "es-toolkit": "^1.32.0",
-    "mapbox-gl": "3.9.4"
+    "mapbox-gl": "3.10.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.3.2",
