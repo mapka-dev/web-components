@@ -1,5 +1,5 @@
 {
-  "name": "@mapka/map-shared",
+  "name": "@mapka/react-map-shared",
   "version": "0.8.0",
   "type": "module",
   "description": "Shared map components and utils",
@@ -23,9 +23,6 @@
   ],
   "author": "chyzwar",
   "license": "Apache-2.0",
-  "dependencies": {
-    "maplibre-gl": "^5.1.0"
-  },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.3.2",
     "react": "^19.0.0",

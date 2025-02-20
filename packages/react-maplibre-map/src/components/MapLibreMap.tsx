@@ -1,9 +1,9 @@
 import type maplibre from "maplibre-gl";
-import { useCallback, useEffect, useMemo, useRef, version } from "react";
+import { type FC, memo, useCallback, useEffect, useMemo, useRef, version } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
 import { MapLibreStyles } from "./MapLibreStyles.js";
 import { isEqual } from "es-toolkit";
-import type { StyleSpecification } from "maplibre-gl";
+import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
 
 interface MapLibreMapProps {
   center?: [number, number];
@@ -20,7 +20,7 @@ const defaultCenter: [number, number] = [0, 0];
 const defaultZoom = 1;
 const defaultStyle = "https://demotiles.maplibre.org/style.json";
 
-export function MapLibreMap(props: MapLibreMapProps) {
+export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
   const {
     width = "100%",
     height = "100%",
@@ -35,7 +35,7 @@ export function MapLibreMap(props: MapLibreMapProps) {
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<maplibre.Map | null>(null);
 
-  const mapkaAPIkeyRef = useRef<string | null>(mapkaApiKey);
+  const mapkaAPIkeyRef = useRef<string | undefined>(mapkaApiKey);
   if (mapkaApiKey !== mapkaAPIkeyRef.current) {
     mapkaAPIkeyRef.current = mapkaApiKey;
   }
@@ -144,4 +144,6 @@ export function MapLibreMap(props: MapLibreMapProps) {
       <MapLibreContainer ref={initMap} style={styles} />
     </>
   );
-}
+});
+
+MapLibreMap.displayName = "MapLibreMap"

@@ -2,7 +2,7 @@
   "name": "@mapka/react-leaflet-map",
   "version": "0.8.0",
   "type": "module",
-  "description": "Leaflet web components and react component",
+  "description": "React wrapper for leaflet",
   "publishConfig": {
     "access": "public"
   },
@@ -24,9 +24,9 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
+    "@mapka/react-map-shared": "^0.8.0",
     "es-toolkit": "^1.32.0",
-    "leaflet": "^1.9.4",
-    "react": "^19.0.0"
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.3.2",
