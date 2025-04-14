@@ -17,16 +17,14 @@ interface MapboxMapProps {
   onMapLoaded?: (map: mapbox.Map) => void;
 }
 
-const defaultCenter: [number, number] = [0, 0];
-const defaultZoom = 1;
 const defaultStyle = "mapbox://styles/mapbox/streets-v12";
 
 export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
   const {
     width = "100%",
     height = "100%",
-    center = defaultCenter,
-    zoom = defaultZoom,
+    center,
+    zoom,
     style = defaultStyle,
     accessToken,
     mapkaApiKey,
@@ -131,16 +129,18 @@ export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
 
   useEffect(() => {
     if (!currentMap) return;
+    if (!Number.isInteger(zoom)) return;
 
     const currentZoom = currentMap.getZoom();
 
     if (!isEqual(currentZoom, zoom)) {
-      currentMap.setZoom(zoom);
+      currentMap.setZoom(zoom as number);
     }
   }, [currentMap, zoom]);
 
   useEffect(() => {
     if (!currentMap) return;
+    if (!Array.isArray(center)) return;
 
     const currentCenter = currentMap.getCenter().toArray();
     if (!isEqual(currentCenter, center)) {
@@ -168,4 +168,4 @@ export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
   );
 });
 
-MapboxMap.displayName = "MapboxMap"
+MapboxMap.displayName = "MapboxMap";

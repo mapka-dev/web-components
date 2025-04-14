@@ -2,7 +2,7 @@ import { type FC, useEffect, useMemo, useRef, useState } from "react";
 import { EditorState } from "@codemirror/state";
 import { EditorView, basicSetup } from "codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { Box, Stack } from "@mantine/core";
+import { Box } from "@mantine/core";
 
 /*
  * This function evaluates the code in the context of the provided object.
