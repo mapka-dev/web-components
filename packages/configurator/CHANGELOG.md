@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.0](https://github.com/mapka-dev/web-components/compare/v0.11.0...v0.12.0) (2025-04-23)
+
+### Features
+
+* **configurator:** added mapkaapikey ([ffb5b6b](https://github.com/mapka-dev/web-components/commit/ffb5b6bbbf5ee4455910dbfea3e3cbf8ad7bc037)) - by @chyzwar
+
 ## [0.11.0](https://github.com/mapka-dev/web-components/compare/v0.10.1...v0.11.0) (2025-04-23)
 
 ### Features
