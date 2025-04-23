@@ -10,7 +10,9 @@ export interface MapExample {
 }
 
 interface SplitPanelExampleProps {
+  mapLibreStyle?: string;
   mapLibreExample?: MapExample;
+  mapboxStyle?: string;
   mapboxExample?: MapExample;
   mapboxAccessToken?: string;
   leafletExample?: MapExample;
@@ -18,8 +20,10 @@ interface SplitPanelExampleProps {
 }
 
 export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
+  mapLibreStyle,
   mapLibreExample,
   mapboxExample,
+  mapboxStyle,
   mapboxAccessToken,
   leafletExample,
   defaultValue = "mapLibre",
@@ -55,13 +59,17 @@ export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
 
       {mapLibreExample && (
         <Tabs.Panel value="mapLibre" h="calc(100% - 34px)">
-          <MapLibreSplitPanelExample example={mapLibreExample} />
+          <MapLibreSplitPanelExample example={mapLibreExample} style={mapLibreStyle} />
         </Tabs.Panel>
       )}
 
       {mapboxAccessToken && mapboxExample && (
         <Tabs.Panel value="mapbox" h="calc(100% - 34px)">
-          <MapboxSplitPanelExample mapboxAccessToken={mapboxAccessToken} example={mapboxExample} />
+          <MapboxSplitPanelExample
+            mapboxAccessToken={mapboxAccessToken}
+            example={mapboxExample}
+            style={mapboxStyle}
+          />
         </Tabs.Panel>
       )}
 
