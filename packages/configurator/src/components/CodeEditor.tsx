@@ -1,6 +1,5 @@
 import Editor from "@monaco-editor/react";
 import { type FC, useEffect, useState } from "react";
-import { trimCode } from "../utils/dash";
 
 /*
  * This function evaluates the code in the context of the provided object.

@@ -1,15 +1,16 @@
 {
   "name": "@mapka/configurator",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "18.x.x",
-    "yarn": "1.x.x"
+    "node": "22.x.x"
+  },
+  "exports": {
+    ".": "./lib/index.js"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,12 +22,12 @@
     "@mapka/split-panel": "0.0.4",
     "@monaco-editor/react": "^4.6.0",
     "@tabler/icons-react": "^3.12.0",
-    "monaco-editor": "^0.50.0",
+    "monaco-editor": "^0.51.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "typescript": "^5.5.4",

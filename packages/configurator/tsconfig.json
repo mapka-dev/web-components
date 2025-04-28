@@ -2,9 +2,9 @@
   "extends": "@chyzwar/tsconfig/bundler.json",
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "outDir": "dist",
+    "outDir": "lib",
     "rootDir": "src",
-    "noEmit": true,
+    "noEmit": false,
     "noUncheckedIndexedAccess": true,
     "tsBuildInfoFile": "./dist/buildInfo.json",
     "skipLibCheck": true,
