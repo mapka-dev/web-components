@@ -1,11 +1,12 @@
 import Editor from "@monaco-editor/react";
 import { type FC, useEffect, useState } from "react";
+import { trimCode } from "../utils/dash";
 
 /*
  * This function evaluates the code in the context of the provided object.
  * Context is is injected as variables declared before code block from editor
  */
-function evalInContext(context: Record<string, unknown> = {}, code?: string) {
+async function evalInContext(code?: string, context: Record<string, unknown> = {}) {
   if (!code) {
     return;
   }
@@ -16,12 +17,14 @@ function evalInContext(context: Record<string, unknown> = {}, code?: string) {
   }
 
   const codeWithVars = `
-  ${lets}
-  ${code}
-  `;
+  return async () => {
+    ${lets}
+    ${code}
+  }`;
 
   try {
-    new Function("context", codeWithVars)(context);
+    const fn = new Function("context", codeWithVars)(context);
+    await fn();
   } catch (error) {
     console.warn("Code evaluation failed", codeWithVars, error);
   }
@@ -42,7 +45,7 @@ export const CodeEditor: FC<CodeEditorProps> = ({
 
   useEffect(() => {
     if (!waitForContext || context) {
-      evalInContext(context, code);
+      evalInContext(code, context);
     }
   }, [code, context, waitForContext]);
 

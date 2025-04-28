@@ -1,3 +1,4 @@
+import { Card, Stack } from "@mantine/core";
 import { SplitPanelExample } from "./components/SplitPanelExample";
 import { trimCode } from "./utils/dash";
 
@@ -41,10 +42,14 @@ export function App() {
   };
 
   return (
-    <SplitPanelExample
-      mapLibreExample={mapLibreCodeExample}
-      mapboxExample={mapLibreCodeExample}
-      leafletExample={leafletCodeExample}
-    />
+    <Stack h="100vh" pt="200px" align="center" bg={"gray.1"}>
+      <Card shadow="sm" padding="0px" radius="md" withBorder w="90%">
+        <SplitPanelExample
+          mapLibreExample={mapLibreCodeExample}
+          mapboxExample={mapLibreCodeExample}
+          leafletExample={leafletCodeExample}
+        />
+      </Card>
+    </Stack>
   );
 }
