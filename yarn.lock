@@ -132,23 +132,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chyzwar/runner@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@chyzwar/runner@npm:0.7.0"
+"@chyzwar/runner@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "@chyzwar/runner@npm:0.7.1"
   dependencies:
     picocolors: "npm:^1.1.1"
   peerDependencies:
     "@types/node": "> 16.0.0"
   bin:
     runner: ./lib/runner.js
-  checksum: 10c2/4bcab453b0d8e0f94c2ecc81f4ed44e0dfd9f50ec8fa18151ba4947868a9f1b7e304a9a8ae91a935300f98c352fa1c205d0dcf0831d28e50f8836b55d472ba30
+  checksum: 10c2/dbe330b581b9fde0ed637d38a5db3e575fb3276ccd008e2737595d82841f95a4eecbb52ebae62b500fa726d510b67c4c2993ee5006261c04801c4fd2de030fae
   languageName: node
   linkType: hard
 
-"@chyzwar/tsconfig@npm:^0.3.2":
-  version: 0.3.2
-  resolution: "@chyzwar/tsconfig@npm:0.3.2"
-  checksum: 10c2/30c4e49e1c066cfed9946a6e41c9590f3dec127305561cb5acd56d48ec0790ef0726855899c972c32451c8317711b672485cd67155a7f9888017b97539890690
+"@chyzwar/tsconfig@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@chyzwar/tsconfig@npm:0.4.0"
+  checksum: 10c2/8e8e1d430bc1350378b72f91a9650c149f03b79d13e1e8fb2bbca1f963a60b62b8912e542467605c323fda6ac7e953d67f7bb91b2ef5ddf6498339caee7d6e63
   languageName: node
   linkType: hard
 
@@ -236,14 +236,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/view@npm:^6.0.0, @codemirror/view@npm:^6.17.0, @codemirror/view@npm:^6.23.0, @codemirror/view@npm:^6.27.0, @codemirror/view@npm:^6.35.0, @codemirror/view@npm:^6.36.5":
-  version: 6.36.5
-  resolution: "@codemirror/view@npm:6.36.5"
+"@codemirror/view@npm:^6.0.0, @codemirror/view@npm:^6.17.0, @codemirror/view@npm:^6.23.0, @codemirror/view@npm:^6.27.0, @codemirror/view@npm:^6.35.0, @codemirror/view@npm:^6.36.6":
+  version: 6.36.6
+  resolution: "@codemirror/view@npm:6.36.6"
   dependencies:
     "@codemirror/state": "npm:^6.5.0"
     style-mod: "npm:^4.1.0"
     w3c-keyname: "npm:^2.2.4"
-  checksum: 10c2/6f9c73b43d0ad4843abd53fa59a82cf1e04e168f947123b0c6b67c4205844bfafd55167bb30deece2bfb23c0c04764f5733c7b947c2751152638cd75eb9c24b2
+  checksum: 10c2/7cceb2ebe5b578d612bef6680851a65d3c6a5a764df4ad191511e32f97bcde9a611322d91ce86bc158449f4195be358308700d241031bba552fb3b1c6cc89727
   languageName: node
   linkType: hard
 
@@ -1032,9 +1032,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^7.17.4":
-  version: 7.17.4
-  resolution: "@mantine/core@npm:7.17.4"
+"@mantine/core@npm:^7.17.5":
+  version: 7.17.5
+  resolution: "@mantine/core@npm:7.17.5"
   dependencies:
     "@floating-ui/react": "npm:^0.26.28"
     clsx: "npm:^2.1.1"
@@ -1043,19 +1043,19 @@ __metadata:
     react-textarea-autosize: "npm:8.5.9"
     type-fest: "npm:^4.27.0"
   peerDependencies:
-    "@mantine/hooks": 7.17.4
+    "@mantine/hooks": 7.17.5
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c2/179f6b7a3b651b7ce96952195c3ac1a19197d6c2a6bccacf0cae5e98369ebbdff0c6ff0c5631f382520b8005edf2c27cc1f28e54d778c68e182be9551f4508e3
+  checksum: 10c2/65e5d24329d8e250e665f5bfec2d8f62e7f0f490def5c2fcf69b78ccd6e0f402d3d82e6011cb10adcc976cb7d2604bd7dd33eb7874863d31a178e34b5fac45ea
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^7.17.4":
-  version: 7.17.4
-  resolution: "@mantine/hooks@npm:7.17.4"
+"@mantine/hooks@npm:^7.17.5":
+  version: 7.17.5
+  resolution: "@mantine/hooks@npm:7.17.5"
   peerDependencies:
     react: ^18.x || ^19.x
-  checksum: 10c2/104bf3816e5497fc6677d53fc4eeec0362249a7d9132856918288a750f9eb5f22d194e9e85b648135a9c5f41216d0c572a0de1defc5bc9365f93f4bf00b5486b
+  checksum: 10c2/ae5e703285e0c927ee9bfc583dce40b82a55b26b1f9f9599507dbd6b52338a850cbc7da353cc43fe79fc07b55a23be2b8fda6e13c526d757491733456de038ba
   languageName: node
   linkType: hard
 
@@ -1127,9 +1127,9 @@ __metadata:
   resolution: "@mapka/configurator@workspace:packages/configurator"
   dependencies:
     "@codemirror/lang-javascript": "npm:^6.2.3"
-    "@codemirror/view": "npm:^6.36.5"
-    "@mantine/core": "npm:^7.17.4"
-    "@mantine/hooks": "npm:^7.17.4"
+    "@codemirror/view": "npm:^6.36.6"
+    "@mantine/core": "npm:^7.17.5"
+    "@mantine/hooks": "npm:^7.17.5"
     "@mapka/react-leaflet-map": "npm:^0.12.0"
     "@mapka/react-mapbox-map": "npm:^0.12.0"
     "@mapka/react-maplibre-map": "npm:^0.12.0"
@@ -1139,11 +1139,11 @@ __metadata:
     "@types/react-dom": "npm:^19.1.2"
     "@vitejs/plugin-react-swc": "npm:^3.9.0"
     codemirror: "npm:^6.0.1"
-    es-toolkit: "npm:^1.35.0"
+    es-toolkit: "npm:^1.36.0"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
     typescript: "npm:^5.8.3"
-    vite: "npm:^6.3.2"
+    vite: "npm:^6.3.3"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
@@ -1154,10 +1154,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/react-leaflet-map@workspace:packages/react-leaflet-map"
   dependencies:
-    "@chyzwar/tsconfig": "npm:^0.3.2"
+    "@chyzwar/tsconfig": "npm:^0.4.0"
     "@mapka/react-map-shared": "npm:^0.12.0"
     "@types/leaflet": "npm:^1.9.17"
-    es-toolkit: "npm:^1.35.0"
+    es-toolkit: "npm:^1.36.0"
     leaflet: "npm:^1.9.4"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
@@ -1172,7 +1172,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/react-map-shared@workspace:packages/react-map-shared"
   dependencies:
-    "@chyzwar/tsconfig": "npm:^0.3.2"
+    "@chyzwar/tsconfig": "npm:^0.4.0"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
     typescript: "npm:^5.8.3"
@@ -1183,11 +1183,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/react-mapbox-map@workspace:packages/react-mapbox-map"
   dependencies:
-    "@chyzwar/tsconfig": "npm:^0.3.2"
+    "@chyzwar/tsconfig": "npm:^0.4.0"
     "@mapka/react-map-shared": "npm:^0.12.0"
-    "@types/mapbox-gl": "npm:^3.4.1"
-    es-toolkit: "npm:^1.35.0"
-    mapbox-gl: "npm:3.11.0"
+    es-toolkit: "npm:^1.36.0"
+    mapbox-gl: "npm:3.11.1"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
     typescript: "npm:^5.8.3"
@@ -1201,10 +1200,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/react-maplibre-map@workspace:packages/react-maplibre-map"
   dependencies:
-    "@chyzwar/tsconfig": "npm:^0.3.2"
+    "@chyzwar/tsconfig": "npm:^0.4.0"
     "@mapka/react-map-shared": "npm:^0.12.0"
-    "@maplibre/maplibre-gl-style-spec": "npm:^23.2.0"
-    es-toolkit: "npm:^1.35.0"
+    "@maplibre/maplibre-gl-style-spec": "npm:^23.2.1"
+    es-toolkit: "npm:^1.36.0"
     maplibre-gl: "npm:^5.4.0"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
@@ -1221,13 +1220,13 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^1.9.4"
     "@chyzwar/biome-config": "npm:^0.2.31"
-    "@chyzwar/runner": "npm:^0.7.0"
+    "@chyzwar/runner": "npm:^0.7.1"
     "@commitlint/cli": "npm:^19.8.0"
     "@commitlint/config-conventional": "npm:^19.8.0"
     "@lerna-lite/cli": "npm:^4.0.0"
     "@lerna-lite/publish": "npm:^4.0.0"
     "@lerna-lite/version": "npm:^4.0.0"
-    "@types/node": "npm:^22.14.1"
+    "@types/node": "npm:^22.15.3"
     conventional-changelog-conventionalcommits: "npm:^8.0.0"
     husky: "npm:^9.1.7"
     lint-staged: "npm:^15.5.1"
@@ -1239,8 +1238,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/split-panel@workspace:packages/split-panel"
   dependencies:
-    "@chyzwar/tsconfig": "npm:^0.3.2"
-    es-toolkit: "npm:^1.35.0"
+    "@chyzwar/tsconfig": "npm:^0.4.0"
+    es-toolkit: "npm:^1.36.0"
     react: "npm:^19.1.0"
     typescript: "npm:^5.8.3"
   peerDependencies:
@@ -1249,9 +1248,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@maplibre/maplibre-gl-style-spec@npm:^23.1.0, @maplibre/maplibre-gl-style-spec@npm:^23.2.0":
-  version: 23.2.0
-  resolution: "@maplibre/maplibre-gl-style-spec@npm:23.2.0"
+"@maplibre/maplibre-gl-style-spec@npm:^23.1.0, @maplibre/maplibre-gl-style-spec@npm:^23.2.1":
+  version: 23.2.1
+  resolution: "@maplibre/maplibre-gl-style-spec@npm:23.2.1"
   dependencies:
     "@mapbox/jsonlint-lines-primitives": "npm:~2.0.2"
     "@mapbox/unitbezier": "npm:^0.0.1"
@@ -1264,7 +1263,7 @@ __metadata:
     gl-style-format: dist/gl-style-format.mjs
     gl-style-migrate: dist/gl-style-migrate.mjs
     gl-style-validate: dist/gl-style-validate.mjs
-  checksum: 10c2/5efac5b72f04498b999e25992bf813327acd53601f959e197ec779b340fc1dc20ace59acc12c5b08191f8bdbc70bb9a920f634c0fb0ed677333d254698960423
+  checksum: 10c2/fcf93968d1d4fd155308d44a56a80701de9eecaf04b40c7b5311fe1d2b5863f09433329c53ca0e99e6c6eb6b93ed824bdd7ba6aca311ded08384ebee23ac45c9
   languageName: node
   linkType: hard
 
@@ -2013,15 +2012,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mapbox-gl@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "@types/mapbox-gl@npm:3.4.1"
-  dependencies:
-    "@types/geojson": "npm:*"
-  checksum: 10c2/1ad88582724273b671b3acede65638f2d3c797bbfd93978cdb639043ef89f23deec8b4e50854ea3e757796a3cdc26a4dfc5ca7c457256edcd64258f10622f400
-  languageName: node
-  linkType: hard
-
 "@types/mapbox__point-geometry@npm:*, @types/mapbox__point-geometry@npm:^0.1.4":
   version: 0.1.4
   resolution: "@types/mapbox__point-geometry@npm:0.1.4"
@@ -2040,12 +2030,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.14.1":
-  version: 22.14.1
-  resolution: "@types/node@npm:22.14.1"
+"@types/node@npm:*, @types/node@npm:^22.15.3":
+  version: 22.15.3
+  resolution: "@types/node@npm:22.15.3"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c2/033f6b14724d30ee50d3c673105aa8dc9e0d01106457584d454f50890c8b092f7f9ec5a49634e7b99bffbf4b34c35a3619eaf39da5e769ddd5e8dca62165bfc4
+  checksum: 10c2/aa6b0574447a0d03820db24ba575c9e03d47b3fbac60f9b9f46245f231939a3456c8229bc3bceec44ae701503754a4bf2fde33bf373ce7f24ac7ca439a19c6c0
   languageName: node
   linkType: hard
 
@@ -2950,15 +2940,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-toolkit@npm:^1.35.0":
-  version: 1.35.0
-  resolution: "es-toolkit@npm:1.35.0"
+"es-toolkit@npm:^1.36.0":
+  version: 1.36.0
+  resolution: "es-toolkit@npm:1.36.0"
   dependenciesMeta:
     "@trivago/prettier-plugin-sort-imports@4.3.0":
       unplugged: true
     prettier-plugin-sort-re-exports@0.0.1:
       unplugged: true
-  checksum: 10c2/36f3a3b50f4d315fe8079912de4c76c8dec0479d436733afc860346830f650b4455c754b15108c8da87ffcfb81d18dbe229858a39c9876f5efa376eccf03de83
+  checksum: 10c2/fe874adf58702aa8a02dcfecb4f13bc9804d5ec061076762f0805b9aa8ddd3165e52d8eca4dad07b2f1b6c8aaf4c6f5faab9a42b212c0ea1e23d483830d3349c
   languageName: node
   linkType: hard
 
@@ -3107,15 +3097,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fdir@npm:^6.4.3":
-  version: 6.4.3
-  resolution: "fdir@npm:6.4.3"
+"fdir@npm:^6.4.4":
+  version: 6.4.4
+  resolution: "fdir@npm:6.4.4"
   peerDependencies:
     picomatch: ^3 || ^4
   peerDependenciesMeta:
     picomatch:
       optional: true
-  checksum: 10c2/e0f170afb815c57a631f332e222f3fc271c7d4f2bba7a8d34afe0e51424fecd8ece1a4f1ee0b7c4d9755f75337140bbf4c5e0a083b59caa7ab90d0176befcc69
+  checksum: 10c2/c32c5be30f1befad1080419717380dcee8fcba06b92370aa393200f183fc4883a8dbe79a64473fe0848f215a5549f9abbf992efd00eb4664c288041391ac226b
   languageName: node
   linkType: hard
 
@@ -4074,9 +4064,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mapbox-gl@npm:3.11.0":
-  version: 3.11.0
-  resolution: "mapbox-gl@npm:3.11.0"
+"mapbox-gl@npm:3.11.1":
+  version: 3.11.1
+  resolution: "mapbox-gl@npm:3.11.1"
   dependencies:
     "@mapbox/jsonlint-lines-primitives": "npm:^2.0.2"
     "@mapbox/mapbox-gl-supported": "npm:^3.0.0"
@@ -4106,7 +4096,7 @@ __metadata:
     supercluster: "npm:^8.0.1"
     tinyqueue: "npm:^3.0.0"
     vt-pbf: "npm:^3.1.3"
-  checksum: 10c2/796c88cd72c8ad8312f87ea40f8936b9a28833e57811b65e7bad3950b73d8bae35a03287f827a744f17c46dea5207fdf930a56140e286b2acb5d14dd40297c05
+  checksum: 10c2/fe29445b32517f485a4ad03acc3c3c067eed29976ed4049221a400d3c0fa55f6d4f80bdb17441486e78fa7a3f37ccc34998374ef16ccf60304d1db8e8634d72c
   languageName: node
   linkType: hard
 
@@ -5625,13 +5615,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinyglobby@npm:^0.2.12":
-  version: 0.2.12
-  resolution: "tinyglobby@npm:0.2.12"
+"tinyglobby@npm:^0.2.12, tinyglobby@npm:^0.2.13":
+  version: 0.2.13
+  resolution: "tinyglobby@npm:0.2.13"
   dependencies:
-    fdir: "npm:^6.4.3"
+    fdir: "npm:^6.4.4"
     picomatch: "npm:^4.0.2"
-  checksum: 10c2/b026bef5d6965b17b39e871a1ebd7b369d5d5de5ddca489fef94dd3bc71ae578672951887ffdfe910061159d156e9e37723143397210dd3ded74d02bd3827ff1
+  checksum: 10c2/e32719fa79ea783acd1cafb851a3b57098787000d367d3ff9decc4690f5d905adcf0b1c7b049bb5465aaccf2a455d1bbb2bbaa81bfea210b132f11f8c76a6bfc
   languageName: node
   linkType: hard
 
@@ -5881,17 +5871,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.3.2":
-  version: 6.3.2
-  resolution: "vite@npm:6.3.2"
+"vite@npm:^6.3.3":
+  version: 6.3.3
+  resolution: "vite@npm:6.3.3"
   dependencies:
     esbuild: "npm:^0.25.0"
-    fdir: "npm:^6.4.3"
+    fdir: "npm:^6.4.4"
     fsevents: "npm:~2.3.3"
     picomatch: "npm:^4.0.2"
     postcss: "npm:^8.5.3"
     rollup: "npm:^4.34.9"
-    tinyglobby: "npm:^0.2.12"
+    tinyglobby: "npm:^0.2.13"
   peerDependencies:
     "@types/node": ^18.0.0 || ^20.0.0 || >=22.0.0
     jiti: ">=1.21.0"
@@ -5932,7 +5922,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c2/50633a7f3a5a1d1392b09094e5cd28204a038aa46daa4e6f1dfbd33d9d99683dd60deb70ba2f5c99136eedd693a21ec8b03862ba861b507f281dc8066d71ca6d
+  checksum: 10c2/6852faa87ee57827d7f180d8ae2d3d0c6f2dd49ae4ca7020453b4c21d1fa79035e682083a81ea58adbf7e580987f2efa9f2eef34d1a4b02a4f5d32cd52a81816
   languageName: node
   linkType: hard
 
