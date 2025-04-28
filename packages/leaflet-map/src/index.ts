@@ -1,4 +1,4 @@
-export { LeafletMap } from "./LeafletMap.js";
+export { LeafletMap } from "./components/LeafletMap.js";
 
 import type L from "leaflet";
 
