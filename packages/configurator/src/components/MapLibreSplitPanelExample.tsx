@@ -7,11 +7,13 @@ import type { MapExample } from "./SplitPanelExample.js";
 export interface MapLibreSplitPanelExampleProps {
   example?: MapExample;
   style?: string;
+  mapkaApiKey?: string;
 }
 
 export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (props) => {
   const {
     style,
+    mapkaApiKey,
     example: { code } = {},
   } = props;
 
@@ -25,7 +27,14 @@ export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (pr
 
   return (
     <SplitPanel
-      leftPanel={<MapLibreMap style={style} onMapLoaded={setMap} showFeatureTooltip />}
+      leftPanel={
+        <MapLibreMap
+          style={style}
+          mapkaApiKey={mapkaApiKey}
+          onMapLoaded={setMap}
+          showFeatureTooltip
+        />
+      }
       rightPanel={<CodeEditor context={context} value={code} waitForContext />}
     />
   );
