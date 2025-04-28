@@ -1,7 +1,7 @@
 export const MapboxStyles = () => {
   return (
-    <style>
-      {`
+    <style>{
+  `
     .mapboxgl-map {
       font: 12px/20px Helvetica Neue, Arial, Helvetica, sans-serif;
       overflow: hidden;
@@ -783,7 +783,7 @@ export const MapboxStyles = () => {
     .mapboxgl-canvas-container.mapboxgl-touch-pan-blocker-override.mapboxgl-scrollable-page .mapboxgl-canvas {
       touch-action: pan-x pan-y
     }
-    `}
+  `}
     </style>
   );
 };

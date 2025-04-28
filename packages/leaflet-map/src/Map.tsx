@@ -1,5 +1,6 @@
 import L from "leaflet";
-import { useCallback, useMemo, useRef } from "react";
+import { debounce } from "moderndash";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { LeafletStyles } from "./LeafletStyles.js";
 
 interface LeafletMapProps {
@@ -31,6 +32,23 @@ export function LeafletMap(props: LeafletMapProps) {
       onMapLoaded?.(leafletMap);
     }
   }, [onMapLoaded]);
+
+  useEffect(() => {
+    if (map.current === null) {
+      return;
+    }
+    if (container.current === null) { 
+      return;
+    }
+
+    const resizer = new ResizeObserver(debounce(() => map.current?.invalidateSize(), 150));
+    resizer.observe(container.current); 
+    
+    return () => {
+      resizer.disconnect();
+    };
+  }, []);
+
 
   const style = useMemo(() => {
     return {

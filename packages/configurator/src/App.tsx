@@ -20,7 +20,7 @@ export function App() {
           Leaflet
         </Tabs.Tab>
         <Tabs.Tab value="settings" leftSection={<IconSettings style={iconStyle} />}>
-          Deck.gallery
+          Deck.GL
         </Tabs.Tab>
       </Tabs.List>
 
