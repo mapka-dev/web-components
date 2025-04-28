@@ -13,14 +13,16 @@
     "build:watch": "tsc --build --watch --preserveWatchOutput"
   },
   "workspaces": {
-    "packages": ["packages/**"]
+    "packages": [
+      "packages/**"
+    ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "@chyzwar/biome-config": "^0.2.30",
-    "@chyzwar/runner": "^0.4.32",
-    "@types/node": "^22.7.4",
-    "typescript": "^5.6.2"
+    "@biomejs/biome": "^1.9.4",
+    "@chyzwar/biome-config": "^0.2.31",
+    "@chyzwar/runner": "^0.4.34",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
   },
   "packageManager": "yarn@4.4.1"
 }
