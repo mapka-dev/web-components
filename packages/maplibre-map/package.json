@@ -9,25 +9,22 @@
   "description": "MapLibre web component",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "import": "./lib/index.js"
-    }
+    ".": "./lib/index.js"
   },
   "scripts": {
     "build": "tsc --build",
-    "build:watch": "tsc --watch --build",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "build:watch": "tsc --watch --build"
   },
   "keywords": ["map"],
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
-    "maplibre-gl": "^4.5.0",
-    "react": "^18.3.1"
+    "maplibre-gl": "^4.5.2"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.2.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "typescript": "^5.5.4"
   },
   "files": ["src/", "lib/", "!**/__tests__/", "!lib/buildInfo.json"]
