@@ -1,0 +1,25 @@
+{
+  "name": "@mapka/root",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "chyzwar",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "lint": "biome lint",
+    "check": "biome check --write .",
+    "build": "tsc --build",
+    "build:watch": "tsc --watch --build"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@chyzwar/biome-config": "^0.2.27",
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "yarn@3.2.4"
+}

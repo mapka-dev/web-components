@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "preserveWatchOutput": true,
+    "pretty": true
+  },
+  "include": [],
+  "references": [
+    { "path": "./packages/map/tsconfig.json" },
+    { "path": "./packages/configurator/tsconfig.json" }
+  ]
+}
