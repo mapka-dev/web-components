@@ -1,6 +1,3 @@
-
-
-
 export const MapLibreStyles = () => {
   return (
     <style>
@@ -801,4 +798,4 @@ export const MapLibreStyles = () => {
       `}
     </style>
   );
-}
+};

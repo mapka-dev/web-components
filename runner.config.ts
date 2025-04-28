@@ -1,18 +1,9 @@
-import {spawnTask, parallelTask} from "@chyzwar/runner";
+import { parallelTask, spawnTask } from "@chyzwar/runner";
 
-spawnTask("build:watch", 
-  "yarn", ["build:watch"] 
-);
+spawnTask("build:watch", "yarn", ["build:watch"]);
 
-spawnTask("start:configurator", 
-  "yarn", ["dev"], 
-  {
-    cwd: "./packages/configurator",
-  }
-);
+spawnTask("start:configurator", "yarn", ["dev"], {
+  cwd: "./packages/configurator",
+});
 
-
-parallelTask("start", [
-  "build:watch", 
-  "start:configurator",
-]);
+parallelTask("start", ["build:watch", "start:configurator"]);

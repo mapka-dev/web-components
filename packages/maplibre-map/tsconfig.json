@@ -1,5 +1,5 @@
 {
-  "extends": "@chyzwar/tsconfig/react.json", 
+  "extends": "@chyzwar/tsconfig/react.json",
   "compilerOptions": {
     "module": "Node16",
     "outDir": "lib",
@@ -9,7 +9,5 @@
     "composite": true,
     "tsBuildInfoFile": "./lib/buildInfo.json"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

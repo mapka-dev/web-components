@@ -1,30 +1,36 @@
 import L from "leaflet";
 import { useCallback, useMemo, useRef } from "react";
+import { LeafletStyles } from "./LeafletStyles.js";
 
 interface LeafletMapProps {
   width?: string | number;
   height?: string | number;
+  onMapLoaded?: (map: L.Map) => void;
 }
 
 export function LeafletMap(props: LeafletMapProps) {
-  const { width = "100%", height = "100%"} = props;
+  const { width = "100%", height = "100%", onMapLoaded } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<L.Map | null>(null);
 
   const initMap = useCallback((newContainer: HTMLDivElement) => {
-    if(!map.current) {
-      const leafletMap = L.map(newContainer,
-        {
-          center: [0, 0],
-          zoom: 1,
-        }
-      );
+    if (!map.current) {
+      const leafletMap = L.map(newContainer, {
+        center: [0, 0],
+        zoom: 1,
+        layers: [
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+          }),
+        ],
+      });
       map.current = leafletMap;
       container.current = newContainer;
+      onMapLoaded?.(leafletMap);
     }
-  }, []);
-
+  }, [onMapLoaded]);
 
   const style = useMemo(() => {
     return {
@@ -33,11 +39,10 @@ export function LeafletMap(props: LeafletMapProps) {
     };
   }, [width, height]);
 
-
   return (
-    <div 
-      style={style} 
-      ref={initMap}
-    />
+    <>
+      <LeafletStyles />
+      <div style={style} ref={initMap} />
+    </>
   );
 }
