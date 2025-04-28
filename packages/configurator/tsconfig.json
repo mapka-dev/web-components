@@ -6,13 +6,8 @@
     "rootDir": "src",
     "noEmit": true,
     "noUncheckedIndexedAccess": true,
-    "tsBuildInfoFile": "./build/buildInfo.json",
+    "tsBuildInfoFile": "./dist/buildInfo.json",
     "skipLibCheck": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "types": [
       "react",
       "react-dom"
