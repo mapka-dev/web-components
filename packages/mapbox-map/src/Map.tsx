@@ -1,7 +1,6 @@
-import "mapbox-gl/dist/mapbox-gl.css";
-
 import { Map as Mapbox } from "mapbox-gl";
 import { useCallback, useMemo, useRef } from "react";
+import { MapboxStyles } from "./MapboxStyles.js";
 
 interface MapboxMapProps {
   width?: string | number;
@@ -11,7 +10,11 @@ interface MapboxMapProps {
 }
 
 export function MapboxMap(props: MapboxMapProps) {
-  const { width, height, accessToken} = props;
+  const { 
+    width = "100%", 
+    height = "100%", 
+    accessToken
+  } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<Mapbox | null>(null);
@@ -40,9 +43,12 @@ export function MapboxMap(props: MapboxMapProps) {
 
 
   return (
-    <div 
-      style={style} 
-      ref={initMap}
-    />
+    <>
+      <MapboxStyles />
+      <div 
+        style={style} 
+        ref={initMap}
+      />
+    </>
   );
 }

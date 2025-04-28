@@ -7,7 +7,7 @@ interface LeafletMapProps {
 }
 
 export function LeafletMap(props: LeafletMapProps) {
-  const { width, height } = props;
+  const { width = "100%", height = "100%"} = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<L.Map | null>(null);
