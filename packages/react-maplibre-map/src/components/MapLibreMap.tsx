@@ -16,16 +16,14 @@ interface MapLibreMapProps {
   onMapLoaded?: (map: maplibre.Map) => void;
 }
 
-const defaultCenter: [number, number] = [0, 0];
-const defaultZoom = 1;
 const defaultStyle = "https://demotiles.maplibre.org/style.json";
 
 export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
   const {
     width = "100%",
     height = "100%",
-    center = defaultCenter,
-    zoom = defaultZoom,
+    center,
+    zoom,
     style = defaultStyle,
     onMapLoaded,
     mapkaApiKey,
@@ -94,16 +92,17 @@ export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
 
   useEffect(() => {
     if (!currentMap) return;
+    if (!Number.isInteger(zoom)) return;
 
     const currentZoom = currentMap.getZoom();
-
     if (!isEqual(currentZoom, zoom)) {
-      currentMap.setZoom(zoom);
+      currentMap.setZoom(zoom as number);
     }
   }, [currentMap, zoom]);
 
   useEffect(() => {
     if (!currentMap) return;
+    if (!Array.isArray(center)) return;
 
     const currentCenter = currentMap.getCenter().toArray();
     if (!isEqual(currentCenter, center)) {
@@ -146,4 +145,4 @@ export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
   );
 });
 
-MapLibreMap.displayName = "MapLibreMap"
+MapLibreMap.displayName = "MapLibreMap";

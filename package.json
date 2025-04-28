@@ -21,20 +21,19 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@chyzwar/biome-config": "^0.2.31",
-    "@chyzwar/runner": "^0.4.36",
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
-    "@lerna-lite/cli": "^3.12.1",
-    "@lerna-lite/publish": "^3.12.1",
-    "@lerna-lite/version": "^3.12.1",
-    "@types/node": "^22.13.4",
-    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "@chyzwar/runner": "^0.7.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@lerna-lite/cli": "^4.0.0",
+    "@lerna-lite/publish": "^4.0.0",
+    "@lerna-lite/version": "^4.0.0",
+    "@types/node": "^22.14.1",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "typescript": "^5.7.3"
+    "lint-staged": "^15.5.1",
+    "typescript": "^5.8.3"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "yarn lint"
-  },
-  "packageManager": "yarn@4.5.2"
+  }
 }
