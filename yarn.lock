@@ -971,8 +971,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/configurator@workspace:packages/configurator"
   dependencies:
+    "@mapka/leaflet-map": "npm:0.0.4"
     "@mapka/mapbox-map": "npm:0.0.4"
     "@mapka/maplibre-map": "npm:0.0.4"
+    "@mapka/split-panel": "npm:0.0.4"
+    "@monaco-editor/react": "npm:^4.6.0"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react-swc": "npm:^3.7.0"
@@ -993,7 +996,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/leaflet-map@workspace:packages/leaflet-map":
+"@mapka/leaflet-map@npm:0.0.4, @mapka/leaflet-map@workspace:packages/leaflet-map":
   version: 0.0.0-use.local
   resolution: "@mapka/leaflet-map@workspace:packages/leaflet-map"
   dependencies:
@@ -1038,7 +1041,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/split-panel@workspace:packages/split-panel":
+"@mapka/split-panel@npm:0.0.4, @mapka/split-panel@workspace:packages/split-panel":
   version: 0.0.0-use.local
   resolution: "@mapka/split-panel@workspace:packages/split-panel"
   dependencies:
@@ -1123,6 +1126,30 @@ __metadata:
   version: 4.0.1
   resolution: "@math.gl/web-mercator@npm:4.0.1"
   checksum: 10c2/032ba8ba44bf0418446417319ee44d3acfc6efe958bcb5774951e7a9eea5b788d5b8f19c6665ee203d3a49a17d905317c338a08562a2f2a83cc7b452096ee0e6
+  languageName: node
+  linkType: hard
+
+"@monaco-editor/loader@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@monaco-editor/loader@npm:1.4.0"
+  dependencies:
+    state-local: "npm:^1.0.6"
+  peerDependencies:
+    monaco-editor: ">= 0.21.0 < 1"
+  checksum: 10c2/371b1753cdb3c89e5126853e9c370b8c0757b43bc0bf5ae22b3cf632efcda557e1620af0268f92f86b0fe80235866f2a6e3c8958380255eaecedac6f902c3325
+  languageName: node
+  linkType: hard
+
+"@monaco-editor/react@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "@monaco-editor/react@npm:4.6.0"
+  dependencies:
+    "@monaco-editor/loader": "npm:^1.4.0"
+  peerDependencies:
+    monaco-editor: ">= 0.25.0 < 1"
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c2/e1f026d6b73419a73e13172a8f451e7324127abd163a2a3a3da3d1c760ac64bdf4afb0a75f34a2259c9f59c085e674769668dafbd79e9545df241ab5e2b729a6
   languageName: node
   linkType: hard
 
@@ -3559,6 +3586,13 @@ __metadata:
   dependencies:
     minipass: "npm:^3.1.1"
   checksum: 10c2/7cc30e8216603173a1af5a31f9421d279de31f5da6cff251f54fe1c69fce80ef45a4018cc5a50be14f6984f9d90fbfd4b87e0f2beccd7fb163140976cddc11e9
+  languageName: node
+  linkType: hard
+
+"state-local@npm:^1.0.6":
+  version: 1.0.7
+  resolution: "state-local@npm:1.0.7"
+  checksum: 10c2/60a7e71f82eea061d9b8c551362674c613c0ab3fb68b63be2fda431e14c17721aadc03d6a1e9a8dabc6307982d42da7db14ba675067be378411d947d13c779f6
   languageName: node
   linkType: hard
 

@@ -1,14 +1,19 @@
 import { Map as MapLibre } from "maplibre-gl";
-import { useCallback, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapLibreStyles } from './MapLibreStyles.js';
 
 interface MapLibreMapProps {
   width?: string | number;
   height?: string | number;
+  onMapLoaded?: (map: MapLibre) => void;
 }
 
 export function MapLibreMap(props: MapLibreMapProps) {
-  const { width = "100%", height = "100%"} = props;
+  const { 
+    width = "100%", 
+    height = "100%",
+    onMapLoaded,
+  } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
   const map = useRef<MapLibre | null>(null);
@@ -23,9 +28,14 @@ export function MapLibreMap(props: MapLibreMapProps) {
       });
       map.current = mapLibreMap;
       container.current = newContainer;
-    }
-  }, []);
 
+      mapLibreMap.on("load", () => {
+        if (onMapLoaded) {
+          onMapLoaded(mapLibreMap);
+        }
+      });
+    }
+  }, [onMapLoaded]);
 
   const style = useMemo(() => {
     return {
