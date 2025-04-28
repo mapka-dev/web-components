@@ -6,11 +6,13 @@ import type { MapExample } from "./SplitPanelExample.js";
 
 export interface MapboxSplitPanelExampleProps {
   example?: MapExample;
+  style?: string;
   mapboxAccessToken: string;
 }
 
 export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props) => {
   const {
+    style,
     mapboxAccessToken,
     example: { code } = {},
   } = props;
@@ -25,7 +27,7 @@ export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props)
 
   return (
     <SplitPanel
-      leftPanel={<MapboxMap accessToken={mapboxAccessToken} onMapLoaded={setMap} />}
+      leftPanel={<MapboxMap style={style} accessToken={mapboxAccessToken} onMapLoaded={setMap} />}
       rightPanel={<CodeEditor context={context} value={code} waitForContext />}
     />
   );
