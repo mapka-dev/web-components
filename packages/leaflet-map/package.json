@@ -8,6 +8,9 @@
   "type": "module",
   "description": "Leaflet web component and react component",
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./lib/index.js"
   },
@@ -20,7 +23,7 @@
     "leaflet"
   ],
   "author": "chyzwar",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
     "es-toolkit": "^1.27.0",
     "leaflet": "^1.9.4",

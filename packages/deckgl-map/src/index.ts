@@ -1,1 +1,1 @@
-export { MapboxMap } from "./components/Map.js";
+export { DeckGLMap } from "./components/Map.js";

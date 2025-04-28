@@ -7,6 +7,9 @@
   "type": "module",
   "description": "MapLibre web component",
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./lib/index.js"
   },
@@ -15,10 +18,13 @@
     "build:watch": "tsc --watch --build"
   },
   "keywords": [
-    "map"
+    "map",
+    "maplibre",
+    "react",
+    "component"
   ],
   "author": "chyzwar",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
     "@mapka/map-shared": "^0.0.4",
     "es-toolkit": "^1.27.0",
