@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.0](https://github.com/mapka-dev/web-components/compare/v0.10.1...v0.11.0) (2025-04-23)
+
+### Features
+
+* **react-maplibre-map,react-mapbox-map:** added style prop for map ([8c2b53c](https://github.com/mapka-dev/web-components/commit/8c2b53c0ad168ed747f310db6da2bab719237d5f)) - by @chyzwar
+
 ## [0.10.1](https://github.com/mapka-dev/web-components/compare/v0.10.0...v0.10.1) (2025-04-14)
 
 ### Bug Fixes
