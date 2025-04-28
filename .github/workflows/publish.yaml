@@ -33,15 +33,22 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: "Setup NodeJS 22"
+    - name: Setup Node.js 
       uses: actions/setup-node@v4
       with:
-        node-version: '22'
-        registry-url: 'https://registry.npmjs.org'
-        cache: 'yarn'
+        node-version: '22.x'
 
-    - name: Install
-      run: yarn install
+    - name: Cache node_modules
+      uses: actions/cache@v4
+      with:
+        path: |
+          node_modules
+          .yarn/install-state.gz
+          .yarn/cache
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
+
+    - name: Install 
+      run: yarn install --immutable
       
     - name: Build
       run: yarn build

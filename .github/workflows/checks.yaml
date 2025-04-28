@@ -16,11 +16,22 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v4
 
-    - name: "Setup NodeJS 22"
+    - name: Setup Node.js 
       uses: actions/setup-node@v4
       with:
-        node-version: '22'
-        cache: 'yarn'
+        node-version: '22.x'
+
+    - name: Cache node_modules
+      uses: actions/cache@v4
+      with:
+        path: |
+          node_modules
+          .yarn/install-state.gz
+          .yarn/cache
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
+
+    - name: Install 
+      run: yarn install --immutable
 
     - name: Install
       run: yarn install
