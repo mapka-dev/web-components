@@ -1,10 +1,20 @@
-import { useMemo, useState } from "react";
+import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 import { LeafletMap, type LeafletMapInstance } from "@mapka/leaflet-map";
+import type { MapExample } from "./SplitPanelExample";
 
-export const LeafletSplitPanelExample = () => {
+export interface LeafletSplitPanelExampleProps {
+  example?: MapExample;
+}
+
+export const LeafletSplitPanelExample: FC<LeafletSplitPanelExampleProps> = (props) => {
+  const {
+    example: { code } = {},
+  } = props;
+
   const [map, setMapLibre] = useState<LeafletMapInstance | null>(null);
-  const contextMapLibre = useMemo(() => {
+  const context = useMemo(() => {
+    if (!map) return;
     return {
       map,
     };
@@ -17,7 +27,7 @@ export const LeafletSplitPanelExample = () => {
       </div>
 
       <div slot="content-panel">
-        <CodeEditor context={contextMapLibre} />
+        <CodeEditor context={context} waitForContext />
       </div>
     </split-panel>
   );
