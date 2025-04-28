@@ -9,7 +9,7 @@
     "lint": "biome lint",
     "check": "biome check --write .",
     "build": "tsc --build",
-    "build:watch": "tsc --watch --build"
+    "build:watch": "tsc --build --watch"
   },
   "workspaces": {
     "packages": [

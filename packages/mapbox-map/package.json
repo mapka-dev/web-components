@@ -1,5 +1,5 @@
 {
-  "name": "@mapka/map",
+  "name": "@mapka/mapbox-map",
   "version": "0.0.4",
   "engines": {
     "node": "18.x.x",
@@ -20,10 +20,10 @@
   "author": "chyzwar",
   "license": "UNLICENSED",
   "dependencies": {
-    "mapbox-gl": "3.5.2",
-    "maplibre-gl": "^4.5.0"
+    "mapbox-gl": "3.5.2"
   },
   "devDependencies": {
+    "@chyzwar/tsconfig": "^0.2.28",
     "@types/mapbox-gl": "^3.4.0",
     "typescript": "^5.5.4"
   },
