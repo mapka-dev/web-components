@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/mapka-dev/web-components/compare/v0.10.0...v0.10.1) (2025-04-14)
+
+### Bug Fixes
+
+* **react-mapbox-map,react-maplibre-map:** do no apply zoom or center defaults ([289efdf](https://github.com/mapka-dev/web-components/commit/289efdf875275a3d579144a62b0f8e4d383e7bb8)) - by @chyzwar
+
 ## [0.10.0](https://github.com/mapka-dev/web-components/compare/v0.9.0...v0.10.0) (2025-02-20)
 
 ### Features
