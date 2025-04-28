@@ -1,6 +1,7 @@
 import { Map as Mapbox } from "mapbox-gl";
 import { debounce } from "moderndash";
-import { useCallback, useMemo, useRef, useEffect } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
+import { MapboxContainer } from "./MapboxContainer.js";
 import { MapboxStyles } from "./MapboxStyles.js";
 
 interface MapboxMapProps {
@@ -18,20 +19,20 @@ export function MapboxMap(props: MapboxMapProps) {
   const map = useRef<Mapbox | null>(null);
 
   const initMap = useCallback(
-    (newContainer: HTMLDivElement) => {
+    (element: HTMLDivElement) => {
       if (!map.current) {
         const mapboxMap = new Mapbox({
-          container: newContainer,
+          container: element,
           style: "mapbox://styles/mapbox/streets-v12",
           center: [0, 0],
           zoom: 1,
           accessToken,
           fitBoundsOptions: {
-            padding: 15 
-          }
+            padding: 15,
+          },
         });
         map.current = mapboxMap;
-        container.current = newContainer;
+        container.current = element;
 
         mapboxMap.once("load", () => {
           onMapLoaded?.(mapboxMap);
@@ -45,13 +46,13 @@ export function MapboxMap(props: MapboxMapProps) {
     if (map.current === null) {
       return;
     }
-    if (container.current === null) { 
+    if (container.current === null) {
       return;
     }
 
     const resizer = new ResizeObserver(debounce(() => map.current?.resize(), 150));
-    resizer.observe(container.current); 
-    
+    resizer.observe(container.current);
+
     return () => {
       resizer.disconnect();
     };
@@ -67,7 +68,7 @@ export function MapboxMap(props: MapboxMapProps) {
   return (
     <>
       <MapboxStyles />
-      <div style={style} ref={initMap} />
+      <MapboxContainer style={style} ref={initMap} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { type MapboxMapInstance, MapboxMap } from "@mapka/mapbox-map";
+import { MapboxMap, type MapboxMapInstance } from "@mapka/mapbox-map";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 import type { MapExample } from "./SplitPanelExample";
@@ -30,11 +30,7 @@ export const MapboxSplitPanelExample: FC<MapboxSplitPanelExampleProps> = (props)
       </div>
 
       <div slot="content-panel">
-        <CodeEditor 
-          context={context} 
-          defaultValue={code} 
-          waitForContext 
-        />
+        <CodeEditor context={context} defaultValue={code} waitForContext />
       </div>
     </split-panel>
   );

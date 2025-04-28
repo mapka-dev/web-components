@@ -14,7 +14,7 @@ export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (pr
 
   const [map, setMap] = useState<MapLibreInstance | null>(null);
   const context = useMemo(() => {
-    if(!map) return;
+    if (!map) return;
     return {
       map,
     };
@@ -27,11 +27,7 @@ export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (pr
       </div>
 
       <div slot="content-panel">
-        <CodeEditor 
-          context={context} 
-          defaultValue={code} 
-          waitForContext
-        />
+        <CodeEditor context={context} defaultValue={code} waitForContext />
       </div>
     </split-panel>
   );

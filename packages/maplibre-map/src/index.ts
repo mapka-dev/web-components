@@ -1,2 +1,2 @@
-export { MapLibreMap } from "./Map.js";
+export { MapLibreMap } from "./MapLibreMap.js";
 export { Map as MapLibreInstance } from "maplibre-gl";

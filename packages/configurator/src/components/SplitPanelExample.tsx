@@ -1,20 +1,25 @@
 import { Tabs, rem } from "@mantine/core";
 import { IconMessageCircle, IconPhoto, IconSettings } from "@tabler/icons-react";
+import type { FC } from "react";
+import { LeafletSplitPanelExample } from "./LeafletSplitPanelExample";
 import { MapLibreSplitPanelExample } from "./MapLibreSplitPanelExample";
 import { MapboxSplitPanelExample } from "./MapboxSplitPanelExample";
-import { LeafletSplitPanelExample } from "./LeafletSplitPanelExample";
-import type { FC } from "react";
 
 export interface MapExample {
   code?: string;
 }
 
-
 interface SplitPanelExampleProps {
   mapLibreExample?: MapExample;
-};
+  mapboxExample?: MapExample;
+  leafletExample?: MapExample;
+}
 
-export const SplitPanelExample: FC<SplitPanelExampleProps> = ({mapLibreExample}) => {
+export const SplitPanelExample: FC<SplitPanelExampleProps> = ({
+  mapLibreExample,
+  mapboxExample,
+  leafletExample,
+}) => {
   const iconStyle = { width: rem(12), height: rem(12) };
 
   return (
@@ -32,15 +37,15 @@ export const SplitPanelExample: FC<SplitPanelExampleProps> = ({mapLibreExample})
       </Tabs.List>
 
       <Tabs.Panel value="maplibre" h="800px">
-        <MapLibreSplitPanelExample example={mapLibreExample}/>
+        <MapLibreSplitPanelExample example={mapLibreExample} />
       </Tabs.Panel>
 
       <Tabs.Panel value="mapbox" h="800px">
-        <MapboxSplitPanelExample />
+        <MapboxSplitPanelExample example={mapboxExample} />
       </Tabs.Panel>
 
       <Tabs.Panel value="leaflet" h="800px">
-        <LeafletSplitPanelExample />
+        <LeafletSplitPanelExample example={leafletExample} />
       </Tabs.Panel>
     </Tabs>
   );

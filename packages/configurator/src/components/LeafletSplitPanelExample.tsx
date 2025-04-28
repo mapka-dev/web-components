@@ -1,6 +1,6 @@
+import { type Leaflet, LeafletMap, type LeafletMapInstance } from "@mapka/leaflet-map";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
-import { LeafletMap, type LeafletMapInstance } from "@mapka/leaflet-map";
 import type { MapExample } from "./SplitPanelExample";
 
 export interface LeafletSplitPanelExampleProps {
@@ -12,22 +12,16 @@ export const LeafletSplitPanelExample: FC<LeafletSplitPanelExampleProps> = (prop
     example: { code } = {},
   } = props;
 
-  const [map, setMapLibre] = useState<LeafletMapInstance | null>(null);
-  const context = useMemo(() => {
-    if (!map) return;
-    return {
-      map,
-    };
-  }, [map]);
+  const [context, setContext] = useState<{ map: LeafletMapInstance; L: Leaflet }>();
 
   return (
     <split-panel>
       <div slot="map-panel">
-        <LeafletMap onMapLoaded={setMapLibre} />
+        <LeafletMap onMapLoaded={(map, L) => setContext({ map, L })} />
       </div>
 
       <div slot="content-panel">
-        <CodeEditor context={context} waitForContext />
+        <CodeEditor context={context} defaultValue={code} waitForContext />
       </div>
     </split-panel>
   );

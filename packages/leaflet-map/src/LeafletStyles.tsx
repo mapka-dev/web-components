@@ -1,6 +1,7 @@
 export const LeafletStyles = () => {
   return (
-    <style>{`
+    <style>
+      {`
     /* required styles */
 
     .leaflet-pane,
@@ -666,5 +667,5 @@ export const LeafletStyles = () => {
     
     `}
     </style>
-  )
-}
+  );
+};

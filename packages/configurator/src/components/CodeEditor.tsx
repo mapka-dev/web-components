@@ -33,20 +33,26 @@ export interface CodeEditorProps {
   waitForContext?: boolean;
 }
 
-export const CodeEditor: FC<CodeEditorProps> = ({ context, defaultValue = "", waitForContext = false }) => {
+export const CodeEditor: FC<CodeEditorProps> = ({
+  context,
+  defaultValue = "",
+  waitForContext = false,
+}) => {
   const [code, setCode] = useState<string | undefined>(defaultValue);
-  
-  useEffect(() => {   
+
+  useEffect(() => {
     if (!waitForContext || context) {
       evalInContext(context, code);
     }
   }, [code, context, waitForContext]);
 
-  return <Editor 
-    height="100%" 
-    width="100%"  
-    defaultLanguage="javascript" 
-    onChange={setCode} 
-    value={code} 
-  />;
+  return (
+    <Editor
+      height="100%"
+      width="100%"
+      defaultLanguage="javascript"
+      onChange={setCode}
+      value={code}
+    />
+  );
 };
