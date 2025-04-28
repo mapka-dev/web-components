@@ -18,6 +18,8 @@ export function MapLibreMap(props: MapLibreMapProps) {
 
   const initMap = useCallback(
     (element: HTMLDivElement) => {
+      container.current = element;
+
       import("maplibre-gl").then(({ default: maplibre }) => {
         if (!map.current) {
           const mapLibreMap = new maplibre.Map({
@@ -27,7 +29,6 @@ export function MapLibreMap(props: MapLibreMapProps) {
             zoom: 1,
           });
           map.current = mapLibreMap;
-          container.current = element;
 
           if (onMapLoaded) {
             mapLibreMap.once("load", () => {
@@ -40,21 +41,21 @@ export function MapLibreMap(props: MapLibreMapProps) {
     [onMapLoaded],
   );
 
+  const currentMap = map.current;
   useEffect(() => {
     if (!showFeatureTooltip) return;
 
     const onClick = (event: maplibre.MapMouseEvent) => {
-      const features = map.current?.queryRenderedFeatures(event.point);
+      const features = currentMap?.queryRenderedFeatures(event.point);
       if (!features) return;
-
       console.log(features);
     };
-    map.current?.on("click", onClick);
+    currentMap?.on("click", onClick);
 
     return () => {
-      map.current?.off("click", onClick);
+      currentMap?.off("click", onClick);
     };
-  }, [showFeatureTooltip]);
+  }, [currentMap, showFeatureTooltip]);
 
   const style = useMemo(() => {
     return {
