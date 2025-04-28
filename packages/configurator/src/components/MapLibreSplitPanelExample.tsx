@@ -1,8 +1,8 @@
 import { type MapLibreInstance, MapLibreMap } from "@mapka/maplibre-map";
+import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 import type { MapExample } from "./SplitPanelExample";
-import { SplitPanel } from "@mapka/split-panel";
 
 export interface MapLibreSplitPanelExampleProps {
   example?: MapExample;

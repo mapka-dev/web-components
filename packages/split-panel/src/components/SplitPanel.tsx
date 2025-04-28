@@ -1,5 +1,5 @@
 import { debounce } from "moderndash";
-import { useCallback, useEffect, useRef, type ReactNode } from "react";
+import { type ReactNode, useCallback, useEffect, useRef } from "react";
 
 interface SplitPanelProps {
   rightPanel: ReactNode;

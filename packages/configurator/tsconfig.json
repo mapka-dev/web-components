@@ -2,11 +2,8 @@
   "extends": "@chyzwar/tsconfig/bundler.json",
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "outDir": "lib",
-    "rootDir": "src",
     "noEmit": false,
     "noUncheckedIndexedAccess": true,
-    "tsBuildInfoFile": "./dist/buildInfo.json",
     "skipLibCheck": true,
     "types": ["react", "react-dom"]
   },

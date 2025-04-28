@@ -1,8 +1,8 @@
 import { type Leaflet, LeafletMap, type LeafletMapInstance } from "@mapka/leaflet-map";
+import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useState } from "react";
 import { CodeEditor } from "./CodeEditor";
 import type { MapExample } from "./SplitPanelExample";
-import { SplitPanel } from "@mapka/split-panel";
 
 export interface LeafletSplitPanelExampleProps {
   example?: MapExample;

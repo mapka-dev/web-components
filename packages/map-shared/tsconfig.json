@@ -1,13 +1,7 @@
 {
   "extends": "@chyzwar/tsconfig/react.json",
   "compilerOptions": {
-    "module": "Node16",
-    "outDir": "lib",
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "incremental": true,
-    "composite": true,
-    "tsBuildInfoFile": "./lib/buildInfo.json"
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
