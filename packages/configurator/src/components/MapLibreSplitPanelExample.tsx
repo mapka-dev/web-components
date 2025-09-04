@@ -1,4 +1,8 @@
-import { type Map as MapLibreInstance, MapLibreMap } from "@mapka/react-maplibre-map";
+import {
+  type Map as MapLibreInstance,
+  MapLibreMap,
+  type StyleSpecification,
+} from "@mapka/react-maplibre-map";
 import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor.js";
@@ -6,16 +10,12 @@ import type { MapExample } from "./SplitPanelExample.js";
 
 export interface MapLibreSplitPanelExampleProps {
   example?: MapExample;
-  style?: string;
+  style?: string | StyleSpecification;
   mapkaApiKey?: string;
 }
 
 export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (props) => {
-  const {
-    style,
-    mapkaApiKey,
-    example: { code } = {},
-  } = props;
+  const { style, mapkaApiKey, example: { code } = {} } = props;
 
   const [map, setMap] = useState<MapLibreInstance | null>(null);
   const context = useMemo(() => {
