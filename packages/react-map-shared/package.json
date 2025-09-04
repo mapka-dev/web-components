@@ -1,6 +1,6 @@
 {
   "name": "@mapka/react-map-shared",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "type": "module",
   "description": "Shared map components and utils",
   "sideEffects": false,
