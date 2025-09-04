@@ -1,9 +1,9 @@
-import type maplibre from "maplibre-gl";
+import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
+import { isEqual } from "es-toolkit";
 import { type FC, memo, useCallback, useEffect, useMemo, useRef, version } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
 import { MapLibreStyles } from "./MapLibreStyles.js";
-import { isEqual } from "es-toolkit";
-import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
+import type maplibre from "maplibre-gl";
 
 interface MapLibreMapProps {
   center?: [number, number];
@@ -16,15 +16,13 @@ interface MapLibreMapProps {
   onMapLoaded?: (map: maplibre.Map) => void;
 }
 
-const defaultStyle = "https://demotiles.maplibre.org/style.json";
-
 export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
   const {
     width = "100%",
     height = "100%",
     center,
     zoom,
-    style = defaultStyle,
+    style,
     onMapLoaded,
     mapkaApiKey,
     showFeatureTooltip,
@@ -112,7 +110,7 @@ export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
 
   useEffect(() => {
     if (!currentMap) return;
-    currentMap.setStyle(style);
+    currentMap.setStyle(style ?? null);
   }, [currentMap, style]);
 
   useEffect(() => {
