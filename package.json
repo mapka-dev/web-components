@@ -19,19 +19,19 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.2",
+    "@biomejs/biome": "^2.2.4",
     "@chyzwar/biome-config": "^0.4.0",
-    "@chyzwar/runner": "^0.7.1",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@lerna-lite/cli": "^4.0.0",
-    "@lerna-lite/publish": "^4.0.0",
-    "@lerna-lite/version": "^4.0.0",
-    "@types/node": "^22.15.3",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "@chyzwar/runner": "^0.10.0",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@lerna-lite/cli": "^4.8.0",
+    "@lerna-lite/publish": "^4.8.0",
+    "@lerna-lite/version": "^4.8.0",
+    "@types/node": "^24.5.2",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.1",
-    "typescript": "^5.8.3"
+    "lint-staged": "^16.2.0",
+    "typescript": "^5.9.2"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "yarn lint"
