@@ -1226,6 +1226,11 @@ __metadata:
     husky: "npm:^9.1.7"
     lint-staged: "npm:^16.2.6"
     typescript: "npm:^5.9.3"
+  dependenciesMeta:
+    "@swc/core":
+      built: true
+    esbuild:
+      built: true
   languageName: unknown
   linkType: soft
 
