@@ -33,7 +33,16 @@
     "lint-staged": "^16.2.6",
     "typescript": "^5.9.3"
   },
+  "dependenciesMeta": {
+    "@swc/core": {
+      "built": true
+    },
+    "esbuild": {
+      "built": true
+    }
+  },
   "lint-staged": {
     "*.{js,ts,tsx}": "yarn lint"
-  }
+  },
+  "packageManager": "yarn@4.12.0"
 }
