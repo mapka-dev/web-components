@@ -1,90 +1,107 @@
-import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
 import { isEqual } from "es-toolkit";
-import { type FC, memo, useCallback, useEffect, useMemo, useRef, version } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
+import { isEmpty } from "es-toolkit/compat";
+import { Map as MapLibreBaseMap } from "maplibre-gl";
 import { MapLibreStyles } from "./MapLibreStyles.js";
-import type maplibre from "maplibre-gl";
+import type { RequestTransformFunction, MapOptions } from "maplibre-gl";
+import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
 
-interface MapLibreMapProps {
+const noopTransformRequest: RequestTransformFunction = (url) => {
+  return {
+    url,
+  };
+};
+
+const createTransformRequest =
+  (apiKey?: string, transformRequest?: RequestTransformFunction | null): RequestTransformFunction =>
+  (url) => {
+    if ((!isEmpty(apiKey) && url.includes("mapka.dev")) || url.includes("mapka.localhost")) {
+      return {
+        url,
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+        },
+      };
+    }
+    return transformRequest ? transformRequest(url) : noopTransformRequest(url);
+  };
+
+interface MapLibreMapProps<
+  Map extends MapLibreBaseMap = MapLibreBaseMap,
+  O extends MapOptions = MapOptions,
+> {
   center?: [number, number];
   zoom?: number;
   style?: string | StyleSpecification;
   width?: string | number;
   height?: string | number;
-  mapkaApiKey?: string;
-  showFeatureTooltip?: boolean;
-  onMapLoaded?: (map: maplibre.Map) => void;
+  apiKey?: string;
+  transformRequest?: RequestTransformFunction;
+  BaseMap?: new (options: O) => Map;
+  onMapLoaded?: (map: Map) => void;
 }
 
-export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
+export function MapLibreMap<
+  M extends MapLibreBaseMap = MapLibreBaseMap,
+  O extends MapOptions = MapOptions,
+>(props: MapLibreMapProps<M, O>) {
   const {
+    BaseMap,
     width = "100%",
     height = "100%",
     center,
     zoom,
     style,
+    transformRequest,
     onMapLoaded,
-    mapkaApiKey,
-    showFeatureTooltip,
+    apiKey,
   } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
-  const map = useRef<maplibre.Map | null>(null);
-
-  const mapkaAPIkeyRef = useRef<string | undefined>(mapkaApiKey);
-  if (mapkaApiKey !== mapkaAPIkeyRef.current) {
-    mapkaAPIkeyRef.current = mapkaApiKey;
-  }
+  const map = useRef<M | null>(null);
 
   /*
    * We want to this callback ref to be created only once. Deps update will be handled in dedicated useEffect
    * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
    */
-  const initMap = useCallback((element: HTMLDivElement) => {
-    if (!map.current && element) {
-      import("maplibre-gl").then(({ default: maplibre }) => {
-        const mapLibreMap = new maplibre.Map({
+  const initMap = useCallback(
+    (element: HTMLDivElement) => {
+      if (!map.current && element) {
+        const mapOption: MapOptions & Record<string, unknown> = {
           container: element,
           style,
           center,
           zoom,
-          transformRequest: (url) => {
-            if (url.includes("mapka.dev") || url.includes("mapka.localhost")) {
-              if (mapkaAPIkeyRef.current) {
-                return {
-                  url,
-                  headers: {
-                    Authorization: `Bearer ${mapkaAPIkeyRef.current}`,
-                  },
-                };
-              }
-            }
-            return {
-              url,
-            };
-          },
-        });
+          transformRequest: createTransformRequest(apiKey, transformRequest),
+        };
+
+        if (BaseMap) {
+          mapOption.apiKey = apiKey;
+        }
+
+        const mapInstance = BaseMap
+          ? (new BaseMap(mapOption as O) as M)
+          : (new MapLibreBaseMap(mapOption) as M);
+
         container.current = element;
-        map.current = mapLibreMap;
+        map.current = mapInstance;
 
         if (onMapLoaded) {
-          mapLibreMap.once("load", () => {
-            onMapLoaded(mapLibreMap);
+          mapInstance.once("load", () => {
+            onMapLoaded(mapInstance);
           });
         }
-      });
-    }
-
-    if (!version?.startsWith("19")) {
-      return;
-    }
-    return () => {
-      if (map.current) {
-        map.current.remove();
-        map.current = null;
       }
-    };
-  }, []);
+      return () => {
+        if (map.current) {
+          map.current.remove();
+          map.current = null;
+        }
+      };
+    },
+    [apiKey],
+  );
 
   const currentMap = map.current;
 
@@ -113,21 +130,6 @@ export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
     currentMap.setStyle(style ?? null);
   }, [currentMap, style]);
 
-  useEffect(() => {
-    if (!showFeatureTooltip) return;
-
-    const onClick = (event: maplibre.MapMouseEvent) => {
-      const features = currentMap?.queryRenderedFeatures(event.point);
-      if (!features) return;
-      console.log(features);
-    };
-    currentMap?.on("click", onClick);
-
-    return () => {
-      currentMap?.off("click", onClick);
-    };
-  }, [currentMap, showFeatureTooltip]);
-
   const styles = useMemo(() => {
     return {
       width: typeof width === "number" ? `${width}px` : width,
@@ -141,6 +143,6 @@ export const MapLibreMap: FC<MapLibreMapProps> = memo((props) => {
       <MapLibreContainer ref={initMap} style={styles} />
     </>
   );
-});
+}
 
 MapLibreMap.displayName = "MapLibreMap";

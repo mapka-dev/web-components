@@ -23,29 +23,29 @@
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.2.4",
-    "@codemirror/view": "^6.38.6",
-    "@mantine/core": "^8.3.6",
-    "@mantine/hooks": "^8.3.6",
+    "@codemirror/view": "^6.38.8",
+    "@mantine/core": "^8.3.9",
+    "@mantine/hooks": "^8.3.9",
     "@mapka/react-leaflet-map": "^0.14.1",
     "@mapka/react-mapbox-map": "^0.14.1",
     "@mapka/react-maplibre-map": "^0.14.1",
     "@mapka/split-panel": "^0.14.1",
     "@tabler/icons-react": "^3.35.0",
     "codemirror": "^6.0.2",
-    "es-toolkit": "^1.41.0"
+    "es-toolkit": "^1.42.0"
   },
   "devDependencies": {
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "@vitejs/plugin-react-swc": "^4.2.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "typescript": "^5.9.3",
-    "vite": "^7.2.1"
+    "vite": "^7.2.4"
   },
   "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "files": [
     "src/",

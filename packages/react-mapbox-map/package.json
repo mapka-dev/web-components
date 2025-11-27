@@ -30,7 +30,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@mapka/react-map-shared": "^0.14.1",
-    "es-toolkit": "^1.41.0",
+    "es-toolkit": "^1.42.0",
     "mapbox-gl": "3.16.0"
   },
   "devDependencies": {
@@ -40,8 +40,8 @@
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "files": [
     "src/",

@@ -27,7 +27,7 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "es-toolkit": "^1.41.0"
+    "es-toolkit": "^1.42.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.4.0",
