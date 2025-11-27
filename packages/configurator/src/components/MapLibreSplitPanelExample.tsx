@@ -27,14 +27,7 @@ export const MapLibreSplitPanelExample: FC<MapLibreSplitPanelExampleProps> = (pr
 
   return (
     <SplitPanel
-      leftPanel={
-        <MapLibreMap
-          style={style}
-          mapkaApiKey={mapkaApiKey}
-          onMapLoaded={setMap}
-          showFeatureTooltip
-        />
-      }
+      leftPanel={<MapLibreMap style={style} apiKey={mapkaApiKey} onMapLoaded={setMap} />}
       rightPanel={<CodeEditor context={context} value={code} waitForContext />}
     />
   );
