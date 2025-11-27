@@ -1,8 +1,8 @@
+import * as maplibre from "maplibre-gl";
 import { isEqual } from "es-toolkit";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
 import { isEmpty } from "es-toolkit/compat";
-import { Map as MapLibreBaseMap } from "maplibre-gl";
 import { MapLibreStyles } from "./MapLibreStyles.js";
 import type { RequestTransformFunction, MapOptions } from "maplibre-gl";
 import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
@@ -28,7 +28,7 @@ const createTransformRequest =
   };
 
 interface MapLibreMapProps<
-  Map extends MapLibreBaseMap = MapLibreBaseMap,
+  Map extends maplibre.Map = maplibre.Map,
   O extends MapOptions = MapOptions,
 > {
   center?: [number, number];
@@ -43,7 +43,7 @@ interface MapLibreMapProps<
 }
 
 export function MapLibreMap<
-  M extends MapLibreBaseMap = MapLibreBaseMap,
+  M extends maplibre.Map = maplibre.Map,
   O extends MapOptions = MapOptions,
 >(props: MapLibreMapProps<M, O>) {
   const {
@@ -82,7 +82,7 @@ export function MapLibreMap<
 
         const mapInstance = BaseMap
           ? (new BaseMap(mapOption as O) as M)
-          : (new MapLibreBaseMap(mapOption) as M);
+          : (new maplibre.Map(mapOption) as M);
 
         container.current = element;
         map.current = mapInstance;
