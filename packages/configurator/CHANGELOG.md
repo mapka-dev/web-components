@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.0](https://github.com/mapka-dev/web-components/compare/v0.14.1...v0.15.0) (2025-11-27)
+
+### Features
+
+* allow passing custom map renderer ([141f5f8](https://github.com/mapka-dev/web-components/commit/141f5f87f6666c2957711b97c3fd4874195701b2)) - by @chyzwar
+
 ## [0.14.1](https://github.com/mapka-dev/web-components/compare/v0.14.0...v0.14.1) (2025-11-06)
 
 **Note:** Version bump only for package @mapka/configurator
