@@ -1127,7 +1127,7 @@ __metadata:
     "@mantine/hooks": "npm:^8.3.9"
     "@mapka/react-leaflet-map": "npm:^0.15.0"
     "@mapka/react-mapbox-map": "npm:^0.15.0"
-    "@mapka/react-maplibre-map": "npm:^0.15.0"
+    "@mapka/react-maplibre-map": "npm:^0.15.1"
     "@mapka/split-panel": "npm:^0.15.0"
     "@tabler/icons-react": "npm:^3.35.0"
     "@types/react": "npm:^19.2.7"
@@ -1191,7 +1191,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/react-maplibre-map@npm:^0.15.0, @mapka/react-maplibre-map@workspace:packages/react-maplibre-map":
+"@mapka/react-maplibre-map@npm:^0.15.1, @mapka/react-maplibre-map@workspace:packages/react-maplibre-map":
   version: 0.0.0-use.local
   resolution: "@mapka/react-maplibre-map@workspace:packages/react-maplibre-map"
   dependencies:
