@@ -1,90 +1,101 @@
-import type mapbox from "mapbox-gl";
-import { debounce, isEqual } from "es-toolkit";
-import { type FC, memo, useCallback, useEffect, useMemo, useRef, version } from "react";
+import * as mapbox from "mapbox-gl";
+import { isEqual } from "es-toolkit";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapboxContainer } from "./MapboxContainer.js";
+import { isEmpty } from "es-toolkit/compat";
 import { MapboxStyles } from "./MapboxStyles.js";
-import type { StyleSpecification } from "mapbox-gl";
+import type { RequestTransformFunction, MapOptions, StyleSpecification } from "mapbox-gl";
 
-interface MapboxMapProps {
+const noopTransformRequest: RequestTransformFunction = (url) => {
+  return {
+    url,
+  };
+};
+
+const createTransformRequest =
+  (apiKey?: string, transformRequest?: RequestTransformFunction | null): RequestTransformFunction =>
+  (url) => {
+    if ((!isEmpty(apiKey) && url.includes("mapka.dev")) || url.includes("mapka.localhost")) {
+      return {
+        url,
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+        },
+      };
+    }
+    return transformRequest ? transformRequest(url) : noopTransformRequest(url);
+  };
+
+interface MapboxMapProps<
+  Map extends mapbox.Map = mapbox.Map,
+  O extends MapOptions = MapOptions,
+> {
   center?: [number, number];
   zoom?: number;
   style?: string | StyleSpecification;
   width?: string | number;
   height?: string | number;
   accessToken: string;
-  mapkaApiKey?: string;
-  showFeatureTooltip?: boolean;
-  onMapLoaded?: (map: mapbox.Map) => void;
+  apiKey?: string;
+  injectMapboxStyles?: boolean;
+  transformRequest?: RequestTransformFunction;
+  BaseMap?: new (options: O) => Map;
+  onMapLoaded?: (map: Map) => void;
 }
 
-const defaultStyle = "mapbox://styles/mapbox/streets-v12";
-
-export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
+export function MapboxMap<
+  M extends mapbox.Map = mapbox.Map,
+  O extends MapOptions = MapOptions,
+>(props: MapboxMapProps<M, O>) {
   const {
+    BaseMap,
     width = "100%",
     height = "100%",
     center,
     zoom,
-    style = defaultStyle,
+    style,
     accessToken,
-    mapkaApiKey,
-    showFeatureTooltip,
+    transformRequest,
     onMapLoaded,
+    apiKey,
+    injectMapboxStyles,
   } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
-  const map = useRef<mapbox.Map | null>(null);
-
-  const mapkaAPIkeyRef = useRef<string | null>(mapkaApiKey);
-  if (mapkaApiKey !== mapkaAPIkeyRef.current) {
-    mapkaAPIkeyRef.current = mapkaApiKey;
-  }
+  const map = useRef<M | null>(null);
 
   /*
    * We want to this callback ref to be created only once. Deps update will be handled in dedicated useEffect
    * biome-ignore lint/correctness/useExhaustiveDependencies: ref callback is created only once
    */
   const initMap = useCallback(
-    (element: HTMLDivElement): VoidFunction | undefined => {
+    (element: HTMLDivElement) => {
       if (!map.current && element) {
-        import("mapbox-gl").then(({ default: mapbox }) => {
-          const mapboxMap = new mapbox.Map({
-            container: element,
-            style,
-            center,
-            zoom,
-            accessToken,
-            fitBoundsOptions: {
-              padding: 15,
-            },
-            transformRequest: (url) => {
-              if (url.includes("mapka.dev") || url.includes("mapka.localhost")) {
-                if (mapkaAPIkeyRef.current) {
-                  return {
-                    url,
-                    headers: {
-                      Authorization: `Bearer ${mapkaAPIkeyRef.current}`,
-                    },
-                  };
-                }
-              }
-              return {
-                url,
-              };
-            },
-          });
-          map.current = mapboxMap;
-          container.current = element;
+        const mapOption: MapOptions & Record<string, unknown> = {
+          container: element,
+          style,
+          center,
+          zoom,
+          accessToken,
+          transformRequest: createTransformRequest(apiKey, transformRequest),
+        };
 
-          if (onMapLoaded) {
-            mapboxMap.once("load", () => {
-              onMapLoaded(mapboxMap);
-            });
-          }
-        });
-      }
-      if (!version?.startsWith("19")) {
-        return;
+        if (BaseMap) {
+          mapOption.apiKey = apiKey;
+        }
+
+        const mapInstance = BaseMap
+          ? (new BaseMap(mapOption as O) as M)
+          : (new mapbox.Map(mapOption) as M);
+
+        container.current = element;
+        map.current = mapInstance;
+
+        if (onMapLoaded) {
+          mapInstance.once("load", () => {
+            onMapLoaded(mapInstance);
+          });
+        }
       }
       return () => {
         if (map.current) {
@@ -93,46 +104,16 @@ export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
         }
       };
     },
-    [accessToken],
+    [accessToken, apiKey],
   );
 
   const currentMap = map.current;
-  useEffect(() => {
-    if (!showFeatureTooltip) return;
-
-    const onClick = (event: mapbox.MapMouseEvent) => {
-      const features = currentMap?.queryRenderedFeatures(event.point);
-      if (!features) return;
-      console.log(features);
-    };
-    currentMap?.on("click", onClick);
-
-    return () => {
-      currentMap?.off("click", onClick);
-    };
-  }, [currentMap, showFeatureTooltip]);
-
-  useEffect(() => {
-    if (container.current === null) return;
-
-    const resizer = new ResizeObserver(
-      debounce(() => {
-        map.current?.resize();
-      }, 150),
-    );
-    resizer.observe(container.current);
-
-    return () => {
-      resizer.disconnect();
-    };
-  }, []);
 
   useEffect(() => {
     if (!currentMap) return;
     if (!Number.isInteger(zoom)) return;
 
     const currentZoom = currentMap.getZoom();
-
     if (!isEqual(currentZoom, zoom)) {
       currentMap.setZoom(zoom as number);
     }
@@ -150,7 +131,7 @@ export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
 
   useEffect(() => {
     if (!currentMap) return;
-    currentMap.setStyle(style);
+    currentMap.setStyle(style ?? null);
   }, [currentMap, style]);
 
   const styles = useMemo(() => {
@@ -160,12 +141,16 @@ export const MapboxMap: FC<MapboxMapProps> = memo((props) => {
     };
   }, [width, height]);
 
-  return (
-    <>
-      <MapboxStyles />
-      <MapboxContainer style={styles} ref={initMap} />
-    </>
-  );
-});
+  if (!injectMapboxStyles) {
+    return <MapboxContainer ref={initMap} style={styles} />;
+  } else {
+    return (
+      <>
+        <MapboxStyles />
+        <MapboxContainer ref={initMap} style={styles} />
+      </>
+    );
+  }
+}
 
 MapboxMap.displayName = "MapboxMap";

@@ -4,8 +4,7 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import { MapLibreContainer } from "./MapLibreContainer.js";
 import { isEmpty } from "es-toolkit/compat";
 import { MapLibreStyles } from "./MapLibreStyles.js";
-import type { RequestTransformFunction, MapOptions } from "maplibre-gl";
-import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
+import type { RequestTransformFunction, MapOptions, StyleSpecification } from "maplibre-gl";
 
 const noopTransformRequest: RequestTransformFunction = (url) => {
   return {
@@ -37,6 +36,7 @@ interface MapLibreMapProps<
   width?: string | number;
   height?: string | number;
   apiKey?: string;
+  injectMaplibreStyles?: boolean;
   transformRequest?: RequestTransformFunction;
   BaseMap?: new (options: O) => Map;
   onMapLoaded?: (map: Map) => void;
@@ -56,6 +56,7 @@ export function MapLibreMap<
     transformRequest,
     onMapLoaded,
     apiKey,
+    injectMaplibreStyles,
   } = props;
 
   const container = useRef<HTMLDivElement | null>(null);
@@ -137,12 +138,16 @@ export function MapLibreMap<
     };
   }, [width, height]);
 
-  return (
-    <>
-      <MapLibreStyles />
-      <MapLibreContainer ref={initMap} style={styles} />
-    </>
-  );
+  if (!injectMaplibreStyles) {
+    return <MapLibreContainer ref={initMap} style={styles} />;
+  } else {
+    return (
+      <>
+        <MapLibreStyles />
+        <MapLibreContainer ref={initMap} style={styles} />
+      </>
+    );
+  }
 }
 
 MapLibreMap.displayName = "MapLibreMap";
