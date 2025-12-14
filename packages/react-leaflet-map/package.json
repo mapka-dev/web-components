@@ -1,6 +1,6 @@
 {
   "name": "@mapka/react-leaflet-map",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "type": "module",
   "description": "React wrapper for leaflet",
   "publishConfig": {
@@ -24,7 +24,7 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mapka/react-map-shared": "^0.15.0",
+    "@mapka/react-map-shared": "^0.16.0",
     "es-toolkit": "^1.43.0",
     "leaflet": "^1.9.4"
   },

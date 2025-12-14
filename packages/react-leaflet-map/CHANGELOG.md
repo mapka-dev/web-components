@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.0](https://github.com/mapka-dev/web-components/compare/v0.15.1...v0.16.0) (2025-12-14)
+
+### Features
+
+* inject styles only when requested ([f9d5ce1](https://github.com/mapka-dev/web-components/commit/f9d5ce19634a7e42c61e6c6747e5d640000dc3fc)) - by @chyzwar
+
 ## [0.15.0](https://github.com/mapka-dev/web-components/compare/v0.14.1...v0.15.0) (2025-11-27)
 
 ### Features
