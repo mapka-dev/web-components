@@ -6,7 +6,10 @@ import {
 import { SplitPanel } from "@mapka/split-panel";
 import { type FC, useMemo, useState } from "react";
 import { CodeEditor } from "./CodeEditor.js";
-import type { MapExample } from "./SplitPanelExample.js";
+
+export interface MapExample {
+  code?: string;
+}
 
 export interface MapLibreSplitPanelExampleProps {
   example?: MapExample;

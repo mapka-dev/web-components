@@ -26,8 +26,6 @@
     "@codemirror/view": "^6.39.4",
     "@mantine/core": "^8.3.10",
     "@mantine/hooks": "^8.3.10",
-    "@mapka/react-leaflet-map": "^0.16.0",
-    "@mapka/react-mapbox-map": "^0.16.0",
     "@mapka/react-maplibre-map": "^0.16.0",
     "@mapka/split-panel": "^0.16.0",
     "@tabler/icons-react": "^3.35.0",
