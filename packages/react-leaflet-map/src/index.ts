@@ -5,3 +5,4 @@ import type L from "leaflet";
 type Leaflet = typeof L;
 
 export type { Leaflet, L };
+

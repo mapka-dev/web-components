@@ -7,3 +7,4 @@ export interface FeaturesTooltipProps {
 export const FeaturesTooltip: FC = () => {
   return null;
 };
+
