@@ -28,15 +28,15 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@mapka/react-map-shared": "^0.16.0",
-    "@maplibre/maplibre-gl-style-spec": "^24.4.0",
-    "es-toolkit": "^1.43.0",
-    "maplibre-gl": "^5.14.0"
+    "@maplibre/maplibre-gl-style-spec": "^24.8.1",
+    "es-toolkit": "^1.45.1",
+    "maplibre-gl": "^5.23.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.4.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "typescript": "^5.9.3"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
     "react": "^19.0.0",

@@ -1,8 +1,7 @@
 import { Stack } from "@mantine/core";
-import { SplitPanelExampleCard } from "./components/SplitPanelExampleCard.js";
-import { trimCode } from "./utils/dash.js";
 
-const mapboxAccessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
+import { trimCode } from "./utils/dash.js";
+import { MapLibreSplitPanelExample } from "./components/MapLibreSplitPanelExample.js";
 
 export function App() {
   const mapLibreCodeExample = {
@@ -29,28 +28,9 @@ export function App() {
     ),
   };
 
-  const leafletCodeExample = {
-    code: trimCode(
-      4,
-      `
-      const data = await fetch(
-        "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_urban_areas.geojson"
-        ).then((response) => response.json())
-      
-      const geoJsonLayer = L.geoJSON(data);
-      map.addLayer(geoJsonLayer);
-    `,
-    ),
-  };
-
   return (
     <Stack h="100vh" pt="100px" pb="100px" px="200px" align="center" bg={"gray.1"}>
-      <SplitPanelExampleCard
-        mapLibreExample={mapLibreCodeExample}
-        mapboxExample={mapLibreCodeExample}
-        leafletExample={leafletCodeExample}
-        mapboxAccessToken={mapboxAccessToken}
-      />
+      <MapLibreSplitPanelExample example={mapLibreCodeExample} />
     </Stack>
   );
 }
