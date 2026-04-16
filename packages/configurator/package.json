@@ -1,6 +1,6 @@
 {
   "name": "@mapka/configurator",
-  "version": "0.16.1",
+  "version": "0.16.2",
   "type": "module",
   "license": "Apache-2.0",
   "exports": {
@@ -26,8 +26,8 @@
     "@codemirror/view": "^6.41.0",
     "@mantine/core": "^9.0.2",
     "@mantine/hooks": "^9.0.2",
-    "@mapka/react-maplibre-map": "^0.16.0",
-    "@mapka/split-panel": "^0.16.0",
+    "@mapka/react-maplibre-map": "^0.16.2",
+    "@mapka/split-panel": "^0.16.2",
     "@tabler/icons-react": "^3.41.1",
     "codemirror": "^6.0.2",
     "es-toolkit": "^1.45.1"
