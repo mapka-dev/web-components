@@ -1,6 +1,6 @@
 {
   "name": "@mapka/react-mapbox-map",
-  "version": "0.16.2",
+  "version": "0.16.3",
   "type": "module",
   "description": "Map",
   "sideEffects": false,
@@ -29,7 +29,7 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mapka/react-map-shared": "^0.16.2",
+    "@mapka/react-map-shared": "^0.16.3",
     "es-toolkit": "^1.45.1",
     "mapbox-gl": "3.21.0"
   },

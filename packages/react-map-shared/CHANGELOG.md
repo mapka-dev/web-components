@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.3](https://github.com/mapka-dev/web-components/compare/v0.16.2...v0.16.3) (2026-04-16)
+
+### Bug Fixes
+
+* bump patch version across all packages ([457809c](https://github.com/mapka-dev/web-components/commit/457809ce3f15c4faf5e28a07d0a3e0892a7a5094)) - by @chyzwar
+
 ## [0.16.2](https://github.com/mapka-dev/web-components/compare/v0.16.1...v0.16.2) (2026-04-16)
 
 **Note:** Version bump only for package @mapka/react-map-shared
