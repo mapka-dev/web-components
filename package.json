@@ -19,19 +19,19 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.8",
-    "@chyzwar/biome-config": "^0.4.0",
-    "@chyzwar/runner": "^0.10.0",
-    "@commitlint/cli": "^20.2.0",
-    "@commitlint/config-conventional": "^20.2.0",
-    "@lerna-lite/cli": "^4.10.2",
-    "@lerna-lite/publish": "^4.10.2",
-    "@lerna-lite/version": "^4.10.2",
-    "@types/node": "^24.10.3",
-    "conventional-changelog-conventionalcommits": "^9.1.0",
+    "@biomejs/biome": "^2.4.12",
+    "@chyzwar/biome-config": "^0.4.2",
+    "@chyzwar/runner": "^0.10.3",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@lerna-lite/cli": "^5.0.0",
+    "@lerna-lite/publish": "^5.0.0",
+    "@lerna-lite/version": "^5.0.0",
+    "@types/node": "^25.6.0",
+    "conventional-changelog-conventionalcommits": "^9.3.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "typescript": "^5.9.3"
+    "lint-staged": "^16.4.0",
+    "typescript": "^6.0.2"
   },
   "dependenciesMeta": {
     "@swc/core": {

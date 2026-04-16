@@ -22,24 +22,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@codemirror/lang-javascript": "^6.2.4",
-    "@codemirror/view": "^6.39.4",
-    "@mantine/core": "^8.3.10",
-    "@mantine/hooks": "^8.3.10",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/view": "^6.41.0",
+    "@mantine/core": "^9.0.2",
+    "@mantine/hooks": "^9.0.2",
     "@mapka/react-maplibre-map": "^0.16.0",
     "@mapka/split-panel": "^0.16.0",
-    "@tabler/icons-react": "^3.35.0",
+    "@tabler/icons-react": "^3.41.1",
     "codemirror": "^6.0.2",
-    "es-toolkit": "^1.43.0"
+    "es-toolkit": "^1.45.1"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react-swc": "^4.2.2",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "typescript": "^5.9.3",
-    "vite": "^7.2.7"
+    "@vitejs/plugin-react-swc": "^4.3.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8"
   },
   "peerDependencies": {
     "react": "^19.0.0",
