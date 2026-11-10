@@ -4,6 +4,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.0](https://github.com/mapka-dev/web-components/compare/v0.16.3...v0.17.0) (2026-11-10)
+
+### ⚠ BREAKING CHANGES
+
+* **react-maplibre-map,configurator:** requires maplibre-gl v6. Bundled apps must call
+setWorkerUrl() once before rendering a map.
+
+### Features
+
+* **react-maplibre-map,configurator:** upgrade to maplibre-gl v6 ([05612c5](https://github.com/mapka-dev/web-components/commit/05612c5a84c622dfdf0e3930b56be13de771fa0c))
+
+### Bug Fixes
+
+* **publish:** rename removePackageFields to stripPackageKeys ([4d98e13](https://github.com/mapka-dev/web-components/commit/4d98e137cfc1569c4dec03dc80f20c5177b148f7))
+* **react-maplibre-map,configurator:** take maplibre-gl as a peer dependency ([96d3e9e](https://github.com/mapka-dev/web-components/commit/96d3e9e639edfa48ae238d6719376a2972bf5fbf))
+
 ## [0.16.3](https://github.com/mapka-dev/web-components/compare/v0.16.2...v0.16.3) (2026-04-16)
 
 ### Bug Fixes
