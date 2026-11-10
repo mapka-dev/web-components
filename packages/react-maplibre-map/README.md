@@ -1,7 +1,7 @@
 # React Mapka MapLibre map components
 
 ```bash
-yarn add @mapka/react-maplibre-map
+yarn add @mapka/react-maplibre-map maplibre-gl
 
 ```
 

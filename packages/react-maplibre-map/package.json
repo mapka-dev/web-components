@@ -27,16 +27,17 @@
   "author": "chyzwar",
   "license": "Apache-2.0",
   "dependencies": {
-    "es-toolkit": "^1.45.1",
-    "maplibre-gl": "^6.17.0"
+    "es-toolkit": "^1.45.1"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.4.0",
+    "maplibre-gl": "^6.17.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "typescript": "^6.0.2"
   },
   "peerDependencies": {
+    "maplibre-gl": "^6.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
