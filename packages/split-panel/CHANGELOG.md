@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://github.com/mapka-dev/web-components/compare/v0.17.0...v0.17.1) (2026-11-11)
+
+### Bug Fixes
+
+* **deps:** keep the published packages' peer ranges ([c76515c](https://github.com/mapka-dev/web-components/commit/c76515c6bb07ba72ca01e6d92d1c8d9bc5ab26ed)) - by @chyzwar
+
 ## [0.17.0](https://github.com/mapka-dev/web-components/compare/v0.16.3...v0.17.0) (2026-11-10)
 
 **Note:** Version bump only for package @mapka/split-panel
