@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.2](https://github.com/mapka-dev/web-components/compare/v0.17.1...v0.17.2) (2026-11-11)
+
+### Bug Fixes
+
+* **configurator:** take mantine as a peer dependency ([6bb967d](https://github.com/mapka-dev/web-components/commit/6bb967d820d8f33f8c1c8873435e0b4651b97d9c)) - by @chyzwar
+
 ## [0.17.1](https://github.com/mapka-dev/web-components/compare/v0.17.0...v0.17.1) (2026-11-11)
 
 ### Bug Fixes
