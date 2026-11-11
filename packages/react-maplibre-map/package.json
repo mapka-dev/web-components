@@ -1,6 +1,6 @@
 {
   "name": "@mapka/react-maplibre-map",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "type": "module",
   "description": "MapLibre react web component",
   "sideEffects": false,
