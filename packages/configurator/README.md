@@ -3,8 +3,11 @@
 Mapka configurator package
 
 ```bash
-yarn add @mapka/configurator maplibre-gl
+yarn add @mapka/configurator maplibre-gl @mantine/core @mantine/hooks
 ```
+
+The components render inside your app's `MantineProvider`, so `@mantine/core` and `@mantine/hooks`
+are peer dependencies. Import `@mantine/core/styles.css` once in your app entry.
 
 ## Worker setup
 

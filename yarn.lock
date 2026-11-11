@@ -914,6 +914,8 @@ __metadata:
     typescript: "npm:@typescript/typescript6@^6.0.2"
     vite: "npm:^8.3.7"
   peerDependencies:
+    "@mantine/core": ^9.0.0
+    "@mantine/hooks": ^9.0.0
     maplibre-gl: ^6.17.0
     react: ^19.0.0
     react-dom: ^19.0.0
