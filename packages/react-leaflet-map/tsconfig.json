@@ -3,5 +3,6 @@
   "compilerOptions": {
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [{ "path": "../react-map-shared/tsconfig.json" }]
 }

@@ -3,4 +3,3 @@ export type {
   Map,
   StyleSpecification,
 } from "maplibre-gl";
-

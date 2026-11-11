@@ -1,18 +1,31 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@chyzwar/biome-config/react"], 
+  "extends": ["@chyzwar/biome-config/react"],
+  "files": {
+    "includes": ["**", "!lerna.json"]
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": false
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "enabled": false
+    }
+  },
   "assist": {
     "actions": {
       "source": {
         "organizeImports": "off"
       }
     }
-  }, 
+  },
   "linter": {
     "rules": {
       "correctness": {
         "useUniqueElementIds": {
-          "level": "error", 
+          "level": "error",
           "options": {
             "excludedComponents": ["FormattedMessage"]
           }
