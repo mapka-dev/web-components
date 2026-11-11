@@ -26,10 +26,7 @@ const createTransformRequest =
     return transformRequest ? transformRequest(url) : noopTransformRequest(url);
   };
 
-interface MapboxMapProps<
-  Map extends mapbox.Map = mapbox.Map,
-  O extends MapOptions = MapOptions,
-> {
+interface MapboxMapProps<Map extends mapbox.Map = mapbox.Map, O extends MapOptions = MapOptions> {
   center?: [number, number];
   zoom?: number;
   style?: string | StyleSpecification;
@@ -43,10 +40,9 @@ interface MapboxMapProps<
   onMapLoaded?: (map: Map) => void;
 }
 
-export function MapboxMap<
-  M extends mapbox.Map = mapbox.Map,
-  O extends MapOptions = MapOptions,
->(props: MapboxMapProps<M, O>) {
+export function MapboxMap<M extends mapbox.Map = mapbox.Map, O extends MapOptions = MapOptions>(
+  props: MapboxMapProps<M, O>,
+) {
   const {
     BaseMap,
     width = "100%",

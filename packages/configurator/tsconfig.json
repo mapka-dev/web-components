@@ -11,7 +11,7 @@
   "references": [
     { "path": "../react-maplibre-map/tsconfig.json" },
     { "path": "../react-mapbox-map/tsconfig.json" },
-    { "path": "../react-leaflet-map/tsconfig.json" }, 
+    { "path": "../react-leaflet-map/tsconfig.json" },
     { "path": "../split-panel/tsconfig.json" },
     { "path": "../react-map-shared/tsconfig.json" }
   ]

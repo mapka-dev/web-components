@@ -30,18 +30,19 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@mapka/react-map-shared": "^0.17.0",
-    "es-toolkit": "^1.45.1",
-    "mapbox-gl": "3.21.0"
+    "es-toolkit": "^1.53.2",
+    "mapbox-gl": "3.34.2"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.4.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "typescript": "^6.0.2"
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "files": [
     "src/",
