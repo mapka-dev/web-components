@@ -915,8 +915,8 @@ __metadata:
     vite: "npm:^8.3.7"
   peerDependencies:
     maplibre-gl: ^6.17.0
-    react: ^19.3.1
-    react-dom: ^19.3.1
+    react: ^19.0.0
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -934,8 +934,8 @@ __metadata:
     react-dom: "npm:^19.3.1"
     typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
-    react: ^19.3.1
-    react-dom: ^19.3.1
+    react: ^19.0.0
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -964,8 +964,8 @@ __metadata:
     react-dom: "npm:^19.3.1"
     typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
-    react: ^19.3.1
-    react-dom: ^19.3.1
+    react: ^19.0.0
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -982,8 +982,8 @@ __metadata:
     typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
     maplibre-gl: ^6.17.0
-    react: ^19.3.1
-    react-dom: ^19.3.1
+    react: ^19.0.0
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -1023,8 +1023,8 @@ __metadata:
     react: "npm:^19.3.1"
     typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
-    react: ^19.3.1
-    react-dom: ^19.3.1
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
   languageName: unknown
   linkType: soft
 

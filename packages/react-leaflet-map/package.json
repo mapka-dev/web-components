@@ -37,8 +37,8 @@
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   },
   "peerDependencies": {
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "files": [
     "src/",
