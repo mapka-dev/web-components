@@ -31,7 +31,7 @@
   "dependencies": {
     "@mapka/react-map-shared": "^0.17.1",
     "es-toolkit": "^1.53.2",
-    "mapbox-gl": "3.34.2"
+    "mapbox-gl": "3.35.0"
   },
   "devDependencies": {
     "@chyzwar/tsconfig": "^0.4.0",
