@@ -905,7 +905,7 @@ __metadata:
     "@codemirror/view": "npm:^6.43.15"
     "@mantine/core": "npm:^9.8.0"
     "@mantine/hooks": "npm:^9.8.0"
-    "@mapka/react-maplibre-map": "npm:^0.17.1"
+    "@mapka/react-maplibre-map": "npm:^0.17.3"
     "@mapka/split-panel": "npm:^0.17.1"
     "@tabler/icons-react": "npm:^3.52.0"
     "@types/react": "npm:^19.3.0"
@@ -977,7 +977,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mapka/react-maplibre-map@npm:^0.17.1, @mapka/react-maplibre-map@workspace:packages/react-maplibre-map":
+"@mapka/react-maplibre-map@npm:^0.17.3, @mapka/react-maplibre-map@workspace:packages/react-maplibre-map":
   version: 0.0.0-use.local
   resolution: "@mapka/react-maplibre-map@workspace:packages/react-maplibre-map"
   dependencies:

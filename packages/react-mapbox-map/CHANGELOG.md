@@ -4,6 +4,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.3](https://github.com/mapka-dev/web-components/compare/v0.17.2...v0.17.3) (2026-11-15)
+
+**Note:** Version bump only for package @mapka/react-mapbox-map
+
 ## [0.17.1](https://github.com/mapka-dev/web-components/compare/v0.17.0...v0.17.1) (2026-11-11)
 
 ### Bug Fixes
