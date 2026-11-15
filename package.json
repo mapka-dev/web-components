@@ -5,6 +5,9 @@
   "author": "chyzwar",
   "license": "UNLICENSED",
   "private": true,
+  "engines": {
+    "node": "26.x"
+  },
   "scripts": {
     "lint": "runner lint",
     "check": "runner check",
@@ -19,7 +22,7 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.6.6",
+    "@biomejs/biome": "^2.6.7",
     "@chyzwar/biome-config": "^0.4.4",
     "@chyzwar/runner": "^0.14.2",
     "@commitlint/cli": "^21.2.4",
